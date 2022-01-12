@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Cassini UVIS Users Guide
+title: Cassini UVIS User Guide
 author: Cassini UVIS team, Jupyter Book created by Michael Aye
 logo: logo.png
 only_build_toc_files: true
