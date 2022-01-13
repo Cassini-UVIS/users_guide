@@ -268,7 +268,7 @@ One approach to estimate the response of anomalous pixels in heavily binned data
 The UVIS Data Product Software Interface Specification (SIS) document provides a
 detailed description of the UVIS data format, structure and content delivered to the PDS.
 The SIS document can be found within any UVIS data volume ([/DOCUMENT/UVIS.TXT](https://pds-rings.seti.org/holdings/volumes/COUVIS_0xxx/COUVIS_0003/DOCUMENT/UVIS.TXT)).
-The user is also referred to Chapter {ref}`sec:pds-data-structure`.
+The user is also referred to {numref}`sec:pds-data-structure`.
 The PDS does not provide calibrated UVIS data. 
 Instead, the raw, observed counts from the instrument are stored in one data file and a calibration matrix is stored in a separate file.
 These files are located within different directories of a UVIS data volume (`/DATA/` and
@@ -280,6 +280,7 @@ The following is a step-by-step example, written in the interpretative language 
 (https://www.exelisvis.com/), of the data reduction involved for one UVIS observation. 
 After this example, a simpler approach will be shown that uses a provided data reader
 (`UVIS_PDS_READ_DATA`), written in IDL, to import the data for analysis. 
+
 Consider an atmospheric limb measurement of Titan where the UVIS boresight was held at a constant altitude throughout the observation and consists of 15 scans (individual detector readouts) each with an integration time of 240 seconds. 
 The EUV and FUV data files and associated calibration matrices are contained in the following files, downloadable [here](https://pds-rings.seti.org/viewmaster/volumes/COUVIS_0xxx/COUVIS_0027):
 
