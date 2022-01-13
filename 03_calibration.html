@@ -701,7 +701,7 @@ One approach to estimate the response of anomalous pixels in heavily binned data
 <p>The UVIS Data Product Software Interface Specification (SIS) document provides a
 detailed description of the UVIS data format, structure and content delivered to the PDS.
 The SIS document can be found within any UVIS data volume (<a class="reference external" href="https://pds-rings.seti.org/holdings/volumes/COUVIS_0xxx/COUVIS_0003/DOCUMENT/UVIS.TXT">/DOCUMENT/UVIS.TXT</a>).
-The user is also referred to Chapter <a class="reference internal" href="02_pds_data_structure.html#sec-pds-data-structure"><span class="std std-ref">PDS Data Structure</span></a>.
+The user is also referred to <a class="reference internal" href="02_pds_data_structure.html#sec-pds-data-structure"><span class="std std-numref">Section 2</span></a>.
 The PDS does not provide calibrated UVIS data.
 Instead, the raw, observed counts from the instrument are stored in one data file and a calibration matrix is stored in a separate file.
 These files are located within different directories of a UVIS data volume (<code class="docutils literal notranslate"><span class="pre">/DATA/</span></code> and
@@ -711,8 +711,8 @@ These files are located within different directories of a UVIS data volume (<cod
 <p>The following is a step-by-step example, written in the interpretative language of IDL
 (<a class="reference external" href="https://www.exelisvis.com/">https://www.exelisvis.com/</a>), of the data reduction involved for one UVIS observation.
 After this example, a simpler approach will be shown that uses a provided data reader
-(<code class="docutils literal notranslate"><span class="pre">UVIS_PDS_READ_DATA</span></code>), written in IDL, to import the data for analysis.
-Consider an atmospheric limb measurement of Titan where the UVIS boresight was held at a constant altitude throughout the observation and consists of 15 scans (individual detector readouts) each with an integration time of 240 seconds.
+(<code class="docutils literal notranslate"><span class="pre">UVIS_PDS_READ_DATA</span></code>), written in IDL, to import the data for analysis.</p>
+<p>Consider an atmospheric limb measurement of Titan where the UVIS boresight was held at a constant altitude throughout the observation and consists of 15 scans (individual detector readouts) each with an integration time of 240 seconds.
 The EUV and FUV data files and associated calibration matrices are contained in the following files, downloadable <a class="reference external" href="https://pds-rings.seti.org/viewmaster/volumes/COUVIS_0xxx/COUVIS_0027">here</a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">COUVIS_0027</span><span class="o">/</span><span class="n">DATA</span><span class="o">/</span><span class="n">D2009_173</span><span class="o">/</span><span class="n">EUV2009_173_15_16</span><span class="o">.</span><span class="n">DAT</span>
 <span class="o">/</span><span class="n">COUVIS_0027</span><span class="o">/</span><span class="n">CALIB</span><span class="o">/</span><span class="n">VERSION_3</span><span class="o">/</span><span class="n">D2009_173</span><span class="o">/</span><span class="n">EUV2009_173_15_16_CAL_3</span><span class="o">.</span><span class="n">DAT</span>
