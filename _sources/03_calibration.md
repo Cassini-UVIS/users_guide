@@ -333,7 +333,7 @@ data_dims=[1024,64,1], data_type=4, endian='big' )
 ```
 
 Note that IDL type code 4 refers to 32 bit floating-point values. 
-All UVIS PDS data, regardless of windowing and binning, is contained within a 1024x64 matrix (see Chapter {ref}`sec:pds-data-structure`). 
+All UVIS PDS data, regardless of windowing and binning, is contained within a 1024x64 matrix (see {numref}`sec:pds-data-structure`). 
 
 The binning and windowing of the data is described in the following label entries (identical for the data and calibration files):
 
@@ -350,11 +350,9 @@ The valid region of the arrays then needs to be extracted based on the above inf
 
 ```
 x1 = UL_CORNER_BAND
-x2 = UL_CORNER_BAND + (LR_CORNER_BAND-UL_CORNER_BAND+1) /
-BAND_BIN - 1
+x2 = UL_CORNER_BAND + (LR_CORNER_BAND-UL_CORNER_BAND+1) / BAND_BIN - 1
 y1 = UL_CORNER_LINE
-y2 = UL_CORNER_LINE + (LR_CORNER_LINE-UL_CORNER_LINE+1) /
-LINE_BIN - 1
+y2 = UL_CORNER_LINE + (LR_CORNER_LINE-UL_CORNER_LINE+1) / LINE_BIN - 1
 ```
 
 ```idl

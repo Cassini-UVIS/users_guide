@@ -754,7 +754,7 @@ data_dims<span class="o">=</span>[<span class="mi">1024</span>,<span class="mi">
 </pre></div>
 </div>
 <p>Note that IDL type code 4 refers to 32 bit floating-point values.
-All UVIS PDS data, regardless of windowing and binning, is contained within a 1024x64 matrix (see Chapter <a class="reference internal" href="02_pds_data_structure.html#sec-pds-data-structure"><span class="std std-ref">PDS Data Structure</span></a>).</p>
+All UVIS PDS data, regardless of windowing and binning, is contained within a 1024x64 matrix (see <a class="reference internal" href="02_pds_data_structure.html#sec-pds-data-structure"><span class="std std-numref">Section 2</span></a>).</p>
 <p>The binning and windowing of the data is described in the following label entries (identical for the data and calibration files):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">UL_CORNER_LINE</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">UL_CORNER_BAND</span> <span class="o">=</span> <span class="mi">0</span>
@@ -766,11 +766,9 @@ All UVIS PDS data, regardless of windowing and binning, is contained within a 10
 </div>
 <p>The valid region of the arrays then needs to be extracted based on the above information:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">UL_CORNER_BAND</span>
-<span class="n">x2</span> <span class="o">=</span> <span class="n">UL_CORNER_BAND</span> <span class="o">+</span> <span class="p">(</span><span class="n">LR_CORNER_BAND</span><span class="o">-</span><span class="n">UL_CORNER_BAND</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span>
-<span class="n">BAND_BIN</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">UL_CORNER_BAND</span> <span class="o">+</span> <span class="p">(</span><span class="n">LR_CORNER_BAND</span><span class="o">-</span><span class="n">UL_CORNER_BAND</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">BAND_BIN</span> <span class="o">-</span> <span class="mi">1</span>
 <span class="n">y1</span> <span class="o">=</span> <span class="n">UL_CORNER_LINE</span>
-<span class="n">y2</span> <span class="o">=</span> <span class="n">UL_CORNER_LINE</span> <span class="o">+</span> <span class="p">(</span><span class="n">LR_CORNER_LINE</span><span class="o">-</span><span class="n">UL_CORNER_LINE</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span>
-<span class="n">LINE_BIN</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">UL_CORNER_LINE</span> <span class="o">+</span> <span class="p">(</span><span class="n">LR_CORNER_LINE</span><span class="o">-</span><span class="n">UL_CORNER_LINE</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">LINE_BIN</span> <span class="o">-</span> <span class="mi">1</span>
 </pre></div>
 </div>
 <div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>dataw_euv <span class="o">=</span> <span class="nb">float</span>(data_euv[x1<span class="o">:</span>x2,y1<span class="o">:</span>y2,<span class="o">*</span>])
