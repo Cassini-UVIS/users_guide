@@ -1,0 +1,577 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. PDS Data Structure &#8212; Cassini UVIS User Guide</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. UVIS Calibration" href="03_calibration.html" />
+    <link rel="prev" title="1. Cassini UVIS data on the PDS system" href="01_uvis_on_pds.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Cassini UVIS User Guide</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Cassini UVIS User Guide
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_uvis_on_pds.html">
+   1. Cassini UVIS data on the PDS system
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. PDS Data Structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_calibration.html">
+   3. UVIS Calibration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   4. Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/02_pds_data_structure.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F02_pds_data_structure.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>PDS Data Structure</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="pds-data-structure">
+<span id="sec-pds-data-structure"></span><h1><span class="section-number">2. </span>PDS Data Structure<a class="headerlink" href="#pds-data-structure" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-conversion-status-raw admonition">
+<p class="admonition-title">Conversion status: Raw</p>
+<p>Copied over raw, not yet cleaned up, figures missing.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">David</span> <span class="n">Judd</span>
+</pre></div>
+</div>
+<p>During the Cassini spacecraft’s tour of the solar system, the Ultraviolet Imaging
+Spectrograph has observed Venus, Earth, the Jovian and Saturn systems. The UVIS science
+team has delivered data to the Planetary Data System for storage in an historical archive. PDS
+clients are able to search, retrieve and analyze this data. This chapter supports those users by
+providing a description of UVIS data and its organization within the PDS.
+In PDS, an “observation” is the fundamental organizational unit of UVIS data. It is a set
+of integers representing detector counts obtained while the instrument had a particular
+configuration and was obtained for a particular purpose. A document entitled UVISREF.CAT is
+located in all UVIS data volumes at the PDS and describes the instrument in detail. In summary,
+it describes the four subsystems of the UVIS instrument: the Far Ultraviolet channel (FUV), the
+Extreme Ultraviolet channel (EUV), the High Speed Photometer (HSP) and the
+Hydrogen/Deuterium Absorption Cell (HDAC) and how they acquire data.
+The four subsystems produce two PDS data types: 1) cubes; and 2) time series. The EUV
+and FUV channels use detectors with a 1024x64 array of pixels, which integrate over time to
+generate a three dimensional matrix. The axes of this matrix, using PDS terminology, are line,
+band, and sample. The line dimension is the detector’s 64 pixel spatial dimension, the band is
+the 1024 pixel spectral dimension, and the sample dimension corresponds to time where each
+integration of the detector is arrayed in this dimension. A three dimensional matrix with these
+axes is referred to as a PDS cube. The HSP and HDAC are photometers which produce a time
+ordered sequence of photon counts, corresponding to a PDS time series.
+Regardless of its PDS data structure, there are four UVIS data products: 1) spatial-
+spectral image cubes; 2) images; 3) spectra; 4) brightness time series. In each sample, a cube
+contains both spatial and spectral information about a target, the image contains only spatial
+information, and a spectrum contains only spectral information. The time series is a sequence of
+samples (photon counts). An image is generated from a cube by summing the detector counts
+across the entire wavelength dimension; a spectrum is generated from a cube by summing across
+the entire spatial dimension. The brightness time series is produced by the HSP or HDAC
+channels. These data products are illustrated in the following figures:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Figure</span> <span class="mf">2.1</span><span class="n">A</span><span class="p">:</span> <span class="n">A</span> <span class="n">spatial</span><span class="o">-</span><span class="n">spectral</span> <span class="n">image</span> <span class="n">cube</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Figure</span> <span class="mf">2.1</span><span class="n">B</span><span class="p">:</span> <span class="n">An</span> <span class="n">image</span> <span class="n">at</span> <span class="n">one</span> <span class="n">wavelength</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Figure</span> <span class="mf">2.1</span><span class="n">C</span><span class="p">:</span> <span class="n">A</span> <span class="n">series</span> <span class="n">of</span> <span class="n">spectra</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>A brightness series from the HSP or HDAC is a time series: {ct0, ct1, …}.
+The following surface plot Figure 2.2 is the first sample of a UVIS EUV spatial-spectral
+image cube from an observation of Jupiter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="nb">sum</span> <span class="nb">all</span> <span class="n">pixels</span> <span class="n">across</span> <span class="n">the</span> <span class="n">spectral</span> <span class="n">dimension</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="mi">0</span> <span class="o">+</span><span class="p">(</span><span class="mi">2</span> <span class="n">sec</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="mi">0</span> <span class="o">+</span><span class="p">(</span><span class="mi">1</span> <span class="n">sec</span><span class="p">)</span>
+<span class="n">t</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span>
+<span class="nb">all</span>
+<span class="n">spatial</span>
+<span class="n">pixels</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1024</span> <span class="n">t</span><span class="o">^</span><span class="mi">0</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="mi">2</span>
+<span class="n">t</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Figure 2.2: The first sample of a UVIS EUV spatial-spectral image cube observation of Jupiter. The elevated line at
+y=~20 is Jupiter. The elevated regions at Y=~15 and Y=~25 are emissions from the Io torus. There are 32 lines and
+512 bands of data because the binning in this observation is 2 spatially and 2 spectrally.</p>
+<p>The EUV and FUV channels can be configured to take data from sub-regions of the
+1024x64 detector called windows. For example, if a target is expected to be visible in the central
+region of the detector then a window centered around the middle of the detector with an upper
+left corner at (0, 24) and a lower right corner at (1023, 39) with dimensions 1024x16 would
+capture the target and minimize irrelevant data. If a reduced level of resolution is possible, then
+the detector could be binned to further reduce the data size. Binning is the summation of adjacent
+pixels, for example, binning by 2 causes adjacent pairs of pixels to be added together. For
+example this [(0,24), (1023,39)] window could be binned by two in the band (spectral)
+dimension resulting in a 512x16 array of pixels. We take as an example two additional windows
+defined by window1 = ([0,10],[1023, 14], SpaBin=5, SpecBin=1) and
+window3 = ([0, 5 0],[1023, 5 4], SpaBin=5, SpecBin=1). When windowing or binning is defined
+on the detector, counts are arranged within the matrix in sub-matrices corresponding to the</p>
+<p>windows of the detector. Figure 2.3 illustrates this windowing and binning:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Figure</span> <span class="mf">2.3</span><span class="p">:</span> <span class="n">an</span> <span class="n">example</span> <span class="n">of</span> <span class="n">windows</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">UVIS</span> <span class="n">detector</span>
+</pre></div>
+</div>
+<p>The image, spectrum and cube data products are represented in the PDS as cubes. Images
+are 1 x 64 x n cubes, spectra are 1024 x 1 x n cubes and spatial-spectral image cubes are 1024 x
+64 x n cubes. The following Figure 2.4 provides an example UVIS cube corresponding to the
+windowed and binned detector configuration in Figure 2.3:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Figure</span> <span class="mf">2.</span> <span class="mi">4</span> <span class="p">:</span> <span class="n">an</span> <span class="n">example</span> <span class="n">of</span> <span class="n">PDS</span> <span class="n">data</span> <span class="n">corresponding</span> <span class="n">to</span> <span class="n">the</span> <span class="n">example</span> <span class="n">offered</span> <span class="ow">in</span> <span class="n">diagram</span> <span class="mf">2.</span> <span class="mf">3.</span>
+</pre></div>
+</div>
+<p>Matrix elements outside the windows contain null values (-1). Data counts are ordered in
+line-major ordering. This structural analogy between detector windows and cubes holds for
+spectra and images as well. The solar-stellar brightness series are represented as PDS Time
+Series objects that are, simply, a series of detector counts, each with an associated timestamp.
+To this point we have seen several configurable aspects of the UVIS instrument, namely,
+integration time and the detector windowing and binning. Windows are defined by the upper left
+and lower right corners of the window and an associated spatial bin and spectral bin. These
+values are specified in the PDS using name/value pairs. In PDS format, the previous example
+had INTEGRATION_DURATION = 1 <SECOND>, and three windows defined using their
+upper left corner, lower right corner and binning:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">UL_CORNER_SPECTRAL</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">UL_CORNER_SPATIAL</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">LR_SPECTRAL</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1023</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">1023</span><span class="p">)</span>
+<span class="n">LR_SPATIAL</span> <span class="o">=</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">54</span><span class="p">)</span>
+<span class="n">SPATIAL_BIN</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">SPECTRAL_BIN</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The structure of a UVIS Cube is specified using the AXIS_NAME, CORE_ITEMS,
+CORE_ITEM_BYTES and CORE_ITEM_TYPE values. A 1024x64x10 UVIS Cube object is
+specified by:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AXIS_NAME</span> <span class="o">=</span> <span class="p">(</span><span class="n">BAND</span><span class="p">,</span> <span class="n">LINE</span><span class="p">,</span> <span class="n">SAMPLE</span><span class="p">)</span>
+<span class="n">CORE_ITEMS</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">CORE_ITEM_BYTES</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">CORE_ITEM_TYPE</span> <span class="o">=</span> <span class="n">MSB_UNSIGNED_INTEGER</span>
+</pre></div>
+</div>
+<p>A 1024x1x10 series of spectra is specified by:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AXIS_NAME</span> <span class="o">=</span> <span class="p">(</span><span class="n">BAND</span><span class="p">,</span> <span class="n">LINE</span><span class="p">,</span> <span class="n">SAMPLE</span><span class="p">)</span>
+<span class="n">CORE_ITEMS</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">CORE_ITEM_BYTES</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">CORE_ITEM_TYPE</span> <span class="o">=</span> <span class="n">MSB_UNSIGNED_INTEGER</span>
+</pre></div>
+</div>
+<p>Time series are specified using ROWS, COLUMNS, ROW_BYTES, and DATA_TYPE.
+The following defines a 14912 element time series of 2 byte integers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ROWS</span> <span class="o">=</span> <span class="mi">14912</span>
+<span class="n">COLUMNS</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">SAMPLING_PARAMETER_NAME</span> <span class="o">=</span> <span class="n">TIME</span>
+<span class="n">SAMPLING_PARAMETER_UNIT</span> <span class="o">=</span> <span class="n">MILLISECOND</span>
+<span class="n">SAMPLING_PARAMETER_INTERVAL</span><span class="o">=</span> <span class="mi">125</span>
+<span class="o">...</span>
+<span class="n">OBJECT</span> <span class="o">=</span> <span class="n">COLUMN</span>
+<span class="n">NAME</span> <span class="o">=</span> <span class="n">PHOTOMETER_COUNTS</span>
+<span class="n">DATA_TYPE</span> <span class="o">=</span> <span class="n">MSB_UNSIGNED_INTEGER</span>
+<span class="n">BYTES</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>All UVIS data objects are composed of 2 byte unsigned integers, though all values are
+significantly less than 2^16.
+The FUV and EUV channel data are converted into geophysical units by multiplying the
+matrix of raw data by a corresponding matrix of calibration coefficients. This calibration is
+continually updated by the UVIS Team, so the user may use the latest calibration data, or if
+preferred, use the calibration data matrix to convert model results to expected UVIS counts for
+comparison. This calibration matrix is a 2-dimensional array with the same BAND and LINE
+dimensions as its corresponding data object. The calibration matrix contains floating point
+values. The product of the data cube and the calibration cube is data whose geophysical units are
+kilorayleighs per angstrom. The mapping between detector columns and wavelengths is specified
+in the PDS BAND_BIN_CENTER value where each value in the list is a wavelength associated
+with the corresponding detector column. The process used to generate calibration coefficients is
+described in Chapter 3 of this user’s guide. Because the calibration is continually updated, the
+calibration matrix may change with time. By providing the latest calibration coefficients, we
+allow the user to calibrate the raw data to geophysical units (alternately, users may use their own
+model of the target and the instrument response to compare to the raw data). See Chapter 9 for</p>
+<p>this approach. HSP and HDAC data in raw form have units of counts (per integration period) and
+are proportional to photon flux. There is no additional calibration defined for these data.
+PDS data objects have two components, a data component and a label component. The
+label contains a set of name/value pairs, including those listed above. The data file contains data
+values formatted into a PDS object. These components are stored as files whose names contain
+the extensions DAT and LBL respectively. UVIS data object file names have the form
+<channel>&lt;start_time&gt;.LBL or <channel>&lt;start_time&gt;.DAT. The LBL files contain instrument
+configuration, spacecraft geometry, and taxonomic information describing UVIS data within the
+PDS. Using the information within a LBL, a reader can understand the organization of data
+within the DAT file and extract that data into an analysis tool. For example, in the IDL
+programming language, the read_binary function can read a data Cube such as the one defined
+above:
+r = read_binary(‘FUV2001_001_01_02.DAT’, data_type = 2,
+data_dims=[1024, 64, 10])</p>
+<p>which returns a 1024x64x10 array of 2 byte integers. Similarly, read_binary can be used to read
+an HSP or HDAC data file since each is organized as a one dimensional array. Other
+configuration fields within a UVIS Cube label further describe the state of the instrument. For
+example:
+SPACECRAFT_CLOCK_START_COUNT = “1/1633050431.160”
+SPACECRAFT_CLOCK_STOP_COUNT = “UNK”
+START_TIME = 2009-274T00:24:32.
+STOP_TIME = 2009-274T00:36:32.
+TARGET_NAME = “SOLAR WIND”
+OBSERVATION_ID = 112818
+INTEGRATION_DURATION = 12.500 <SECOND>
+COMPRESSION_TYPE = “SQRT_9”
+HI_VOLTAGE_POWER_SUPPLY_STATE = ON
+OCCULTATION_PORT_STATE = OPEN
+SLIT_STATE = OCCULTATION
+TEST_PULSE_STATE = OFF
+ODC_ID = 103
+DESCRIPTION = “.. .”</p>
+<p>where the clock start is the Cassini clock time at the end of the first sample, the start time is a
+text string corresponding to the spacecraft clock start time, the stop time is a derived value
+produced by multiplying the INTEGRATION_DURATION by the number of samples, the target
+name is a value defined during operations planning, the OBSERVATION_ID is a unique
+numerical value associated with the observation, the INTEGRATION_DURATION is the time
+period used to generate each sample, the COMPRESSION_TYPE is the algorithm used by the
+UVIS flight software to encode data on-board and during transmission to earth, the
+HI_VOLTAGE_POWER_SUPPLY_STATE is the voltage level applied to the detector, the
+OCCULTATION_PORT_STATE is a flag indicating whether the occultation port is open or
+closed (i.e. whether the light source is being observed through the port), the SLIT_STATE
+describes the width of the spectrometer entrance, the TEST_PULSE_STATE indicates whether
+the data is internally-generated, and the ODC_ID is a numeric value identifying the configuration
+commands generated by the operations team for this observation. There are two DESCRIPTION</p>
+<p>fields in a label. The first contains a reference to additional material for understanding the
+instrument state. The second contains a one line description of the purpose of the observation
+which has the form “The purpose of this observation is to…”. The fields relevant to
+understanding data are spacecraft clock, target, integration, slit state and description. The other
+fields are less important and are included in the label because they are part of UVIS telemetry:
+high voltage state is always ON, test pulse is always OFF, ODC_ID is used exclusively in
+operations management, the compression algorithm, although lossy, has no significant effect on
+data quality, and observation ID is useful only as a reference point.
+The HDAC replaces INTEGRATION_DURATION with DWELL_TIME and the
+H_LEVEL and D_LEVEL parameters. The time series generated by the HDAC channel may
+have additional complexity. If all the filament voltage levels are 0 then the HDAC is in
+photometer mode and its output is a time series of detector counts. If there is a non-zero filament
+voltage level the detector is in modulation mode and the time series can be mapped into a table
+of 32 columns, each column corresponding to an HDAC filament voltage level in the order:
+d1…d16, h1…h16 where d1..d16 correspond to the 16 voltage levels of the d cell and h1..h16 the
+same for the h cell. The time series can be converted to the table by mapping contiguous
+subsequences into the successive columns of the table. The length of the subsequence is equal to
+the dwell time parameter of the instrument configuration. A data product consists of a set of data
+taken during a single instrument configuration.
+Label files contain spacecraft pointing geometry computed for the time at the end of the
+first integration at the center of the field of view of the instrument. The keywords specifying this
+geometry are:
+RIGHT_ASCENSION, DECLINATION, SUB_SOLAR_LATITUDE,
+SUB_SOLAR_LONGITUDE, SUB_SPACECRAFT_LATITUDE,
+SUB_SPACECRAFT_LONGITUDE, PHASE_ANGLE, EMISSION_ANGLE,
+INCIDENCE_ANGLE, CENTRAL_BODY_DISTANCE, PLANET_POSITION_VECTOR,
+SC_PLANET_VELOCITY_VECTOR, SC_SUN_POSITION_VECTOR,
+SC_SUN_VELOCITY_VECTOR, SC_TARGET_POSITION_VECTOR,
+SC_TARGET_VELOCITY_VECTOR, PLANET_CENTER_POSITION_VECTOR,
+PLANET_CENTER_VELOCITY_VECTOR</p>
+<p>Their values are in units of degrees for angles, kilometers for distances, and kilometers/second
+for velocities and are given in the J2000 reference frame. Geometry values are generated using
+the NAIF SPICE toolkit. When a geometry value cannot be computed due to a dispersed target
+(such as observation of the interplanetary medium), or insufficient ephemeris data (such as when
+the target is off-center) a value of UNK is recorded as the parameter value. Since the number of
+interplanetary hydrogen survey observations with a target of SOLAR_WIND is relatively high,
+the number of UNK values is also high.
+Data objects are stored in files within a data volume. A data volume is a directory tree
+whose content and structure is defined by PDS. The UVIS data volume has a name of the form
+COUVIS_nnnn where CO is an acronym for Cassini Orbiter, UVIS is the instrument name, and
+nnnn is a number in a sequence of indices. During the Cassini mission, UVIS produced data
+volumes from COUVIS_0001 through COUVIS_0060. The top level directory contains several
+directories and files:</p>
+<ul class="simple">
+<li><p>DATA contains data objects</p></li>
+<li><p>CALIB contains calibration objects</p></li>
+<li><p>DOCUMENT contains documentation</p></li>
+<li><p>CATALOG contains catalogs of data products on the volume</p></li>
+<li><p>SOFTWARE contains software (used for documentation only)</p></li>
+<li><p>AAREADME.TXT describes the data volume</p></li>
+<li><p>ERRATA.TXT describes know errors.
+The UVIS data object files are organized by date under the DATA directory. The CALIB
+directory contains files that correspond, by name, to FUV and EUV data object files. These
+calibration files contain Cube data objects, used to convert raw counts into geophysical values.
+The calibration LBL files contain a description of the calibration process. The SOFTWARE
+directory contains algorithms used to generate these coefficients and are included for reference.
+The INDEX directory contains a relational database table whose columns are the fields of the
+LBL files and which contain the label values as records in the table. The purpose of the
+INDEX.TAB file is to provide a database search capability.
+Underneath the DATA directory is a sequence of directories of the form
+D<yyyy>_<ddd> where yyyy is a year and ddd is a day of year. The contents of these
+directories are the observations that began on the specified day, for example,
+COUVIS_0002/DATA/D2001_001/FUV2001_001_01_12.LBL. Underneath the CALIB
+directory is a subdirectory of the form VERSION_n and under that is the same directory tree as
+is under DATA, for example:
+COUVIS_0002/CALIB/VERSION_2/D2001_001/FUV2001_001_01_12_CAL_2.LBL.
+Note that as a rule the calibration file and its corresponding data object file have corresponding
+names. Examples of data and calibration labels are given in the appendices. A description of the
+calibration version is located in the SOFTWARE/CALIB directory of each PDS data volume.
+Underneath the INDEX directory are two files, INDEX.LBL and INDEX.TAB. The
+INDEX.LBL file contains a schema definition for a relational database table. The TAB file
+contains a set of records corresponding to observations, one record per observation. One column
+contains the data file name and the rest correspond to the keywords in the observation label, e.g.
+START_TIME, TARGET_NAME, INTEGRATION_TIME, etc. The index table is used to
+search for observations matching some user-specified criteria.
+Underneath the DOCUMENT directory is the UVIS.TXT file that is a more substantial
+version of this chapter. The CATALOG directory contains the files UVISINST.CAT and
+UVISREF.CAT that describe the instrument in detail. Also included there are a description of
+the mission, the spacecraft and the four UVIS data products. The SOFTWARE directory
+contains algorithms encoded in the IDL programming language that are used to generate
+calibration coefficients and geometry. They are included primarily for reference. An IDL data
+reader, UVIS_PDS_READ_DATA and associated documentation are also provided.
+UVIS data are available from the Atmospheres and Rings nodes of the PDS. From PDS,
+users obtain observations formatted as PDS data objects. By reading the object’s label a user can
+ascertain the structure of the data and load it into an analysis tool. The label contains all UVIS
+state information necessary to interpret the data. The steps detailed in this document will make it
+possible for UVIS data to be a valuable scientific resource into the foreseeable future.</p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="01_uvis_on_pds.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>Cassini UVIS data on the PDS system</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="03_calibration.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>UVIS Calibration</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Cassini UVIS team, Jupyter Book created by Michael Aye<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

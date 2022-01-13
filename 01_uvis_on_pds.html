@@ -1,0 +1,673 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Cassini UVIS data on the PDS system &#8212; Cassini UVIS User Guide</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. PDS Data Structure" href="02_pds_data_structure.html" />
+    <link rel="prev" title="Cassini UVIS User Guide" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Cassini UVIS User Guide</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Cassini UVIS User Guide
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Cassini UVIS data on the PDS system
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_pds_data_structure.html">
+   2. PDS Data Structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_calibration.html">
+   3. UVIS Calibration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   4. Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/01_uvis_on_pds.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_uvis_on_pds.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   1.1. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instrument-description">
+   1.2. Instrument description
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#background">
+     1.2.1. Background
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pds">
+   1.3. PDS
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-1">
+     1.3.1. Example 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-2">
+     1.3.2. Example 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-3">
+     1.3.3. Example 3
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Cassini UVIS data on the PDS system</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   1.1. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instrument-description">
+   1.2. Instrument description
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#background">
+     1.2.1. Background
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pds">
+   1.3. PDS
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-1">
+     1.3.1. Example 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-2">
+     1.3.2. Example 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-3">
+     1.3.3. Example 3
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="cassini-uvis-data-on-the-pds-system">
+<span id="sec-uvis-on-pds"></span><h1><span class="section-number">1. </span>Cassini UVIS data on the PDS system<a class="headerlink" href="#cassini-uvis-data-on-the-pds-system" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-conversion-status-raw admonition">
+<p class="admonition-title">Conversion status: Raw</p>
+<p>Copied over raw, not yet cleaned up, figures missing.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Feng</span> <span class="n">Tian</span>
+</pre></div>
+</div>
+<div class="section" id="introduction">
+<h2><span class="section-number">1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>On October 15, 1997, the Cassini-Huygens spacecraft was launched by NASA’s Jet
+Propulsion Laboratory (JPL) from Kennedy Space Center in Florida. After a seven-year journey,
+it entered Saturn’s orbit on July 1, 2004 Coordinated Universal Time (UTC), or June 30 at 8:
+p.m. MDT. The mission includes the Cassini orbiter and the Huygens probe, which was released
+from the Cassini orbiter and landed on the Titan moon to explore its surface and atmosphere. The
+instruments onboard have provided scientists with new and exciting data to help understand the
+mysterious Saturnian system. Besides the Huygens probe, Cassini’s instrumentation consists of
+12 instruments.</p>
+<p>The Ultraviolet Imaging Spectrograph (UVIS) is one of the 12 instruments installed on
+board Cassini. It was built by the Laboratory for Atmospheric and Space Physics (LASP) located
+in the Research Park of the University of Colorado in Boulder. The UVIS is a set of telescopes
+used to measure ultraviolet light from the Saturn system’s atmospheres, rings, and surfaces. The
+UVIS also observes the fluctuations of starlight and sunlight as the sun and stars move behind
+the rings and the atmospheres of Titan and Saturn. These observations are helpful to better
+understand the atmospheric composition and photochemistry of Saturn and Titan, determine the
+atmospheric concentrations of hydrogen and deuterium in these atmospheres, and provide
+information on the nature and history of Saturn’s rings. UVIS data have also helped to
+understand the physical properties of the water plumes and the salty ocean inside Enceladus. A
+detailed description of UVIS can be found in the UVIS Science Team’s paper published in Space
+Science Reviews (Esposito et al. 200 4 ). The following is a brief description of the components of UVIS.</p>
+</div>
+<div class="section" id="instrument-description">
+<h2><span class="section-number">1.2. </span>Instrument description<a class="headerlink" href="#instrument-description" title="Permalink to this headline">¶</a></h2>
+<p>The UVIS has two spectrographic channels: the extreme ultraviolet channel (EUV 56 to
+118 nm) and the far ultraviolet channel (FUV 110 to 190 nm). The ultraviolet channels are built
+into weight-relieved aluminum cases, and each contains a reflecting telescope, a concave grating
+spectrometer, and an imaging, pulse-counting detector. Three slits are available: a high
+resolution slit (75 and 100 μm slit width for the FUV and EUV channel, respectively), a low
+resolution slit (150 and 200 μm slit width for the FUV and EUV respectively), and an occultation
+slit of 800 μm width, identical for both channels. In both the EUV and the FUV channels the
+detector is a CODACON (CODed Anode array CONverter), consisting of 1024 pixels in the
+spectral direction and 64 pixels in the spatial direction. The UVIS also includes a high-speed
+photometer channel (HSP), a hydrogen-deuterium absorption cell channel (HDAC), and an
+electronic and control subassembly.</p>
+<p>The extreme ultraviolet channel (EUV) is used primarily for imaging spectroscopy and
+spectroscopic measurements of the structure and composition of the atmospheres of Titan and
+Saturn. The EUV channel consists of a telescope with a three-position slit changer, a baffle
+system, and a spectrograph with a CODACON microchannel plate detector and associated
+electronics. The telescope consists of an off-axis section of a parabolic mirror with a focal length of 100 mm, and a 2 0 x 2 0 mm aperture.
+A precision mechanism positions one of the three entrance slits at the focal plane of the telescope, each translating to a different spectral resolution.
+The spectrograph uses a toroidal grating that focuses the spectrum onto an imaging microchannel
+plate detector to achieve both high sensitivity and spatial resolution along the entrance slit.</p>
+<p>The microchannel plate detector electronics consist of a low-voltage power supply, a programmable
+high-voltage power supply, charge-sensitive amplifiers, and associated logic. The EUV channel
+also contains a solar occultation port to allow solar flux to enter the telescope through a small
+aperture when the sun is 20 degrees off-axis from the primary telescope.
+The far ultraviolet channel (FUV) is used primarily for imaging spectroscopy and
+spectroscopic measurements of the structure and composition of the atmospheres of Titan and
+Saturn and of the rings and icy satellites. The FUV is similar to the EUV channel except for the
+grating ruling density, optical coatings, and detector details. The FUV electronics are similar to
+those for the EUV except for the addition of a high-voltage power supply for the ion pump.
+The high-speed photometer channel (HSP), using a solar blind CsI photocathode,
+performs high signal-to-noise-ratio stellar occultation measurements of the structure and density
+of material in the rings, as well as the atmospheres. The HSP resides in its own module and
+measures light that is focused by its own parabolic mirror with a photomultiplier tube detector.
+The electronics consist of a pulse-amplifier-discriminator and a fixed-level high- voltage power
+supply.</p>
+<p>The hydrogen-deuterium absorption cell channel (HDAC) is used to measure the relative
+abundance of D/H in the Saturn system from their Lyman-alpha emission by using a hydrogen
+cell, a deuterium cell, and a channel electron multiplier (CEM) detector to record photons not
+absorbed in the cells. The hydrogen and deuterium cells are resonance absorption cells filled
+with pure molecular hydrogen and deuterium, respectively. They are located between an
+objective lens and a detector. Both cells are made of stainless steel coated with teflon and are
+sealed at each end with MgF 2 windows. The electronics consist of a pulse-amplifier-
+discriminator, a fixed-level high-voltage power supply, and two filament current controllers.
+The UVIS microprocessor electronics and control subassembly consists of input-output
+elements, power conditioning, science data and housekeeping data collection electronics, and
+microprocessor control elements.</p>
+<p>The microprocessor on the UVIS operates the instrument, executes various operating
+modes for data handling and compression, and buffers the instrument’s observation data for
+pickup by the Cassini Orbiter’s Command and Data Subsystem (CDS). The Cassini spacecraft
+points the UVIS telescopes to the desired target (including stars, the Sun, atmospheric features,
+and the limbs of Saturn and its moons). The spacecraft attitude control allows for slews, steps, or drifts across the target. Generally, these spacecraft motions are executed by commands issued
+from the spacecraft CDS. Synchronization of the instrument activities with the spacecraft motion
+is achieved by having the CDS send trigger commands to the UVIS at the correct time. These
+trigger commands instruct the UVIS to execute actions that have been pre-loaded in the UVIS
+memory. The data from the observation are buffered for pickup by the CDS. Two pickup rates
+are allowed: 32 kbps (for occultations) and 5 kbps (for spectral imaging). UVIS team members
+generate command sequences for each observation, which are loaded in the UVIS memory using
+a set of tools known as the Uplink Product Generation System (UPGS). The sequence of internal
+commands is then submitted to the sequencing team at JPL via the UVIS SOPC (Science
+Operations and Planning Computer). Using the SOPC and the UVIS GSE (Ground Support
+Equipment), the UVIS team can also monitor the health of the instrument in near real-time. In
+addition, the SOPC is used to access the data played back by the spacecraft and stored in the JPL
+Telemetry Data Server (TDS).</p>
+<div class="section" id="background">
+<h3><span class="section-number">1.2.1. </span>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h3>
+<p>Like all observations, the UVIS data contain noises from different sources and anomalies.
+The Cassini spacecraft is powered by 3 radioisotope thermoelectric generators (RTGs), which
+use heat from the natural decay of plutonium-238 to generate direct current electricity via
+thermocouples. The RTGs produce a constant background noise that needs to be subtracted from
+the UVIS observation. There are other backgrounds that may or may not contribute to the total
+raw counts; however the RTG background is internal to the spacecraft and must always be dealt
+with. More descriptions on the handling of RTG background can be found in Chapters 3, 4, 7,
+and 8. A small light leak allowed undispersed interplanetary H Lyman-α to reach the EUV
+detector for pixels &lt;720, corresponding to wavelengths shorter than 920 Å. For observations
+prior to 2007, this creates a background referred to as the “mesa” by the UVIS team. Users of
+this pre-2007 data should be careful to remove the affected pixels. In 2007 the source of the light leak was identified and it was eliminated from subsequent observations by opening the solar
+occultation door.</p>
+<p>For wavelengths &gt;~1150 Å (EUV pixel 971), another wavelength dependent background arises from internal instrument scattering of H Lyman-α.
+This contribution to the EUV signal is small below 1170 Å, and is estimated to be less than 7% of the total signal, based on comparisons with a modeled H 2 spectrum (Ajello et al., 2005).
+When all the noise sources are subtracted from the signal, the raw observation is ready for the flatfield calibration and the conversion from the raw counts to physical units. Users can find more information regarding backgrounds, the flatfield correction, and calibration in Chapters 3 and 11.</p>
+<p>A population of anomalous pixels exist in the FUV detector (~15% of all detector
+elements), which are characterized by relatively low and possibly nonlinear responses. These
+pixels are often referred to as “evil”. Although these anomalous pixels are distributed across the
+entire FUV detector, they often appear in groups along individual columns. Because of the
+poorly characterized response of these evil pixels, the UVIS team has decided to eliminate them
+from analysis. This is implemented by assigning an invalid sensitivity to the calibration matrix
+for these elements. Users can find how the “evil” pixels are identified and handled in Chapters 3
+and 4. An alternate approach is to average over large enough areas of the detector to minimize
+the effects. This is described in 9.3.</p>
+</div>
+</div>
+<div class="section" id="pds">
+<h2><span class="section-number">1.3. </span>PDS<a class="headerlink" href="#pds" title="Permalink to this headline">¶</a></h2>
+<p>The Cassini UVIS data are stored in the NASA PDS system. The detailed structure and
+components of the UVIS data in the PDS are described in Chapter 2. In the current chapter we
+provide step-by-step instructions on how to find and obtain the UVIS data from the PDS with the
+following 3 examples:</p>
+<ol class="simple">
+<li><p>a 2005 observation of Saturn’s aurora</p></li>
+<li><p>a 2004 observation of the reflected FUV spectrum from Phoebe; and</p></li>
+<li><p>a 2005 Enceladus occultation observation.</p></li>
+</ol>
+<div class="section" id="example-1">
+<h3><span class="section-number">1.3.1. </span>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h3>
+<blockquote class="epigraph">
+<div><p>An observation of Saturn’s aurora was carried out around 03:35 on day 172 of year 2005.</p>
+</div></blockquote>
+<ol>
+<li><p>Go to the Cassini UVIS data website: <a class="reference external" href="https://pds-rings.seti.org/cassini/uvis/access.html">https://pds-rings.seti.org/cassini/uvis/access.html</a></p></li>
+<li><p>Find COUVIS_0011 in the table called “Temporal coverage of each volume”, which contains
+the observations taken on day 172. And the available data are listed by the date the observations
+were carried out.</p></li>
+<li><p>Open COUVIS_0011/DATA/D2005_172/ (the full URL address is <a class="reference external" href="https://pds-rings.seti.org/vol/COUVIS_0011/DATA/D2005_172/">https://pds-rings.seti.org/vol/COUVIS_0011/DATA/D2005_172/</a> ) and search for data with observation time
+close to 03:35. Save the following data files and LBL files to your computer:
+EUV2005_172_03_35.DAT
+EUV2005_172_03_35.LBL
+FUV2005_172_03_35.DAT
+FUV2005_172_03_35.LBL</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that the LBL files contain the description of this data set. Also note that EUV, FUV,
+HDAC, and HSP data are presented in the same directory.</p>
+</div>
+</li>
+<li><p>Open the LBL files to determine the dimensionality, binning, and windowing of the data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AXIS_NAME</span> <span class="o">=</span> <span class="p">(</span><span class="n">BAND</span><span class="p">,</span> <span class="n">LINE</span><span class="p">,</span> <span class="n">SAMPLE</span><span class="p">)</span>
+<span class="n">CORE_ITEMS</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">163</span><span class="p">)</span>
+<span class="n">UL_CORNER_LINE</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">UL_CORNER_BAND</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">LR_CORNER_LINE</span> <span class="o">=</span> <span class="mi">61</span>
+<span class="n">LR_CORNER_BAND</span> <span class="o">=</span> <span class="mi">1023</span>
+<span class="n">BAND_BIN</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">LINE_BIN</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>This information states that the data consist of 1024 spectral elements, called “bands” (spectral
+bins) from bin number 0 to 1023 with no spectral binning performed (spec_bin=BAND_BIN=1),
+in 60 lines (spatial bins) from line number 2 to 61 with no spatial binning performed
+(space_bin=LINE_BIN=1), and 163 samples (or records).</p>
+</li>
+<li><p>The user can select for use any programming language to read and analyze the data. The
+following example uses IDL to read the data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">read_binary</span><span class="p">(</span> <span class="n">filename</span><span class="p">,</span> <span class="n">data_dims</span><span class="o">=</span><span class="p">[</span> <span class="n">BAND</span><span class="p">,</span> <span class="n">LINE</span><span class="p">,</span> <span class="n">SAMPLE</span><span class="p">],</span> <span class="n">data_type</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">endian</span><span class="o">=</span><span class="s1">&#39;big&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Here the filename can be either <code class="docutils literal notranslate"><span class="pre">FUV2005_172_03_35.DAT</span></code> or <code class="docutils literal notranslate"><span class="pre">EUV2005_172_03_35.DAT</span></code>.</p>
+<p>The data matrix’s dimensions are (1024, 64, 163). Note that endian keyword is set to ‘big’ because the machine used to create the binary file follows big-endian byte ordering.
+Also note that in IDL, type code 12 refers to a 16-bit unsigned integer ranging from 0 to 65535.</p>
+</li>
+<li><p>Some supporting IDL codes and calibration files can be found on the PDS system associated
+with the data. For example, the users can go to the following URL:</p>
+<p><a class="reference external" href="https://pds-rings.seti.org/volumes/COUVIS_0011/SOFTWARE/CALIB/VERSION_3">https://pds-rings.seti.org/volumes/COUVIS_0011/SOFTWARE/CALIB/VERSION_3</a></p>
+<p>to download <code class="docutils literal notranslate"><span class="pre">F_Flight_Wavelength.pro</span></code>, which can provide the wavelength scale of the data.
+Figure 1.1 can be generated by summing all the sample data from lines 2 and 61.</p>
+</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Figure 1.1 Cassini UVIS observation of Saturn’s aurora on day 172 of year 2005.
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-2">
+<h3><span class="section-number">1.3.2. </span>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h3>
+<blockquote class="epigraph">
+<div><p>Phoebe observations were made during the flyby around 19:22 on day 163 of
+year 2004.</p>
+</div></blockquote>
+<ol>
+<li><p>Go to the Cassini UVIS data website <a class="reference external" href="http://pds-rings.seti.org/cassini/uvis/access.html">http://pds-rings.seti.org/cassini/uvis/access.html</a></p></li>
+<li><p>Because the data was taken on day 163 of year 2004, find COUVIS_0007 in the table called
+“Temporal coverage of each volume”</p></li>
+<li><p>Open <a class="reference external" href="http://pds-rings.seti.org/vol/COUVIS_0007/DATA/D2004_163/">http://pds-rings.seti.org/vol/COUVIS_0007/DATA/D2004_163/</a> and save the following
+data and LBL files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUV2004_163_19_22</span><span class="o">.</span><span class="n">LBL</span>
+<span class="n">FUV2004_163_19_22</span><span class="o">.</span><span class="n">DAT</span>
+</pre></div>
+</div>
+</li>
+<li><p>Open the LBL files to determine the dimensionality, binning, and windowing of the data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">INTEGRATION_DURATION</span> <span class="o">=</span> <span class="mf">30.000</span> <span class="o">&lt;</span><span class="n">SECOND</span><span class="o">&gt;</span>
+<span class="n">AXIS_NAME</span> <span class="o">=</span> <span class="p">(</span><span class="n">BAND</span><span class="p">,</span> <span class="n">LINE</span><span class="p">,</span> <span class="n">SAMPLE</span><span class="p">)</span>
+<span class="n">CORE_ITEMS</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">132</span><span class="p">)</span>
+<span class="n">UL_CORNER_LINE</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">UL_CORNER_BAND</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">LR_CORNER_LINE</span> <span class="o">=</span> <span class="mi">63</span>
+<span class="n">LR_CORNER_BAND</span> <span class="o">=</span> <span class="mi">1023</span>
+<span class="n">BAND_BIN</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">LINE_BIN</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>This information states that the data consist of 1024 (spectral bins) from bin number 0 to 1023
+with no spectral binning performed (spec_bin=BAND_BIN=1), 64 lines (spatial bins) from line
+number 0 to 63 with no spatial binning performed (space_bin=LINE_BIN=1), and 132 samples
+(or records). Also note that the integration duration is 30 seconds. This will be useful to convert
+raw counts into the count rate.</p>
+</li>
+<li><p>The user can select for use any programming language to read and analyze the data. The
+following example uses IDL to read the data:</p>
+<p>data = read_binary( filename, data_dims=[ BAND, LINE, SAMPLE], data_type=12, endian=’big’ )</p>
+</li>
+<li><p>Figure 1.2 can be generated by using the data at sample number 15. Note that to convert
+the raw counts to the count rate, the users will need to sum all lines, assuming that all lines
+observed the reflection from Phoebe, and divide the sum by 64x30. The value 30 comes from
+the 30 second integration duration and the value 64 is the total number of lines used in the
+observation. See Chapter 8 for more detailed information on the difference between the
+reflected spectra from Phoebe’s dayside and nightside.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Figure 1.2: 2004 UVIS observation of Phoebe’s dayside.
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-3">
+<h3><span class="section-number">1.3.3. </span>Example 3<a class="headerlink" href="#example-3" title="Permalink to this headline">¶</a></h3>
+<blockquote class="epigraph">
+<div><p>An Enceladus occultation observation was carried out around UTC 19:54:56 on July 14th, 2005, which was day 195.</p>
+</div></blockquote>
+<ol class="simple">
+<li><p>Select COUVIS_0012 which contains the observation data. Then select DATA. This
+brings us to the following webpage: <a class="reference external" href="http://pds-">http://pds-</a>
+<a class="reference external" href="http://rings.seti.org/volumes/COUVIS_0012/DATA/D2005_195/">rings.seti.org/volumes/COUVIS_0012/DATA/D2005_195/</a>. Download the data set
+containing the closest starting time:
+FUV2005_195_19_52.DAT
+FUV2005_195_19_52.LBL</p></li>
+<li><p>Open the LBL files to determine the dimensionality, binning, and windowing of the data:
+AXIS_NAME = (BAND, LINE, SAMPLE)
+CORE_ITEMS = (1024, 64, 71)
+UL_CORNER_LINE = 19
+UL_CORNER_BAND = 0
+LR_CORNER_LINE = 43
+LR_CORNER_BAND = 1023
+BAND_BIN = 2
+LINE_BIN = 1</p></li>
+</ol>
+<p>Now we have all the files needed for the 2005 Enceladus occultation observation. Note that
+the Enceladus observation data is stored in a 3-dimensional array [1024, 64, 71]. As
+described in the data label, only lines between 19 and 43 contain valid data. And only the
+first 512 wavelength (band) bins contain valid data because in this particular observation a
+spectral binning by 2 is carried out.</p>
+<ol class="simple">
+<li><p>The user can select to use any programming language to read and analyze the data. The
+following example uses IDL to read the data:
+data = read_binary( filename, data_dims=[ BAND, LINE, SAMPLE],
+data_type=12, endian=’big’ )</p></li>
+<li><p>Figure 1.3 can be generated by using the Enceladus data. Note that the users will need to sum
+all spatial elements (lines) of the corresponding samples in order to obtain the total raw counts as
+shown in Figure 1.3.</p></li>
+</ol>
+<p>Figure 1.3: Cassini UVIS observation during the 2005 Enceladus occultation event. The upper panel is the FUV
+spectrum of the target star at sample record number 16, which is before the occultation. The middle panel
+corresponds to sample record number 32, during the occultation. The lower panel shows the division between
+sample 32 and 16, which can be matched with the absorption features of water vapor (see Hansen et al. 2006 ).</p>
+<p>In the above, we provide some examples on how different data types can be retrieved
+from the PDS. The PDS archive contains instructions for reading the data that provide an
+alternative to the instructions given here. Generally, each COUVIS directory consists of six
+separate directories: CALIB, CATALOG, DATA, DOCUMENT, INDEX, and SOFTWARE.
+These directories contain all the necessary information that is required to read and handle the
+data. The subdirectory SOFTWARE/READERS contains the file READERS_README.TXT
+that describes how the data can read into IDL. Basically the file describes an automated
+procedure that is used to generate a subroutine that reads both the data and calibration files from
+the appropriate DATA and CALIB subdirectories. It is important to note that if the reader wants
+to obtain both the data and the calibration matrix simultaneously with the methods described in
+the PDS, it will be necessary to download all of the subdirectories and files in the given COUVIS
+directory.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Cassini UVIS User Guide</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="02_pds_data_structure.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>PDS Data Structure</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Cassini UVIS team, Jupyter Book created by Michael Aye<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

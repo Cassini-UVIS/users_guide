@@ -1,0 +1,931 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. UVIS Calibration &#8212; Cassini UVIS User Guide</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4. Bibliography" href="bibliography.html" />
+    <link rel="prev" title="2. PDS Data Structure" href="02_pds_data_structure.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Cassini UVIS User Guide</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Cassini UVIS User Guide
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_uvis_on_pds.html">
+   1. Cassini UVIS data on the PDS system
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_pds_data_structure.html">
+   2. PDS Data Structure
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. UVIS Calibration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   4. Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/03_calibration.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F03_calibration.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   3.1. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instrument-overview">
+   3.2. Instrument overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terminology">
+   3.3. Terminology
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#radiometric-equation">
+   3.4. Radiometric equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spectrometer-scattered-light">
+   3.5. Spectrometer scattered light
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#in-flight-updates-to-the-calibration">
+   3.6. In-flight updates to the calibration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anomalous-pixels">
+   3.7. Anomalous pixels
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-calibration-of-a-pds-dataset">
+   3.8. Example calibration of a PDS dataset
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-by-step-example">
+     3.8.1. Step-by-step example
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>UVIS Calibration</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   3.1. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instrument-overview">
+   3.2. Instrument overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terminology">
+   3.3. Terminology
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#radiometric-equation">
+   3.4. Radiometric equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spectrometer-scattered-light">
+   3.5. Spectrometer scattered light
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#in-flight-updates-to-the-calibration">
+   3.6. In-flight updates to the calibration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anomalous-pixels">
+   3.7. Anomalous pixels
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-calibration-of-a-pds-dataset">
+   3.8. Example calibration of a PDS dataset
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-by-step-example">
+     3.8.1. Step-by-step example
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="uvis-calibration">
+<span id="sec-calib"></span><h1><span class="section-number">3. </span>UVIS Calibration<a class="headerlink" href="#uvis-calibration" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-conversion-status-done admonition">
+<p class="admonition-title">Conversion status: done</p>
+<p>Conversion finished. Please report any errors or issues you find.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Greg</span> <span class="n">Holsclaw</span>
+</pre></div>
+</div>
+<div class="section" id="introduction">
+<h2><span class="section-number">3.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This chapter provides an overview of the UVIS EUV and FUV channel calibration and
+demonstrates how to produce calibrated data products from a PDS dataset.</p>
+</div>
+<div class="section" id="instrument-overview">
+<h2><span class="section-number">3.2. </span>Instrument overview<a class="headerlink" href="#instrument-overview" title="Permalink to this headline">¶</a></h2>
+<p>The optical design of UVIS is described by <span id="id1">McClintock [<a class="reference internal" href="bibliography.html#id2">1993</a>]</span> and the science
+investigation by <span id="id2">Esposito <em>et al.</em> [<a class="reference internal" href="bibliography.html#id3">2004</a>]</span>.
+A description of the instrument is also provided in the file <a class="reference external" href="https://pds-rings.seti.org/holdings/volumes/COUVIS_0xxx/COUVIS_0003/CATALOG/UVISINST.CAT">CATALOG/UVISINST.CAT</a> found within any UVIS data volume in the PDS.
+A brief overview of the instrument relevant to the current discussion of calibration will be presented here.
+The Cassini Ultraviolet Imaging Spectrograph (UVIS) contains four separate remote sensing
+subsystems integrated in a single mechanical assembly.
+These subsystems are referred to as the Far Ultraviolet Spectrograph (FUV), the Extreme Ultraviolet Spectrograph (EUV), the High Speed Photometer (HSP) and the Hydrogen-Deuterium Absorption Cell (HDAC).
+<a class="reference internal" href="#tab-uvis-design"><span class="std std-numref">Table 3.1</span></a> contains the design parameters for each subsystem.
+Because the interpretations of data from the EUV and FUV channels require a well-understood calibration, the rest of this chapter will be limited to these two subsystems only.</p>
+<table class="colwidths-auto table" id="tab-uvis-design">
+<caption><span class="caption-number">Table 3.1 </span><span class="caption-text">Summary of the UltraViolet Imaging Spectrograph design specifications</span><a class="headerlink" href="#tab-uvis-design" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>FUV</p></th>
+<th class="head"><p>EUV</p></th>
+<th class="head"><p>HSP</p></th>
+<th class="head"><p>HDAC</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>TELESCOPE</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Focal length (mm)</p></td>
+<td><p>100</p></td>
+<td><p>100</p></td>
+<td><p>200</p></td>
+<td><p>150</p></td>
+</tr>
+<tr class="row-even"><td><p>Entrance pupil size (mm)</p></td>
+<td><p>20 x 20</p></td>
+<td><p>20 x 20</p></td>
+<td><p>133 x 38</p></td>
+<td><p>25 mm Dia</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reflecting surface (Material)</p></td>
+<td><p>Al + MgF2</p></td>
+<td><p>Boron Carbide</p></td>
+<td><p>Al + MgF2</p></td>
+<td><p>MgF2</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>TOROIDAL GRATINGS</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Grating radii (mm)</p></td>
+<td><p>300, 296.1</p></td>
+<td><p>300, 296.8</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Grating surface</p></td>
+<td><p>Al + MgF2</p></td>
+<td><p>Boron Carbide</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Grooves/mm</p></td>
+<td><p>1066</p></td>
+<td><p>1371</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Input angle a (degrees)</p></td>
+<td><p>9.22</p></td>
+<td><p>8.03</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Out angles b (degrees)</p></td>
+<td><p>±2.45</p></td>
+<td><p>-3.63, +1.27</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Dispersion (Å/mm)</p></td>
+<td><p>31.18</p></td>
+<td><p>24.20</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Dispersion (Å/pixel)</p></td>
+<td><p>0.7794</p></td>
+<td><p>0.6049</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>3-POSITION SLITS</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Slit widths (microns)</p></td>
+<td><p>75, 150, 800</p></td>
+<td><p>100, 200, 800</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Dl (Å) atmosphere</p></td>
+<td><p>2.75, 4.8, 24.9</p></td>
+<td><p>2.75, 4.8, 19.4</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Field of View (mrad)</p></td>
+<td><p>(0.75, 1.5, 8)x60</p></td>
+<td><p>(1, 2, 8)x59</p></td>
+<td><p>6.0 (az) x 6.4 (el)</p></td>
+<td><p>58 Dia (FWHM)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>DETECTORS</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Photocathode</p></td>
+<td><p>CsI</p></td>
+<td><p>KBr</p></td>
+<td><p>CsI</p></td>
+<td><p>KBr</p></td>
+</tr>
+<tr class="row-even"><td><p>Detector window</p></td>
+<td><p>MgF2</p></td>
+<td><p>none</p></td>
+<td><p>MgF2</p></td>
+<td><p>MgF2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Detector size (mm)</p></td>
+<td><p>25.6 x 6.4</p></td>
+<td><p>25.6 x 6.4</p></td>
+<td><p>8 mm Dia</p></td>
+<td><p>13 mm Dia</p></td>
+</tr>
+<tr class="row-even"><td><p>Pixel format (l x q)</p></td>
+<td><p>1024 x 64</p></td>
+<td><p>1024 x 64</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Pixel size (m)</p></td>
+<td><p>25 x 100</p></td>
+<td><p>25 x 100</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="terminology">
+<h2><span class="section-number">3.3. </span>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h2>
+<p>As presented in <a class="reference internal" href="02_pds_data_structure.html#sec-pds-data-structure"><span class="std std-numref">Section 2</span></a>, the NASA Planetary Data System (PDS) favors the
+terminology of <code class="docutils literal notranslate"><span class="pre">line</span></code> and <code class="docutils literal notranslate"><span class="pre">band</span></code> to describe the perpendicular dimensions of a two-dimensional
+array detector.
+However, the terms <code class="docutils literal notranslate"><span class="pre">column</span></code> and <code class="docutils literal notranslate"><span class="pre">row</span></code> are more often encountered.
+In this chapter, a <code class="docutils literal notranslate"><span class="pre">column</span></code> will refer to all the detector elements at a given wavelength center, each of which exists at a unique spatial location.
+Likewise, a <code class="docutils literal notranslate"><span class="pre">row</span></code> refers to all detector elements at a given spatial location, each of which exists at a unique wavelength center.
+Thus, <code class="docutils literal notranslate"><span class="pre">columns</span></code> are equivalent to <code class="docutils literal notranslate"><span class="pre">bands</span></code> while <code class="docutils literal notranslate"><span class="pre">rows</span></code> are equivalent to <code class="docutils literal notranslate"><span class="pre">lines</span></code>.</p>
+</div>
+<div class="section" id="radiometric-equation">
+<h2><span class="section-number">3.4. </span>Radiometric equation<a class="headerlink" href="#radiometric-equation" title="Permalink to this headline">¶</a></h2>
+<p>The number of counts recorded for a pixel at column <span class="math notranslate nohighlight">\(i\)</span> and row <span class="math notranslate nohighlight">\(j\)</span> can be expressed as:</p>
+<div class="math notranslate nohighlight">
+\[C_{ij} = L_{ij}\cdot\frac{A_t\cdot A_s}{f^2}\cdot\frac{1}{K}\cdot FF_{ij}\cdot T_i\cdot QE_i\cdot \delta\lambda_i\cdot t+B_{ij}+S_{ij}\]</div>
+<p>where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(L_{ij}\)</span> is the radiance at that pixel,</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_t\)</span> is the area of the telescope entrance pupil (20 × 20 mm),</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_s\)</span> is the area of the entrance slit (three slits per channel, see Table 1),</p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> is telescope focal length (100 mm),</p></li>
+<li><p><span class="math notranslate nohighlight">\(K\)</span> is the number of rows illuminated by the image of a filled slit (60 for FUV, 59 for EUV),</p></li>
+<li><p><span class="math notranslate nohighlight">\(FF_{ij}\)</span> is the pixel-to-pixel sensitivity variation (also known as the “flat field”, see <a class="reference internal" href="#sec-calib-flatfield"><span class="std std-numref">Section 3.6</span></a>),</p></li>
+<li><p><span class="math notranslate nohighlight">\(T_i\)</span> is the system transmission (i.e. mirror reflectance, grating efficiency, and window transmission),</p></li>
+<li><p><span class="math notranslate nohighlight">\(QE\)</span> is the quantum efficiency (detected counts per incident photon),</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta\lambda_i\)</span> is the spectral width of a pixel (average of 0.07794 nm for FUV, 0.0609 nm for EUV),</p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> is the
+integration time (seconds),</p></li>
+<li><p><span class="math notranslate nohighlight">\(B_{ij}\)</span> is any background signal present, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(S_{ij}\)</span> is scattered light.</p></li>
+</ul>
+<p>The sensitivity of the instrument was measured during laboratory calibration prior to
+launch.
+Using this instrument sensitivity, the recorded counts can be converted to geophysical
+units:</p>
+<div class="math notranslate nohighlight" id="equation-eq-convert-geo">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-eq-convert-geo" title="Permalink to this equation">¶</a></span>\[L_{ij}=(C_{ij}-B_{ij}-S_{ij})\cdot M_{ij}\]</div>
+<p>where <span class="math notranslate nohighlight">\(M_{ij}\)</span> is the inverse of the sensitivity and has units of kilorayleigh/(count x angstrom):</p>
+<div class="math notranslate nohighlight">
+\[M_{ij} = \frac{f^2}{A_t\cdot A_s}\cdot K\cdot\frac{1}{FF_{ij}\cdot T_i\cdot QE_i\cdot \delta\lambda_i\cdot t}\]</div>
+<p>Note that the calibration matrix provided at the PDS includes the integration time, and so the
+user does not need to derive count rate (as would be more typical) before applying the
+calibration. Calibrated values, resulting from the multiplication of the data and the calibration
+matrix, will carry units of kilorayleigh per angstrom.</p>
+<p>The derived radiance value in Eq. <a class="reference internal" href="#equation-eq-convert-geo">(3.1)</a> has significance only if the entrance slit width and pixel height (spatial dimension) is filled by the target.
+The dark current of the UVIS CODACON detectors is expected to be negligible.
+A persistent source of background <em>B</em> is thought to be caused by the radioisotope
+thermoelectric generators (RTGs) that power the Cassini spacecraft.
+<a class="reference internal" href="#fig-fuv-background"><span class="std std-numref">Fig. 3.1</span></a> shows a measure of the FUV detector background over time, calculated by finding the mean value of all pixels in the detector area defined by columns 950 to 1015 and rows 2 to 60 extracted from routine observations of interplanetary hydrogen.
+Values derived from observations using the high-resolution and low-resolution entrance slit are shown separately.
+The background from the low-resolution data is slightly, but systematically larger than the background determined from the high-resolution data.
+This difference indicates a small contribution of scattered Lyman-alpha, as the low-resolution entrance slit is twice the width of the high-resolution slit.
+After filtering out extreme values (those outside +/-30% of the median), an exponential function was fit to the low-resolution data and is shown as the solid line in the <a class="reference internal" href="#fig-fuv-background"><span class="std std-numref">Fig. 3.1</span></a>.</p>
+<p>Values above the primary trend indicate contamination by stars or planetary bodies that have entered the field of view, or due to ring-crossing events that have been found to significantly increase the UVIS detector background.
+Values below the primary trend indicate partial data loss during downlink.
+The decrease in UVIS detector background is qualitatively consistent with the expected decay of
+<span class="math notranslate nohighlight">\(^{238}Pu\)</span> within the RTGs.</p>
+<p>Another source of background is the relatively bright signal due to solar emission at the
+Lyman-α wavelength (121.6 nm) scattered by interplanetary hydrogen (IPH).
+Due to scattering within the spectrograph (see <a class="reference internal" href="#sec-spec-scattered"><span class="std std-numref">Section 3.5</span></a>), this IPH signal is detectable across much of the FUV detector as well as the long-wavelength end of the EUV detector.
+It is recommended that background estimates be determined for each observation independently.</p>
+<div class="figure align-default" id="fig-fuv-background">
+<img alt="FUV background count rate" src="_images/fig_3.1.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Background count rate in the FUV detector as a function of time.</span><a class="headerlink" href="#fig-fuv-background" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="spectrometer-scattered-light">
+<span id="sec-spec-scattered"></span><h2><span class="section-number">3.5. </span>Spectrometer scattered light<a class="headerlink" href="#spectrometer-scattered-light" title="Permalink to this headline">¶</a></h2>
+<p>The scattering properties of a spectrometer will redistribute signal at any wavelength to
+other positions across the detector in a predictable manner.
+Ideally, a monochromatic point source would be used to characterize this point-spread function (PSF).
+While there is no such source available in-flight, sunlight scattered by interplanetary hydrogen can provide an essentially monochromatic, though spatially extended, source.
+In 1999, a campaign consisting of many long-exposure observations was conducted to measure the instrument response to illumination by the IPH.
+<a class="reference internal" href="#fig-fuv-hydrogen"><span class="std std-numref">Fig. 3.2</span></a> shows an average FUV spectrum from these observations using the low-resolution entrance slit.
+An analytic model defined by a Gaussian function (to characterize the central, high signal portion of the PSF) plus a Lorentzian function (to characterize the broad, low-signal wings) is given in Equation <a class="reference internal" href="#equation-eq-convert-geo">(3.1)</a>.
+Because the signal originates from an extended source, the function must be convolved with a
+rectangular function representing the geometric image of the low-resolution entrance aperture.
+The model given in Eqn <a class="reference internal" href="#equation-eq-iph-model">(3.2)</a> was fit to the data, and is shown as a dashed line in <a class="reference internal" href="#fig-fuv-hydrogen"><span class="std std-numref">Fig. 3.2</span></a>.
+The model coefficients from this fit are listed in <a class="reference internal" href="#tab-iph-coeffs"><span class="std std-numref">Table 3.2</span></a>.</p>
+<div class="figure align-default" id="fig-fuv-hydrogen">
+<img alt="FUV interplanetary hydrogen" src="_images/fig_3.2.png" />
+<p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Average FUV spectrum of interplanetary hydrogen along with a fit to an analytic function.</span><a class="headerlink" href="#fig-fuv-hydrogen" title="Permalink to this image">¶</a></p>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>These are the coefficients of the model given in Eq. <a class="reference internal" href="#equation-eq-iph-model">(3.2)</a> after fitting to the data shown in <a class="reference internal" href="#fig-fuv-hydrogen"><span class="std std-numref">Fig. 3.2</span></a>:</p>
+<table class="colwidths-auto table" id="tab-iph-coeffs">
+<caption><span class="caption-number">Table 3.2 </span><span class="caption-text">Model coefficients</span><a class="headerlink" href="#tab-iph-coeffs" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Coeff</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(a_0\)</span></p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(a_1\)</span></p></td>
+<td><p>0.318</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(a_2\)</span></p></td>
+<td><p>121.569</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(a_3\)</span></p></td>
+<td><p>0.149</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(a_4\)</span></p></td>
+<td><p>0.00373</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(a_5\)</span></p></td>
+<td><p>1.507</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="math notranslate nohighlight" id="equation-eq-iph-model">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-eq-iph-model" title="Permalink to this equation">¶</a></span>\[f = \left[a_0 + a_1\cdot \exp{\left(\frac{-0.5(x-a_2)^2}{a^2_3}\right)}+\frac{a_4}{1+\frac{1}{a_5}(x-a_2)^2}\right]\otimes rect\left(\frac{x-a_2}{w}\right)\]</div>
+</div>
+<div class="section" id="in-flight-updates-to-the-calibration">
+<span id="sec-calib-flatfield"></span><h2><span class="section-number">3.6. </span>In-flight updates to the calibration<a class="headerlink" href="#in-flight-updates-to-the-calibration" title="Permalink to this headline">¶</a></h2>
+<p>The calibration of the instrument has been monitored during flight by acquiring periodic
+observations of the star α Virginis (Spica).
+Initial analysis of measurements obtained after launch indicated that the stellar spectrum was consistent with results from previous investigators.
+However, later observations revealed that the sensitivity of the long-wavelength end of the FUV
+detector was actually <em>increasing</em> with time.
+The nature of this change is still not completely understood.
+In any case, a time-varying sensitivity was formulated and has been applied to all data obtained since launch.</p>
+<p>Other changes to the instrument sensitivity have been noted over time.
+Around June 6, 2002 a long observation of the star Spica was executed to characterize the scattering properties of the Imaging Science Subsystem (ISS) cameras onboard Cassini.
+Although the UVIS instrument did not acquire any data at this time, the relatively high photon flux resulted in a decrease in the sensitivity in the central few rows (~30-33) of both the EUV and FUV detector.
+This event is referred to as the “starburn” and is discussed in more detail by Steffl (2005).
+The loss in sensitivity is proportional to the photon flux at any wavelength, and so the effect appears as an inverted spectrum of Spica.</p>
+<p>The flat-field response (pixel-to-pixel sensitivity variation) of the instrument detectors
+was not characterized prior to launch.
+A series of observations of Spica were obtained which slewed the stellar image across the spectrograph entrance slit in a pattern such that a relative pixel-to-pixel response could be derived.
+This procedure is documented in Appendix A of Steffl (2005).
+A flat-field corrector matrix was derived for both the time before and the time after the
+starburn event.
+The post-burn matrix attempts to correct for the loss in sensitivity in rows 30- 33
+due to the starburn.
+The FUV flat-field correction matrix can be found in any UVIS PDS volume under /SOFTWARE/CALIB/VERSION_n/ where n is an integer indicating the calibration version number.
+As of March 2014, version 3 is the most current.</p>
+<p>It has been noted that the sensitivity in the starburn region continues to decrease over
+time, likely due to the repeated use of bright stars like Spica as a source for occultation
+measurements.
+The sensitivity loss appears to be proportional to the integrated photon flux over
+time.
+There are other examples of regional sensitivity loss from this effect, especially in the
+FUV detector.
+The FUV occultation slit was often left in position following routine
+measurements of IPH.
+This allowed a significant flux of Lyman- α photons to fall on the detector
+in the clear regions above and below the occultation lens holder.
+The effect is a loss in sensitivity in a region where the image of the occultation slit would appear at a wavelength of 121.6 nm within rows 2-12, 51-61.</p>
+<p>The planet Saturn, its moons, and the rings enter the field-of-view while the FUV occultation slit is in position, though the instrument may not be acquiring data.
+Because these objects scatter incident sunlight, a significant flux of photons is incident on the
+detector at long wavelengths (where the solar irradiance is large).
+The effect, again, is the decrease in sensitivity in the region above and below the occultation slit lens holder (rows 2-12, 51 - 61) at the long-wavelength end of the FUV detector.</p>
+<p>In order to mitigate these regional losses in sensitivity, a procedure was developed to
+derive correction values.
+This was accomplished by first identifying detector rows that are within
+the region obscured by the FUV occultation lens holder (rows 18-23, 41-46).
+Next, the relative response of each column to the average value from these “reference” rows is calculated for a stellar calibration where a star is slewed along the slit, creating an effective extended object.
+The inverse of these values, referred to as a “flat-field modifier”, is derived for every successful stellar calibration.
+A correction matrix is linearly interpolated with time for any observation that
+occurs between calibrations.</p>
+<p>All corrections and adjustments to the UVIS sensitivity that have been discussed here are
+included with the UVIS calibration matrix delivered to the PDS.</p>
+</div>
+<div class="section" id="anomalous-pixels">
+<h2><span class="section-number">3.7. </span>Anomalous pixels<a class="headerlink" href="#anomalous-pixels" title="Permalink to this headline">¶</a></h2>
+<p>A population of anomalous pixels has been identified on the FUV detector.
+These pixels are characterized by a relatively low response and they also may exhibit a nonlinear response.
+These pixels are often referred to as “evil” and they comprise ~15% of all detector elements.
+Although these anomalous pixels are distributed across the entire FUV detector, they often
+appear in groups along individual columns.
+Because of the poorly characterized response of these evil pixels, the UVIS team has decided to eliminate them from analysis.
+This is implemented by assigning an invalid sensitivity to the calibration matrix for these elements.
+Evil pixels are flagged as invalid by assigning them the CORE_NULL value indicated in any
+calibration label file, and this value is - 1 for the current (version 3) calibration.
+The approach described above creates an irregular grid of data. There are several methods
+for dealing with such datasets, and one suggested approach is to linearly interpolate across any
+flagged pixel.
+An IDL routine is provided by the UVIS team to perform this interpolation
+(<code class="docutils literal notranslate"><span class="pre">interpolate_nans2.pro</span></code>), and its use will be described in an example later in this chapter.
+The presence of such flagged pixels creates a unique problem for binned data.
+Since binning occurs within the instrument’s flight software, there is no way to recover the value of a “good” pixel that has been combined with an “evil” pixel.
+The flagging of evil pixels in the calibration matrix forces any binned element to also retain this value.
+The effect of this approach is that for larger bin sizes, a larger fraction of invalid (flagged) pixels will be present in the data.
+For moderate levels of binning, the interpolation approach may still be a useful option.
+However, for some datasets the binning is so large that the calibration matrix contains invalid
+(flagged) pixels exclusively.
+Such datasets may yet yield useful information, but special consideration is required on a case-by-case basis.
+Any user interested in analyzing such a dataset is encouraged to contact a UVIS team member.
+One approach to estimate the response of anomalous pixels in heavily binned data is provided in Chapter 4.</p>
+</div>
+<div class="section" id="example-calibration-of-a-pds-dataset">
+<h2><span class="section-number">3.8. </span>Example calibration of a PDS dataset<a class="headerlink" href="#example-calibration-of-a-pds-dataset" title="Permalink to this headline">¶</a></h2>
+<p>The UVIS Data Product Software Interface Specification (SIS) document provides a
+detailed description of the UVIS data format, structure and content delivered to the PDS.
+The SIS document can be found within any UVIS data volume (<a class="reference external" href="https://pds-rings.seti.org/holdings/volumes/COUVIS_0xxx/COUVIS_0003/DOCUMENT/UVIS.TXT">/DOCUMENT/UVIS.TXT</a>).
+The user is also referred to Chapter <a class="reference internal" href="02_pds_data_structure.html#sec-pds-data-structure"><span class="std std-ref">PDS Data Structure</span></a>.
+The PDS does not provide calibrated UVIS data.
+Instead, the raw, observed counts from the instrument are stored in one data file and a calibration matrix is stored in a separate file.
+These files are located within different directories of a UVIS data volume (<code class="docutils literal notranslate"><span class="pre">/DATA/</span></code> and
+<code class="docutils literal notranslate"><span class="pre">/CALIB/</span></code>, respectively).</p>
+<div class="section" id="step-by-step-example">
+<h3><span class="section-number">3.8.1. </span>Step-by-step example<a class="headerlink" href="#step-by-step-example" title="Permalink to this headline">¶</a></h3>
+<p>The following is a step-by-step example, written in the interpretative language of IDL
+(<a class="reference external" href="https://www.exelisvis.com/">https://www.exelisvis.com/</a>), of the data reduction involved for one UVIS observation.
+After this example, a simpler approach will be shown that uses a provided data reader
+(<code class="docutils literal notranslate"><span class="pre">UVIS_PDS_READ_DATA</span></code>), written in IDL, to import the data for analysis.
+Consider an atmospheric limb measurement of Titan where the UVIS boresight was held at a constant altitude throughout the observation and consists of 15 scans (individual detector readouts) each with an integration time of 240 seconds.
+The EUV and FUV data files and associated calibration matrices are contained in the following files, downloadable <a class="reference external" href="https://pds-rings.seti.org/viewmaster/volumes/COUVIS_0xxx/COUVIS_0027">here</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">COUVIS_0027</span><span class="o">/</span><span class="n">DATA</span><span class="o">/</span><span class="n">D2009_173</span><span class="o">/</span><span class="n">EUV2009_173_15_16</span><span class="o">.</span><span class="n">DAT</span>
+<span class="o">/</span><span class="n">COUVIS_0027</span><span class="o">/</span><span class="n">CALIB</span><span class="o">/</span><span class="n">VERSION_3</span><span class="o">/</span><span class="n">D2009_173</span><span class="o">/</span><span class="n">EUV2009_173_15_16_CAL_3</span><span class="o">.</span><span class="n">DAT</span>
+<span class="o">/</span><span class="n">COUVIS_0027</span><span class="o">/</span><span class="n">DATA</span><span class="o">/</span><span class="n">D2009_173</span><span class="o">/</span><span class="n">FUV2009_173_15_16</span><span class="o">.</span><span class="n">DAT</span>
+<span class="o">/</span><span class="n">COUVIS_0027</span><span class="o">/</span><span class="n">CALIB</span><span class="o">/</span><span class="n">VERSION_3</span><span class="o">/</span><span class="n">D2009_173</span><span class="o">/</span><span class="n">FUV2009_173_15_16_CAL_3</span><span class="o">.</span><span class="n">DAT</span>
+</pre></div>
+</div>
+<p>Metadata contained in the EUV label file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">COUVIS_0027</span><span class="o">/</span><span class="n">DATA</span><span class="o">/</span><span class="n">D2009_173</span><span class="o">/</span><span class="n">EUV2009_173_15_16</span><span class="o">.</span><span class="n">LBL</span>
+</pre></div>
+</div>
+<p>indicates the dimensionality, data type, and any scaling required by the following entries
+(identical for the FUV data):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AXIS_NAME</span> <span class="o">=</span> <span class="p">(</span><span class="n">BAND</span><span class="p">,</span> <span class="n">LINE</span><span class="p">,</span> <span class="n">SAMPLE</span><span class="p">)</span>
+<span class="n">CORE_ITEMS</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">CORE_ITEM_BYTES</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">CORE_ITEM_TYPE</span> <span class="o">=</span> <span class="n">MSB_UNSIGNED_INTEGER</span>
+<span class="n">CORE_BASE</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">CORE_MULTIPLIER</span> <span class="o">=</span> <span class="mf">1.0</span>
+</pre></div>
+</div>
+<p>Using this information, the following IDL command can be used to read in the data:</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>data_euv <span class="o">=</span> <span class="nb">read_binary</span>( ‘EUV2009_173_15_16.DAT’,
+data_dims<span class="o">=</span>[<span class="mi">1024</span>,<span class="mi">64</span>,<span class="mi">15</span>], data_type<span class="o">=</span><span class="mi">12</span>, endian<span class="o">=</span><span class="s1">&#39;big&#39;</span> )
+data_fuv <span class="o">=</span> <span class="nb">read_binary</span>( ‘FUV2009_173_15_16.DAT’,
+data_dims<span class="o">=</span>[<span class="mi">1024</span>,<span class="mi">64</span>,<span class="mi">15</span>], data_type<span class="o">=</span><span class="mi">12</span>, endian<span class="o">=</span><span class="s1">&#39;big&#39;</span> )
+</pre></div>
+</div>
+<p>Note that endian keyword is set to ‘big’ because the machine used to create the binary file
+follows big-endian byte ordering.
+Also note that in IDL, type code 12 refers to a 16-bit unsigned
+integer ranging from 0 to 65535.
+The CORE_BASE is zero, which indicates no offsets are required, and CORE_MULTIPLIER is unity, which indicates there is no scaling of the data required.
+In a similar way, the calibration matrix can be read in by the following commands:</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>cal_euv <span class="o">=</span> <span class="nb">read_binary</span>( ‘EUV2009_173_15_16_CAL_3.DAT’,
+data_dims<span class="o">=</span>[<span class="mi">1024</span>,<span class="mi">64</span>,<span class="mi">1</span>], data_type<span class="o">=</span><span class="mi">4</span>, endian<span class="o">=</span><span class="s1">&#39;big&#39;</span> )
+cal_fuv <span class="o">=</span> <span class="nb">read_binary</span>( ‘FUV2009_173_15_16_CAL_3.DAT’,
+data_dims<span class="o">=</span>[<span class="mi">1024</span>,<span class="mi">64</span>,<span class="mi">1</span>], data_type<span class="o">=</span><span class="mi">4</span>, endian<span class="o">=</span><span class="s1">&#39;big&#39;</span> )
+</pre></div>
+</div>
+<p>Note that IDL type code 4 refers to 32 bit floating-point values.
+All UVIS PDS data, regardless of windowing and binning, is contained within a 1024x64 matrix (see Chapter <a class="reference internal" href="02_pds_data_structure.html#sec-pds-data-structure"><span class="std std-ref">PDS Data Structure</span></a>).</p>
+<p>The binning and windowing of the data is described in the following label entries (identical for the data and calibration files):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">UL_CORNER_LINE</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">UL_CORNER_BAND</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">LR_CORNER_LINE</span> <span class="o">=</span> <span class="mi">61</span>
+<span class="n">LR_CORNER_BAND</span> <span class="o">=</span> <span class="mi">1023</span>
+<span class="n">BAND_BIN</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">LINE_BIN</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>The valid region of the arrays then needs to be extracted based on the above information:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">UL_CORNER_BAND</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">UL_CORNER_BAND</span> <span class="o">+</span> <span class="p">(</span><span class="n">LR_CORNER_BAND</span><span class="o">-</span><span class="n">UL_CORNER_BAND</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span>
+<span class="n">BAND_BIN</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">UL_CORNER_LINE</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">UL_CORNER_LINE</span> <span class="o">+</span> <span class="p">(</span><span class="n">LR_CORNER_LINE</span><span class="o">-</span><span class="n">UL_CORNER_LINE</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span>
+<span class="n">LINE_BIN</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>dataw_euv <span class="o">=</span> <span class="nb">float</span>(data_euv[x1<span class="o">:</span>x2,y1<span class="o">:</span>y2,<span class="o">*</span>])
+calw_euv <span class="o">=</span> cal_euv[x1<span class="o">:</span>x2,y1<span class="o">:</span>y2]
+dataw_fuv <span class="o">=</span> <span class="nb">float</span>(data_fuv[x1<span class="o">:</span>x2,y1<span class="o">:</span>y2,<span class="o">*</span>])
+calw_fuv <span class="o">=</span> cal_fuv[x1<span class="o">:</span>x2,y1<span class="o">:</span>y2]
+</pre></div>
+</div>
+<p>The instructions above are given explicitly in order to assist a user in the production of a data
+reader in IDL or another language.
+An IDL routine with this functionality is provided at the UVIS PDS Atmospheres node website <a class="reference external" href="https://atmos.nmsu.edu/data_and_services/atmospheres_data/Cassini/logs/uvis_pds_read_data.pro">https://atmos.nmsu.edu/data_and_services/atmospheres_data/Cassini/logs/uvis_pds_read_data.pro</a>.
+This routine requires that both the data file (.DAT) and label (.LBL) are present and located in the same path.
+The following example shows how the steps above can be accomplished using these routines:</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>UVIS_PDS_READ_DATA, ‘EUV2009_173_15_16.DAT’, dataw_euv
+UVIS_PDS_READ_DATA, ‘FUV2009_173_15_16.DAT’, dataw_fuv
+UVIS_PDS_READ_DATA, ‘EUV2009_173_15_16_CAL_3.DAT’, calw_euv
+UVIS_PDS_READ_DATA, ‘FUV2009_173_15_16_CAL_3.DAT’, calw_fuv
+</pre></div>
+</div>
+<p>Because all scans (time samples) were acquired at a fixed altitude above the Titan limb, we will
+average them together:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dataw_avg_euv</span> <span class="o">=</span> <span class="n">total</span><span class="p">(</span><span class="n">dataw_euv</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="mf">15.</span>
+<span class="n">dataw_avg_fuv</span> <span class="o">=</span> <span class="n">total</span><span class="p">(</span><span class="n">dataw_fuv</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="mf">15.</span>
+</pre></div>
+</div>
+<p>It is always recommended that the data be inspected prior to applying the calibration
+matrix to look for unexpected anomalies and to estimate the background signal that needs to be
+subtracted.
+<a class="reference internal" href="#fig-example-data-raw"><span class="std std-numref">Fig. 3.3</span></a> shows the average detector counts as an image (smoothed with a 5x3 rectangular kernel and scaled from 0 to 0.6 counts) and a spectrum derived by then averaging the signal in the spatial dimension (across rows).
+The EUV image (top left panel) shows that there appears to be little or no detectable signal below ~85 nm; however, there is a small amount of anomalous signal that appears in the upper left corner of the detector, and shows up in the average spectrum (bottom left panel) at ~60 nm.
+This is likely a residual signal from the “mesa”, a known contamination occurring in this region of the detector due to undispersed light entering through the solar occultation port (see <mark>Chapters 4 and 11</mark>).</p>
+<div class="figure align-default" id="fig-example-data-raw">
+<img alt="EUV/FUV example data as images and spectra" src="_images/fig_3.3.png" />
+<p class="caption"><span class="caption-number">Fig. 3.3 </span><span class="caption-text">Top panels: image of the average EUV (left) and FUV (right) array. Bottom panels: spatially averaged
+EUV (left) and FUV (right) spectrum. Images have been scaled from 0 to 0.6 counts.</span><a class="headerlink" href="#fig-example-data-raw" title="Permalink to this image">¶</a></p>
+</div>
+<p>We can estimate the EUV background by finding the mean pixel value in a region with
+no apparent photon-generated signal:</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>background_euv <span class="o">=</span> <span class="nb">mean</span>( dataw_avg_euv[<span class="mi">300</span><span class="o">:</span><span class="mi">500</span>,<span class="mi">0</span><span class="o">:</span><span class="mi">30</span>] )
+</pre></div>
+</div>
+<p>This background (0.118 counts) is shown as a dashed line in the EUV spectrum in the lower-left
+panel of <a class="reference internal" href="#fig-example-data-raw"><span class="std std-numref">Fig. 3.3</span></a>.
+Given the integration time of 240 seconds, this equates to a background rate
+is 4.9e-4 counts per second – slightly larger than the predicted RTG signal from <a class="reference internal" href="#fig-example-data-raw"><span class="std std-numref">Fig. 3.3</span></a>.
+The EUV background value also appears to be a good estimate of the FUV channel (dashed line in
+the lower right panel of <a class="reference internal" href="#fig-example-data-raw"><span class="std std-numref">Fig. 3.3</span></a>), as it is consistent with the signal at the short- and long-wavelength ends of the FUV spectrum.
+Before calibrating the data, any anomalous or “evil” pixels need to be flagged.
+While the measured counts from these pixels are recorded in the data file, the associated elements of the calibration matrix are assigned the CORE_NULL value (-1) indicated in the PDS label file.
+To facilitate the interpolation across these invalid pixels, they will be replaced with a special value within the IDL environment (Not-a-Number or NaN):</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>core_null <span class="o">=</span> <span class="o">-</span> <span class="mi">1</span>
+ndx_null <span class="o">=</span> <span class="nb">where</span>( calw_euv <span class="k">eq</span> core_null, count_null )
+<span class="k">if</span> count_null <span class="k">gt</span> <span class="mi">0</span> <span class="k">then</span> calw_euv[ndx_null] <span class="o">=</span> !values.f_nan
+ndx_null <span class="o">=</span> <span class="nb">where</span>( calw_fuv <span class="k">eq</span> core_null, count_null )
+<span class="k">if</span> count_null <span class="k">gt</span> <span class="mi">0</span> <span class="k">then</span> calw_fuv[ndx_null] <span class="o">=</span> !values.f_nan
+</pre></div>
+</div>
+<p>Next, the background is subtracted from the data and the result multiplied by the calibration
+matrix:</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>arrcal_euv <span class="o">=</span> (dataw_avg_euv<span class="o">-</span>background_euv)<span class="o">*</span>calw_euv
+arrcal_fuv <span class="o">=</span> (dataw_avg_fuv<span class="o">-</span>background_fuv)<span class="o">*</span>calw_fuv
+</pre></div>
+</div>
+<p>Recall that we have assigned the FUV background value to be equal to that for the EUV.
+The final step is to interpolate across invalid pixels.
+A simple row-by-row IDL interpolation routine (<code class="docutils literal notranslate"><span class="pre">interpolate_nans2.pro</span></code>) is provided by the UVIS team on the PDS website under any UVIS volume at <code class="docutils literal notranslate"><span class="pre">/SOFTWARE/CALIB/VERSION_n/</span></code> where <em>n</em> is an integer indicating the calibration version number (n=3 as of March 2012).</p>
+<p>The following commands illustrate the usage of this routine:</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>interpolate_nans2,arrcal_euv,arrcali_euv
+interpolate_nans2,arrcal_fuv,arrcali_fuv
+</pre></div>
+</div>
+<p><a class="reference internal" href="#fig-example-data-calibrated"><span class="std std-numref">Fig. 3.4</span></a> shows images of the calibrated EUV and FUV arrays along with the average spectrum for each channel.
+Here we have converted the units from kilorayleigh per angstrom to rayleigh per angstrom, and scaled the results from 0 to 2.
+An analysis of this dataset is reported in Ajello et al (2012).
+Aeronomers are typically familiar with the rayleigh unit, but researchers in other disciplines, who are also users of UVIS data, may not be.
+The rayleigh was originally defined as a photon emission rate from an observed column of gas. However, using some assumptions, the rayleigh can be interpreted as an apparent surface radiance (Baker and Romick, 1976):</p>
+<div class="math notranslate nohighlight">
+\[1\, rayleigh = \frac{10^6}{4\pi}\,ph\,s^{-1}\,cm^{-2}\,sr^{-1}\]</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Remark
+Greg Holsclaw 2/24/2014 3:03 PM
+Comment: “revise”</p>
+</div>
+</div>
+<p>It is this relationship that provides the link between the quantity of radiance (<mark><em>power or photon rate per unit area per unit solid angle</em></mark>) measured by remote sensing instrumentation and the reported column emission rate expected by aeronomers.</p>
+<div class="figure align-default" id="fig-example-data-calibrated">
+<img alt="EUV/FUV calibrated example data as images and spectra" src="_images/fig_3.4.png" />
+<p class="caption"><span class="caption-number">Fig. 3.4 </span><span class="caption-text">Top panels: image of the calibrated average EUV (left) and FUV (right) array. Bottom panels: spatially averaged calibrated EUV (left) and FUV (right) spectrum.
+Images have been scaled from 0 to 2 rayleigh per angstrom.</span><a class="headerlink" href="#fig-example-data-calibrated" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="02_pds_data_structure.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>PDS Data Structure</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="bibliography.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Bibliography</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Cassini UVIS team, Jupyter Book created by Michael Aye<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
