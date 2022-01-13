@@ -9,5 +9,4 @@ chapters:
 - file: 01_uvis_on_pds
 - file: 02_pds_data_structure
 - file: 03_calibration
-- file: notebooks
 - file: bibliography

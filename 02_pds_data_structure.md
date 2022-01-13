@@ -1,6 +1,10 @@
 (sec:pds-data-structure)=
 # PDS Data Structure
 
+```{admonition} Conversion status: Raw
+Copied over raw, not yet cleaned up, figures missing.
+```
+
 ```
 David Judd
 ```

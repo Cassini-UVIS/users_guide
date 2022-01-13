@@ -1,5 +1,10 @@
 # Cassini UVIS User Guide
 
+```{warning}
+This website is a work in progress and has not yet implemented all sections of the original user guide. 
+The original full document can be found [here](https://pds-atmospheres.nmsu.edu/data_and_services/atmospheres_data/Cassini/CASSINIUVIS/1-UVIS_Users_Guide_-2018-Jan%2015-For%20PDS-REV-2018-07-06.pdf).
+```
+
     Laboratory for Atmospheric and Space Physics (LASP)
     University of Colorado
     1234 Innovation Drive
@@ -8,8 +13,10 @@
 ---
     Revised December 18, 2017
     Revised July 6, 2018
+    Converted to JupyterBook in January 2022
+    Additions made in 2022
 
-# Introduction
+## Introduction
 
 ```
 Larry Esposito

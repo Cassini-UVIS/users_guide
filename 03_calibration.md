@@ -1,6 +1,10 @@
 (sec:calib)=
 # UVIS Calibration
 
+```{admonition} Conversion status: done
+Conversion finished. Please report any errors or issues you find.
+```
+
 ```
 Greg Holsclaw
 ```
@@ -129,7 +133,9 @@ It is recommended that background estimates be determined for each observation i
 <img src="figures/fig_3.1.png" alt="FUV background count rate">
 
 Background count rate in the FUV detector as a function of time.
+
 :::
+
 (sec:spec-scattered)=
 ## Spectrometer scattered light
 
@@ -138,26 +144,21 @@ other positions across the detector in a predictable manner.
 Ideally, a monochromatic point source would be used to characterize this point-spread function (PSF). 
 While there is no such source available in-flight, sunlight scattered by interplanetary hydrogen can provide an essentially monochromatic, though spatially extended, source.
 In 1999, a campaign consisting of many long-exposure observations was conducted to measure the instrument response to illumination by the IPH.
-<mark>Figure 3.2</mark> shows an average FUV spectrum from these observations using the low-resolution entrance slit. 
+{numref}`fig:fuv-hydrogen` shows an average FUV spectrum from these observations using the low-resolution entrance slit. 
 An analytic model defined by a Gaussian function (to characterize the central, high signal portion of the PSF) plus a Lorentzian function (to characterize the broad, low-signal wings) is given in Equation {eq}`eq:convert-geo`.
 Because the signal originates from an extended source, the function must be convolved with a
 rectangular function representing the geometric image of the low-resolution entrance aperture.
-The model given in Eqn {eq}`eq:convert-geo` was fit to the data, and is shown as a dashed line in <mark>Figure 3.2</mark>. 
+The model given in Eqn {eq}`eq:iph-model` was fit to the data, and is shown as a dashed line in {numref}`fig:fuv-hydrogen`. 
 The model coefficients from this fit are listed in {numref}`tab:iph-coeffs`.
 
+:::{figure-md} fig:fuv-hydrogen
+<img src="figures/fig_3.2.png" alt="FUV interplanetary hydrogen">
 
-```
-<mark>Figure 3.2</mark> – Average FUV spectrum of interplanetary hydrogen along with a fit to an analytic function.
-```
+Average FUV spectrum of interplanetary hydrogen along with a fit to an analytic function.
+:::
 
-```{math}
-:label: eq-iph-model
-f = \left[a_0 + a_1\cdot \exp{\left(\frac{-0.5(x-a_2)^2}{a^2_3}\right)}+\frac{a_4}{1+\frac{1}{a_5}(x-a_2)^2}\right]\otimes rect\left(\frac{x-a_2}{w}\right)
-```
-
-### Coefficients
-
-These are the coefficients of the model given in {eq}`eq-iph-model` after fitting to the data shown in <mark>Figure 3.2</mark>:
+````{margin}
+These are the coefficients of the model given in Eq. {eq}`eq:iph-model` after fitting to the data shown in {numref}`fig:fuv-hydrogen`:
 
 ```{table} Model coefficients
 :name: tab:iph-coeffs
@@ -171,6 +172,12 @@ These are the coefficients of the model given in {eq}`eq-iph-model` after fittin
 | $a_4$ | 0.00373|
 | $a_5$ | 1.507 |
 ```
+````
+```{math}
+:label: eq:iph-model
+f = \left[a_0 + a_1\cdot \exp{\left(\frac{-0.5(x-a_2)^2}{a^2_3}\right)}+\frac{a_4}{1+\frac{1}{a_5}(x-a_2)^2}\right]\otimes rect\left(\frac{x-a_2}{w}\right)
+```
+
 (sec:calib-flatfield)=
 ## In-flight updates to the calibration
 
@@ -274,7 +281,7 @@ The following is a step-by-step example, written in the interpretative language 
 After this example, a simpler approach will be shown that uses a provided data reader
 (`UVIS_PDS_READ_DATA`), written in IDL, to import the data for analysis. 
 Consider an atmospheric limb measurement of Titan where the UVIS boresight was held at a constant altitude throughout the observation and consists of 15 scans (individual detector readouts) each with an integration time of 240 seconds. 
-The EUV and FUV data files and associated calibration matrices are contained in the following files:
+The EUV and FUV data files and associated calibration matrices are contained in the following files, downloadable [here](https://pds-rings.seti.org/viewmaster/volumes/COUVIS_0xxx/COUVIS_0027):
 
 ```
 /COUVIS_0027/DATA/D2009_173/EUV2009_173_15_16.DAT
@@ -283,7 +290,6 @@ The EUV and FUV data files and associated calibration matrices are contained in 
 /COUVIS_0027/CALIB/VERSION_3/D2009_173/FUV2009_173_15_16_CAL_3.DAT
 ```
 
-These files can be located at the UVIS PDS repository at https://pds-rings.seti.org/cassini/uvis/access.html.
 Metadata contained in the EUV label file:
 
 ```
@@ -381,14 +387,17 @@ dataw_avg_fuv = total(dataw_fuv,3) / 15.
 It is always recommended that the data be inspected prior to applying the calibration
 matrix to look for unexpected anomalies and to estimate the background signal that needs to be
 subtracted. 
-<mark>Figure</mark> 3.1 shows the average detector counts as an image (smoothed with a 5x3 rectangular kernel and scaled from 0 to 0.6 counts) and a spectrum derived by then averaging the signal in the spatial dimension (across rows).
+{numref}`fig:example-data-raw` shows the average detector counts as an image (smoothed with a 5x3 rectangular kernel and scaled from 0 to 0.6 counts) and a spectrum derived by then averaging the signal in the spatial dimension (across rows).
 The EUV image (top left panel) shows that there appears to be little or no detectable signal below ~85 nm; however, there is a small amount of anomalous signal that appears in the upper left corner of the detector, and shows up in the average spectrum (bottom left panel) at ~60 nm.
 This is likely a residual signal from the “mesa”, a known contamination occurring in this region of the detector due to undispersed light entering through the solar occultation port (see <mark>Chapters 4 and 11</mark>).
 
-```
-Figure 3.3 - Top panels: image of the average EUV (left) and FUV (right) array. Bottom panels: spatially averaged
+
+:::{figure-md} fig:example-data-raw
+<img src="figures/fig_3.3.png" alt="EUV/FUV example data as images and spectra">
+
+Top panels: image of the average EUV (left) and FUV (right) array. Bottom panels: spatially averaged
 EUV (left) and FUV (right) spectrum. Images have been scaled from 0 to 0.6 counts.
-```
+:::
 
 We can estimate the EUV background by finding the mean pixel value in a region with
 no apparent photon-generated signal:
@@ -398,11 +407,11 @@ background_euv = mean( dataw_avg_euv[300:500,0:30] )
 ```
 
 This background (0.118 counts) is shown as a dashed line in the EUV spectrum in the lower-left
-panel of <mark>Figure</mark> 3.3. 
+panel of {numref}`fig:example-data-raw`. 
 Given the integration time of 240 seconds, this equates to a background rate
-is 4.9e-4 counts per second – slightly larger than the predicted RTG signal from <mark>Figure</mark> 3.3. 
+is 4.9e-4 counts per second – slightly larger than the predicted RTG signal from {numref}`fig:example-data-raw`. 
 The EUV background value also appears to be a good estimate of the FUV channel (dashed line in
-the lower right panel of <mark>Figure</mark> 3.3), as it is consistent with the signal at the short- and long-wavelength ends of the FUV spectrum.
+the lower right panel of {numref}`fig:example-data-raw`), as it is consistent with the signal at the short- and long-wavelength ends of the FUV spectrum.
 Before calibrating the data, any anomalous or “evil” pixels need to be flagged. 
 While the measured counts from these pixels are recorded in the data file, the associated elements of the calibration matrix are assigned the CORE_NULL value (-1) indicated in the PDS label file. 
 To facilitate the interpolation across these invalid pixels, they will be replaced with a special value within the IDL environment (Not-a-Number or NaN):
@@ -434,7 +443,7 @@ interpolate_nans2,arrcal_euv,arrcali_euv
 interpolate_nans2,arrcal_fuv,arrcali_fuv
 ```
 
-<mark>Figure</mark> 3.4 shows images of the calibrated EUV and FUV arrays along with the average spectrum for each channel. 
+{numref}`fig:example-data-calibrated` shows images of the calibrated EUV and FUV arrays along with the average spectrum for each channel. 
 Here we have converted the units from kilorayleigh per angstrom to rayleigh per angstrom, and scaled the results from 0 to 2. 
 An analysis of this dataset is reported in Ajello et al (2012).
 Aeronomers are typically familiar with the rayleigh unit, but researchers in other disciplines, who are also users of UVIS data, may not be. 
@@ -451,7 +460,10 @@ Comment: "revise"
 ````
 It is this relationship that provides the link between the quantity of radiance (<mark>*power or photon rate per unit area per unit solid angle*</mark>) measured by remote sensing instrumentation and the reported column emission rate expected by aeronomers.
 
-```
-<mark>Figure</mark> 3.4 – Top panels: image of the calibrated average EUV (left) and FUV (right) array. Bottom panels: spatially averaged calibrated EUV (left) and FUV (right) spectrum.
+
+:::{figure-md} fig:example-data-calibrated
+<img src="figures/fig_3.4.png" alt="EUV/FUV calibrated example data as images and spectra">
+
+Top panels: image of the calibrated average EUV (left) and FUV (right) array. Bottom panels: spatially averaged calibrated EUV (left) and FUV (right) spectrum.
 Images have been scaled from 0 to 2 rayleigh per angstrom.
-```
+:::
