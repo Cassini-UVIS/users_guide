@@ -38,72 +38,118 @@ The following is a brief description of the components of UVIS.
 
 ## Instrument description
 
-The UVIS has two spectrographic channels: the extreme ultraviolet channel (EUV 56 to
-118 nm) and the far ultraviolet channel (FUV 110 to 190 nm). The ultraviolet channels are built
-into weight-relieved aluminum cases, and each contains a reflecting telescope, a concave grating
-spectrometer, and an imaging, pulse-counting detector. Three slits are available: a high
-resolution slit (75 and 100 μm slit width for the FUV and EUV channel, respectively), a low
-resolution slit (150 and 200 μm slit width for the FUV and EUV respectively), and an occultation
-slit of 800 μm width, identical for both channels. In both the EUV and the FUV channels the
-detector is a CODACON (CODed Anode array CONverter), consisting of 1024 pixels in the
-spectral direction and 64 pixels in the spatial direction. The UVIS also includes a high-speed
-photometer channel (HSP), a hydrogen-deuterium absorption cell channel (HDAC), and an
-electronic and control subassembly.
+UVIS has two spectrographic channels: the extreme ultraviolet channel (EUV 56 to
+118 nm) and the far ultraviolet channel (FUV 110 to 190 nm).
+The ultraviolet channels are built into weight-relieved aluminum cases, and each contains 
 
-The extreme ultraviolet channel (EUV) is used primarily for imaging spectroscopy and
-spectroscopic measurements of the structure and composition of the atmospheres of Titan and
-Saturn. The EUV channel consists of a telescope with a three-position slit changer, a baffle
-system, and a spectrograph with a CODACON microchannel plate detector and associated
-electronics. The telescope consists of an off-axis section of a parabolic mirror with a focal length of 100 mm, and a 2 0 x 2 0 mm aperture. 
+* a reflecting telescope, 
+* a concave grating spectrometer, and 
+* an imaging, pulse-counting detector. 
+
+Three slits are available: 
+
+* a high resolution slit (75 and 100 μm slit width for the FUV and EUV channel, respectively), 
+* a low resolution slit (150 and 200 μm slit width for the FUV and EUV respectively), and 
+* an occultation slit of 800 μm width, identical for both channels. 
+
+In both the EUV and the FUV channels the detector is a CODACON (CODed Anode array CONverter), consisting of 1024 pixels in the spectral direction and 64 pixels in the spatial direction. 
+
+UVIS also includes 
+
+* a high-speed photometer channel (HSP), 
+* a hydrogen-deuterium absorption cell channel (HDAC), and 
+* an electronic and control subassembly.
+
+### EUV
+
+The extreme ultraviolet channel (EUV) is used primarily for imaging spectroscopy and spectroscopic measurements of the structure and composition of the atmospheres of Titan and Saturn.
+
+The EUV channel consists of 
+
+* a telescope with a three-position slit changer, 
+* a baffle system, and 
+* a spectrograph with a CODACON microchannel plate detector and associated
+electronics. 
+
+### Telescope
+
+The telescope consists of 
+
+* an off-axis section of a parabolic mirror with a focal length of 100 mm, and 
+* a 20 x 20 mm aperture.
+
 A precision mechanism positions one of the three entrance slits at the focal plane of the telescope, each translating to a different spectral resolution.
-The spectrograph uses a toroidal grating that focuses the spectrum onto an imaging microchannel
-plate detector to achieve both high sensitivity and spatial resolution along the entrance slit. 
+The spectrograph uses a toroidal grating that focuses the spectrum onto an imaging microchannel plate detector to achieve both high sensitivity and spatial resolution along the entrance slit. 
 
-The microchannel plate detector electronics consist of a low-voltage power supply, a programmable
-high-voltage power supply, charge-sensitive amplifiers, and associated logic. The EUV channel
-also contains a solar occultation port to allow solar flux to enter the telescope through a small
+#### Microchannel plate detector
+
+The microchannel plate detector electronics consist of 
+
+* a low-voltage power supply, 
+* a programmable high-voltage power supply, 
+* charge-sensitive amplifiers, and 
+* associated logic. 
+
+#### Solar occultation port
+
+The EUV channel also contains a solar occultation port to allow solar flux to enter the telescope through a small
 aperture when the sun is 20 degrees off-axis from the primary telescope.
-The far ultraviolet channel (FUV) is used primarily for imaging spectroscopy and
-spectroscopic measurements of the structure and composition of the atmospheres of Titan and
-Saturn and of the rings and icy satellites. The FUV is similar to the EUV channel except for the
-grating ruling density, optical coatings, and detector details. The FUV electronics are similar to
-those for the EUV except for the addition of a high-voltage power supply for the ion pump.
-The high-speed photometer channel (HSP), using a solar blind CsI photocathode,
-performs high signal-to-noise-ratio stellar occultation measurements of the structure and density
-of material in the rings, as well as the atmospheres. The HSP resides in its own module and
-measures light that is focused by its own parabolic mirror with a photomultiplier tube detector.
-The electronics consist of a pulse-amplifier-discriminator and a fixed-level high- voltage power
-supply.
 
-The hydrogen-deuterium absorption cell channel (HDAC) is used to measure the relative
-abundance of D/H in the Saturn system from their Lyman-alpha emission by using a hydrogen
-cell, a deuterium cell, and a channel electron multiplier (CEM) detector to record photons not
-absorbed in the cells. The hydrogen and deuterium cells are resonance absorption cells filled
-with pure molecular hydrogen and deuterium, respectively. They are located between an
-objective lens and a detector. Both cells are made of stainless steel coated with teflon and are
-sealed at each end with MgF 2 windows. The electronics consist of a pulse-amplifier-
-discriminator, a fixed-level high-voltage power supply, and two filament current controllers.
-The UVIS microprocessor electronics and control subassembly consists of input-output
-elements, power conditioning, science data and housekeeping data collection electronics, and
-microprocessor control elements.
+### FUV
 
-The microprocessor on the UVIS operates the instrument, executes various operating
-modes for data handling and compression, and buffers the instrument's observation data for
-pickup by the Cassini Orbiter's Command and Data Subsystem (CDS). The Cassini spacecraft
-points the UVIS telescopes to the desired target (including stars, the Sun, atmospheric features,
-and the limbs of Saturn and its moons). The spacecraft attitude control allows for slews, steps, or drifts across the target. Generally, these spacecraft motions are executed by commands issued
-from the spacecraft CDS. Synchronization of the instrument activities with the spacecraft motion
-is achieved by having the CDS send trigger commands to the UVIS at the correct time. These
-trigger commands instruct the UVIS to execute actions that have been pre-loaded in the UVIS
-memory. The data from the observation are buffered for pickup by the CDS. Two pickup rates
-are allowed: 32 kbps (for occultations) and 5 kbps (for spectral imaging). UVIS team members
-generate command sequences for each observation, which are loaded in the UVIS memory using
-a set of tools known as the Uplink Product Generation System (UPGS). The sequence of internal
-commands is then submitted to the sequencing team at JPL via the UVIS SOPC (Science
-Operations and Planning Computer). Using the SOPC and the UVIS GSE (Ground Support
-Equipment), the UVIS team can also monitor the health of the instrument in near real-time. In
-addition, the SOPC is used to access the data played back by the spacecraft and stored in the JPL
-Telemetry Data Server (TDS).
+The far ultraviolet channel (FUV) is used primarily for imaging spectroscopy and spectroscopic measurements of the structure and composition of 
+* the atmospheres of Titan and Saturn and of 
+* the rings and icy satellites. 
+
+The FUV channel is similar to the EUV channel except for 
+* the grating ruling density, 
+* optical coatings, and 
+* detector details. 
+
+The FUV electronics are similar to those for the EUV except for the addition of a high-voltage power supply for the ion pump.
+
+### HSP
+
+The high-speed photometer channel (HSP), using a solar blind CsI photocathode, performs high signal-to-noise-ratio stellar occultation measurements of the structure and density of material in the rings, as well as the atmospheres. 
+The HSP resides in its own module and measures light that is focused by its own parabolic mirror with a photomultiplier tube detector.
+The electronics consist of a pulse-amplifier-discriminator and a fixed-level high- voltage power supply.
+
+### HDAC
+
+The hydrogen-deuterium absorption cell channel (HDAC) is used to measure the relative abundance of D/H in the Saturn system from their Lyman-alpha emission by using 
+* a hydrogen cell, 
+* a deuterium cell, and 
+* a channel electron multiplier (CEM) detector to record photons not absorbed in the cells. 
+
+The hydrogen and deuterium cells are resonance absorption cells filled with pure molecular hydrogen and deuterium, respectively. 
+They are located between an objective lens and a detector. 
+Both cells are made of stainless steel coated with teflon and are sealed at each end with MgF 2 windows. 
+The electronics consist of 
+* a pulse-amplifier-discriminator, 
+* a fixed-level high-voltage power supply, and 
+* two filament current controllers.
+
+### Microprocessor
+
+The UVIS microprocessor electronics and control subassembly consists of input-output elements, power conditioning, science data and housekeeping data collection electronics, and microprocessor control elements.
+
+The microprocessor on the UVIS 
+* operates the instrument, 
+* executes various operating modes for data handling and compression, and 
+* buffers the instrument's observation data for pickup by the Cassini Orbiter's Command and Data Subsystem (CDS). 
+
+The Cassini spacecraft points the UVIS telescopes to the desired target (including stars, the Sun, atmospheric features,
+and the limbs of Saturn and its moons). 
+The spacecraft attitude control allows for slews, steps, or drifts across the target. 
+Generally, these spacecraft motions are executed by commands issued from the spacecraft CDS. 
+Synchronization of the instrument activities with the spacecraft motion is achieved by having the CDS send trigger commands to the UVIS at the correct time. 
+These trigger commands instruct the UVIS to execute actions that have been pre-loaded in the UVIS memory. 
+The data from the observation are buffered for pickup by the CDS. 
+Two pickup rates are allowed: 32 kbps (for occultations) and 5 kbps (for spectral imaging). 
+UVIS team members generate command sequences for each observation, which are loaded in the UVIS memory using a set of tools known as the Uplink Product Generation System (UPGS). 
+The sequence of internal commands is then submitted to the sequencing team at JPL via the UVIS SOPC (Science Operations and Planning Computer). 
+Using the SOPC and the UVIS GSE (Ground Support Equipment), the UVIS team can also monitor the health of the instrument in near real-time.
+In addition, the SOPC is used to access the data played back by the spacecraft and stored in the JPL Telemetry Data Server (TDS).
 
 ### Background
 
