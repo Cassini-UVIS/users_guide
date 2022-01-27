@@ -12,26 +12,29 @@ Feng Tian
 ## Introduction
 
 On October 15, 1997, the Cassini-Huygens spacecraft was launched by NASA's Jet
-Propulsion Laboratory (JPL) from Kennedy Space Center in Florida. After a seven-year journey,
-it entered Saturn's orbit on July 1, 2004 Coordinated Universal Time (UTC), or June 30 at 8:
-p.m. MDT. The mission includes the Cassini orbiter and the Huygens probe, which was released
-from the Cassini orbiter and landed on the Titan moon to explore its surface and atmosphere. The
-instruments onboard have provided scientists with new and exciting data to help understand the
-mysterious Saturnian system. Besides the Huygens probe, Cassini’s instrumentation consists of
-12 instruments.
+Propulsion Laboratory (JPL) from Kennedy Space Center in Florida. 
+After a seven-year journey, it entered Saturn's orbit on July 1, 2004 Coordinated Universal Time (UTC), or June 30 at 8 p.m. MDT. 
+The mission includes the Cassini orbiter and the Huygens probe, which was released
+from the Cassini orbiter and landed on the Titan moon to explore its surface and atmosphere. 
+The instruments onboard have provided scientists with new and exciting data to help understand the
+mysterious Saturnian system. 
+Besides the Huygens probe, Cassini’s instrumentation consists of 12 instruments.
 
 The Ultraviolet Imaging Spectrograph (UVIS) is one of the 12 instruments installed on
-board Cassini. It was built by the Laboratory for Atmospheric and Space Physics (LASP) located
-in the Research Park of the University of Colorado in Boulder. The UVIS is a set of telescopes
-used to measure ultraviolet light from the Saturn system's atmospheres, rings, and surfaces. The
-UVIS also observes the fluctuations of starlight and sunlight as the sun and stars move behind
-the rings and the atmospheres of Titan and Saturn. These observations are helpful to better
-understand the atmospheric composition and photochemistry of Saturn and Titan, determine the
-atmospheric concentrations of hydrogen and deuterium in these atmospheres, and provide
-information on the nature and history of Saturn’s rings. UVIS data have also helped to
-understand the physical properties of the water plumes and the salty ocean inside Enceladus. A
-detailed description of UVIS can be found in the UVIS Science Team's paper published in Space
-Science Reviews (Esposito et al. 200 4 ). The following is a brief description of the components of UVIS.
+board Cassini. 
+It was built by the Laboratory for Atmospheric and Space Physics (LASP) located in the Research Park of the University of Colorado in Boulder. 
+UVIS is a set of telescopes used to measure ultraviolet light from the Saturn system's atmospheres, rings, and surfaces. 
+UVIS also observes the fluctuations of starlight and sunlight as the sun and stars move behind the rings and the atmospheres of Titan and Saturn. 
+These observations are helpful to 
+
+* better understand the atmospheric composition and photochemistry of Saturn and Titan, 
+* determine the atmospheric concentrations of hydrogen and deuterium in these atmospheres, and 
+* provide information on the nature and history of Saturn’s rings. 
+
+UVIS data have also helped to understand the physical properties of the water plumes and the salty ocean inside Enceladus. 
+A detailed description of UVIS can be found in the UVIS Science Team's paper published in Space
+Science Reviews {cite:p}`Esposito2004-kr`.
+The following is a brief description of the components of UVIS.
 
 ## Instrument description
 
