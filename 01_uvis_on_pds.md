@@ -43,7 +43,7 @@ UVIS has two spectrographic channels: the extreme ultraviolet channel (EUV 56 to
 The ultraviolet channels are built into weight-relieved aluminum cases, and each contains 
 
 * a reflecting telescope, 
-* a concave grating spectrometer, and 
+* a concave grating spectrometer,
 * an imaging, pulse-counting detector. 
 
 Three slits are available: 
@@ -60,7 +60,7 @@ In both the EUV and the FUV channels the detector is a CODACON (CODed Anode arra
 UVIS also includes 
 
 * a high-speed photometer channel (HSP), 
-* a hydrogen-deuterium absorption cell channel (HDAC), and 
+* a hydrogen-deuterium absorption cell channel (HDAC),
 * an electronic and control subassembly.
 
 ### EUV
@@ -70,7 +70,7 @@ The extreme ultraviolet channel (EUV) is used primarily for imaging spectroscopy
 The EUV channel consists of 
 
 * a telescope with a three-position slit changer, 
-* a baffle system, and 
+* a baffle system, 
 * a spectrograph with a CODACON microchannel plate detector and associated
 electronics. 
 
@@ -78,7 +78,7 @@ electronics.
 
 The telescope consists of 
 
-* an off-axis section of a parabolic mirror with a focal length of 100 mm, and 
+* an off-axis section of a parabolic mirror with a focal length of 100 mm, 
 * a 20 x 20 mm aperture.
 
 A precision mechanism positions one of the three entrance slits at the focal plane of the telescope, each translating to a different spectral resolution.
@@ -90,7 +90,7 @@ The microchannel plate detector electronics consist of
 
 * a low-voltage power supply, 
 * a programmable high-voltage power supply, 
-* charge-sensitive amplifiers, and 
+* charge-sensitive amplifiers,
 * associated logic. 
 
 #### Solar occultation port
@@ -100,13 +100,15 @@ aperture when the sun is 20 degrees off-axis from the primary telescope.
 
 ### FUV
 
-The far ultraviolet channel (FUV) is used primarily for imaging spectroscopy and spectroscopic measurements of the structure and composition of 
-* the atmospheres of Titan and Saturn and of 
-* the rings and icy satellites. 
+The far ultraviolet channel (FUV) is used primarily for imaging spectroscopy and spectroscopic measurements of the structure and composition of the
 
-The FUV channel is similar to the EUV channel except for 
-* the grating ruling density, 
-* optical coatings, and 
+* atmospheres of Titan and Saturn, 
+* rings and icy satellites. 
+
+The FUV channel is similar to the EUV channel except for the
+
+* grating ruling density, 
+* optical coatings,
 * detector details. 
 
 The FUV electronics are similar to those for the EUV except for the addition of a high-voltage power supply for the ion pump.
@@ -119,17 +121,19 @@ The electronics consist of a pulse-amplifier-discriminator and a fixed-level hig
 
 ### HDAC
 
-The hydrogen-deuterium absorption cell channel (HDAC) is used to measure the relative abundance of D/H in the Saturn system from their Lyman-alpha emission by using 
-* a hydrogen cell, 
-* a deuterium cell, and 
+The hydrogen-deuterium absorption cell channel (HDAC) is used to measure the relative abundance of D/H in the Saturn system from their Lyman-alpha emission by using
+
+* ahydrogen cell, 
+* a deuterium cell,
 * a channel electron multiplier (CEM) detector to record photons not absorbed in the cells. 
 
 The hydrogen and deuterium cells are resonance absorption cells filled with pure molecular hydrogen and deuterium, respectively. 
 They are located between an objective lens and a detector. 
 Both cells are made of stainless steel coated with teflon and are sealed at each end with MgF 2 windows. 
 The electronics consist of 
+
 * a pulse-amplifier-discriminator, 
-* a fixed-level high-voltage power supply, and 
+* a fixed-level high-voltage power supply,
 * two filament current controllers.
 
 ### Microprocessor
@@ -137,8 +141,9 @@ The electronics consist of
 The UVIS microprocessor electronics and control subassembly consists of input-output elements, power conditioning, science data and housekeeping data collection electronics, and microprocessor control elements.
 
 The microprocessor on the UVIS 
+
 * operates the instrument, 
-* executes various operating modes for data handling and compression, and 
+* executes various operating modes for data handling and compression,
 * buffers the instrument's observation data for pickup by the Cassini Orbiter's Command and Data Subsystem (CDS). 
 
 The Cassini spacecraft points the UVIS telescopes to the desired target (including stars, the Sun, atmospheric features,
@@ -157,31 +162,27 @@ In addition, the SOPC is used to access the data played back by the spacecraft a
 ### Background
 
 Like all observations, the UVIS data contain noises from different sources and anomalies.
-The Cassini spacecraft is powered by 3 radioisotope thermoelectric generators (RTGs), which
-use heat from the natural decay of plutonium-238 to generate direct current electricity via
-thermocouples. The RTGs produce a constant background noise that needs to be subtracted from
-the UVIS observation. There are other backgrounds that may or may not contribute to the total
-raw counts; however the RTG background is internal to the spacecraft and must always be dealt
-with. More descriptions on the handling of RTG background can be found in Chapters 3, 4, 7,
-and 8. A small light leak allowed undispersed interplanetary H Lyman-α to reach the EUV
-detector for pixels <720, corresponding to wavelengths shorter than 920 Å. For observations
-prior to 2007, this creates a background referred to as the “mesa” by the UVIS team. Users of
-this pre-2007 data should be careful to remove the affected pixels. In 2007 the source of the light leak was identified and it was eliminated from subsequent observations by opening the solar
-occultation door. 
+The Cassini spacecraft is powered by 3 radioisotope thermoelectric generators (RTGs), which use heat from the natural decay of plutonium-238 to generate direct current electricity via thermocouples. 
+The RTGs produce a constant background noise that needs to be subtracted from the UVIS observation. 
+There are other backgrounds that may or may not contribute to the total raw counts; however the RTG background is internal to the spacecraft and must always be dealt with.
+More descriptions on the handling of RTG background can be found in Chapters {numref}`sec_calib`, 4, 7, and 8.
+A small light leak allowed undispersed interplanetary H Lyman-α to reach the EUV detector for pixels <720, corresponding to wavelengths shorter than 920 Å. 
+For observations prior to 2007, this creates a background referred to as the “mesa” by the UVIS team.
+Users of this pre-2007 data should be careful to remove the affected pixels. 
+In 2007 the source of the light leak was identified and it was eliminated from subsequent observations by opening the solar occultation door. 
 
-For wavelengths >~1150 Å (EUV pixel 971), another wavelength dependent background arises from internal instrument scattering of H Lyman-α. 
-This contribution to the EUV signal is small below 1170 Å, and is estimated to be less than 7% of the total signal, based on comparisons with a modeled H 2 spectrum (Ajello et al., 2005). 
-When all the noise sources are subtracted from the signal, the raw observation is ready for the flatfield calibration and the conversion from the raw counts to physical units. Users can find more information regarding backgrounds, the flatfield correction, and calibration in Chapters 3 and 11.
+For wavelengths >~1150 Å (EUV pixel 971), another wavelength dependent background arises from internal instrument scattering of H Lyman-α.
+This contribution to the EUV signal is small below 1170 Å, and is estimated to be less than 7% of the total signal, based on comparisons with a modeled H$_2$ spectrum {cite:p}`Ajello2005-jz`. 
+When all the noise sources are subtracted from the signal, the raw observation is ready for the flatfield calibration and the conversion from the raw counts to physical units. 
+Users can find more information regarding backgrounds, the flatfield correction, and calibration in Chapters {ref}`sec:calib` and 11.
 
-A population of anomalous pixels exist in the FUV detector (~15% of all detector
-elements), which are characterized by relatively low and possibly nonlinear responses. These
-pixels are often referred to as “evil”. Although these anomalous pixels are distributed across the
-entire FUV detector, they often appear in groups along individual columns. Because of the
-poorly characterized response of these evil pixels, the UVIS team has decided to eliminate them
-from analysis. This is implemented by assigning an invalid sensitivity to the calibration matrix
-for these elements. Users can find how the “evil” pixels are identified and handled in Chapters 3
-and 4. An alternate approach is to average over large enough areas of the detector to minimize
-the effects. This is described in 9.3.
+A population of anomalous pixels exist in the FUV detector (~15% of all detector elements), which are characterized by relatively low and possibly nonlinear responses. 
+These pixels are often referred to as “evil”. 
+Although these anomalous pixels are distributed across the entire FUV detector, they often appear in groups along individual columns. <mark> Because of the poorly characterized response of these evil pixels, the UVIS team has decided to eliminate them from analysis. </mark> 
+This is implemented by assigning an invalid sensitivity to the calibration matrix for these elements. 
+Users can find how the “evil” pixels are identified and handled in Chapters {ref}`sec_calib` and 4. 
+An alternate approach is to average over large enough areas of the detector to minimize the effects. 
+This is described in 9.3.
 
 ## PDS
 The Cassini UVIS data are stored in the NASA PDS system. The detailed structure and
