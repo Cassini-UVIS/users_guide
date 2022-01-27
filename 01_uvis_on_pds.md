@@ -123,13 +123,13 @@ The electronics consist of a pulse-amplifier-discriminator and a fixed-level hig
 
 The hydrogen-deuterium absorption cell channel (HDAC) is used to measure the relative abundance of D/H in the Saturn system from their Lyman-alpha emission by using
 
-* ahydrogen cell, 
+* a hydrogen cell, 
 * a deuterium cell,
 * a channel electron multiplier (CEM) detector to record photons not absorbed in the cells. 
 
 The hydrogen and deuterium cells are resonance absorption cells filled with pure molecular hydrogen and deuterium, respectively. 
 They are located between an objective lens and a detector. 
-Both cells are made of stainless steel coated with teflon and are sealed at each end with MgF 2 windows. 
+Both cells are made of stainless steel coated with teflon and are sealed at each end with MgF$_2$ windows. 
 The electronics consist of 
 
 * a pulse-amplifier-discriminator, 
@@ -138,7 +138,12 @@ The electronics consist of
 
 ### Microprocessor
 
-The UVIS microprocessor electronics and control subassembly consists of input-output elements, power conditioning, science data and housekeeping data collection electronics, and microprocessor control elements.
+The UVIS microprocessor electronics and control subassembly consists of 
+
+* input-output elements, 
+* power conditioning, 
+* science data and housekeeping data collection electronics,
+* microprocessor control elements.
 
 The microprocessor on the UVIS 
 
@@ -152,6 +157,7 @@ The spacecraft attitude control allows for slews, steps, or drifts across the ta
 Generally, these spacecraft motions are executed by commands issued from the spacecraft CDS. 
 Synchronization of the instrument activities with the spacecraft motion is achieved by having the CDS send trigger commands to the UVIS at the correct time. 
 These trigger commands instruct the UVIS to execute actions that have been pre-loaded in the UVIS memory. 
+
 The data from the observation are buffered for pickup by the CDS. 
 Two pickup rates are allowed: 32 kbps (for occultations) and 5 kbps (for spectral imaging). 
 UVIS team members generate command sequences for each observation, which are loaded in the UVIS memory using a set of tools known as the Uplink Product Generation System (UPGS). 
@@ -165,7 +171,8 @@ Like all observations, the UVIS data contain noises from different sources and a
 The Cassini spacecraft is powered by 3 radioisotope thermoelectric generators (RTGs), which use heat from the natural decay of plutonium-238 to generate direct current electricity via thermocouples. 
 The RTGs produce a constant background noise that needs to be subtracted from the UVIS observation. 
 There are other backgrounds that may or may not contribute to the total raw counts; however the RTG background is internal to the spacecraft and must always be dealt with.
-More descriptions on the handling of RTG background can be found in Chapters {numref}`sec_calib`, 4, 7, and 8.
+More descriptions on the handling of RTG background can be found in Chapters {numref}`sec:calib`, 4, 7, and 8.
+
 A small light leak allowed undispersed interplanetary H Lyman-α to reach the EUV detector for pixels <720, corresponding to wavelengths shorter than 920 Å. 
 For observations prior to 2007, this creates a background referred to as the “mesa” by the UVIS team.
 Users of this pre-2007 data should be careful to remove the affected pixels. 
@@ -180,20 +187,23 @@ A population of anomalous pixels exist in the FUV detector (~15% of all detector
 These pixels are often referred to as “evil”. 
 Although these anomalous pixels are distributed across the entire FUV detector, they often appear in groups along individual columns. <mark> Because of the poorly characterized response of these evil pixels, the UVIS team has decided to eliminate them from analysis. </mark> 
 This is implemented by assigning an invalid sensitivity to the calibration matrix for these elements. 
-Users can find how the “evil” pixels are identified and handled in Chapters {ref}`sec_calib` and 4. 
+Users can find how the “evil” pixels are identified and handled in Chapters {ref}`sec:calib` and 4. 
 An alternate approach is to average over large enough areas of the detector to minimize the effects. 
 This is described in 9.3.
 
 ## PDS
-The Cassini UVIS data are stored in the NASA PDS system. The detailed structure and
-components of the UVIS data in the PDS are described in Chapter 2. In the current chapter we
-provide step-by-step instructions on how to find and obtain the UVIS data from the PDS with the
-following 3 examples: 
+
+The Cassini UVIS data are stored in the NASA PDS system. 
+The detailed structure and components of the UVIS data in the PDS are described in {numref}`sec:pds-data-structure`. 
+In the current chapter we provide step-by-step instructions on how to find and obtain UVIS data from the PDS with the
+following 3 examples:
+
 1. a 2005 observation of Saturn’s aurora
 2. a 2004 observation of the reflected FUV spectrum from Phoebe; and 
 3. a 2005 Enceladus occultation observation.
 
 ### Example 1
+
 ```{epigraph}
 An observation of Saturn’s aurora was carried out around 03:35 on day 172 of year 2005.
 ```
