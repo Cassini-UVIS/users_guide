@@ -597,7 +597,7 @@ This is described in 9.3.</p>
 <div class="section" id="pds">
 <h2><span class="section-number">1.3. </span>PDS<a class="headerlink" href="#pds" title="Permalink to this headline">¶</a></h2>
 <p>The Cassini UVIS data are stored in the NASA PDS system.
-The detailed structure and components of the UVIS data in the PDS are described in <a class="reference internal" href="02_pds_data_structure.html#sec-pds-data-structure"><span class="std std-numref">Section 2</span></a>.
+The detailed structure and components of the UVIS data in the PDS are described in Chapter <a class="reference internal" href="02_pds_data_structure.html#sec-pds-data-structure"><span class="std std-ref">PDS Data Structure</span></a>.
 In the current chapter we provide step-by-step instructions on how to find and obtain UVIS data from the PDS with the
 following 3 examples:</p>
 <ol class="simple">
@@ -615,12 +615,15 @@ following 3 examples:</p>
 <li><p>Find COUVIS_0011 in the table called “Temporal coverage of each volume”, which contains
 the observations taken on day 172. And the available data are listed by the date the observations
 were carried out.</p></li>
-<li><p>Open COUVIS_0011/DATA/D2005_172/ (the full URL address is <a class="reference external" href="https://pds-rings.seti.org/vol/COUVIS_0011/DATA/D2005_172/">https://pds-rings.seti.org/vol/COUVIS_0011/DATA/D2005_172/</a> ) and search for data with observation time
-close to 03:35. Save the following data files and LBL files to your computer:
-EUV2005_172_03_35.DAT
-EUV2005_172_03_35.LBL
-FUV2005_172_03_35.DAT
-FUV2005_172_03_35.LBL</p>
+<li><p>Open COUVIS_0011/DATA/D2005_172/ (the full URL address is <a class="reference external" href="https://pds-rings.seti.org/viewmaster/volumes/COUVIS_0xxx/COUVIS_0011/DATA/D2005_172">https://pds-rings.seti.org/viewmaster/volumes/COUVIS_0xxx/COUVIS_0011/DATA/D2005_172</a> ) and search for data with observation time
+close to 03:35.
+Save the following data files and LBL files to your computer:</p>
+<ul class="simple">
+<li><p>EUV2005_172_03_35.DAT</p></li>
+<li><p>EUV2005_172_03_35.LBL</p></li>
+<li><p>FUV2005_172_03_35.DAT</p></li>
+<li><p>FUV2005_172_03_35.LBL</p></li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Note that the LBL files contain the description of this data set. Also note that EUV, FUV,
@@ -639,28 +642,30 @@ HDAC, and HSP data are presented in the same directory.</p>
 </pre></div>
 </div>
 <p>This information states that the data consist of 1024 spectral elements, called “bands” (spectral
-bins) from bin number 0 to 1023 with no spectral binning performed (spec_bin=BAND_BIN=1),
+bins) from bin number 0 to 1023 with no spectral binning performed (BAND_BIN=1),
 in 60 lines (spatial bins) from line number 2 to 61 with no spatial binning performed
-(space_bin=LINE_BIN=1), and 163 samples (or records).</p>
+(LINE_BIN=1), and 163 samples (or records).</p>
 </li>
 <li><p>The user can select for use any programming language to read and analyze the data. The
 following example uses IDL to read the data:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">read_binary</span><span class="p">(</span> <span class="n">filename</span><span class="p">,</span> <span class="n">data_dims</span><span class="o">=</span><span class="p">[</span> <span class="n">BAND</span><span class="p">,</span> <span class="n">LINE</span><span class="p">,</span> <span class="n">SAMPLE</span><span class="p">],</span> <span class="n">data_type</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">endian</span><span class="o">=</span><span class="s1">&#39;big&#39;</span> <span class="p">)</span>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>data <span class="o">=</span> <span class="nb">read_binary</span>( filename, data_dims<span class="o">=</span>[ BAND, LINE, SAMPLE], data_type<span class="o">=</span><span class="mi">12</span>, endian<span class="o">=</span><span class="s1">&#39;big&#39;</span> )
 </pre></div>
 </div>
 <p>Here the filename can be either <code class="docutils literal notranslate"><span class="pre">FUV2005_172_03_35.DAT</span></code> or <code class="docutils literal notranslate"><span class="pre">EUV2005_172_03_35.DAT</span></code>.</p>
-<p>The data matrix’s dimensions are (1024, 64, 163). Note that endian keyword is set to ‘big’ because the machine used to create the binary file follows big-endian byte ordering.
+<p>The data matrix’s dimensions are (1024, 64, 163).
+Note that endian keyword is set to <code class="docutils literal notranslate"><span class="pre">big</span></code> because the machine used to create the binary file follows big-endian byte ordering.
 Also note that in IDL, type code 12 refers to a 16-bit unsigned integer ranging from 0 to 65535.</p>
 </li>
 <li><p>Some supporting IDL codes and calibration files can be found on the PDS system associated
 with the data. For example, the users can go to the following URL:</p>
 <p><a class="reference external" href="https://pds-rings.seti.org/volumes/COUVIS_0011/SOFTWARE/CALIB/VERSION_3">https://pds-rings.seti.org/volumes/COUVIS_0011/SOFTWARE/CALIB/VERSION_3</a></p>
-<p>to download <code class="docutils literal notranslate"><span class="pre">F_Flight_Wavelength.pro</span></code>, which can provide the wavelength scale of the data.
+<p>to download <code class="docutils literal notranslate"><span class="pre">F_FLIGHT_WAVELENGTH.PRO</span></code>, which can provide the wavelength scale of the data.
 Figure 1.1 can be generated by summing all the sample data from lines 2 and 61.</p>
 </li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Figure 1.1 Cassini UVIS observation of Saturn’s aurora on day 172 of year 2005.
-</pre></div>
+<div class="figure align-default" id="fig-fuv-background">
+<img alt="Saturn's aurora on 2005-172" src="_images/fig_1.1.pdf" />
+<p class="caption"><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Cassini UVIS observation of Saturn’s aurora on day 172 of year 2005.</span><a class="headerlink" href="#fig-fuv-background" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="example-2">
