@@ -48,9 +48,12 @@ The ultraviolet channels are built into weight-relieved aluminum cases, and each
 
 Three slits are available: 
 
-* a high resolution slit (75 and 100 μm slit width for the FUV and EUV channel, respectively), 
-* a low resolution slit (150 and 200 μm slit width for the FUV and EUV respectively), and 
-* an occultation slit of 800 μm width, identical for both channels. 
+* a high resolution slit
+  * 75 and 100 μm slit width for the FUV and EUV channel, respectively, 
+* a low resolution slit
+  * 150 and 200 μm slit width for the FUV and EUV respectively, 
+* an occultation slit of 800 μm width, 
+  * identical for both channels. 
 
 In both the EUV and the FUV channels the detector is a CODACON (CODed Anode array CONverter), consisting of 1024 pixels in the spectral direction and 64 pixels in the spatial direction. 
 
