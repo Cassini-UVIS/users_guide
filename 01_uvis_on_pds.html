@@ -528,13 +528,13 @@ The electronics consist of a pulse-amplifier-discriminator and a fixed-level hig
 <h3><span class="section-number">1.2.5. </span>HDAC<a class="headerlink" href="#hdac" title="Permalink to this headline">¶</a></h3>
 <p>The hydrogen-deuterium absorption cell channel (HDAC) is used to measure the relative abundance of D/H in the Saturn system from their Lyman-alpha emission by using</p>
 <ul class="simple">
-<li><p>ahydrogen cell,</p></li>
+<li><p>a hydrogen cell,</p></li>
 <li><p>a deuterium cell,</p></li>
 <li><p>a channel electron multiplier (CEM) detector to record photons not absorbed in the cells.</p></li>
 </ul>
 <p>The hydrogen and deuterium cells are resonance absorption cells filled with pure molecular hydrogen and deuterium, respectively.
 They are located between an objective lens and a detector.
-Both cells are made of stainless steel coated with teflon and are sealed at each end with MgF 2 windows.
+Both cells are made of stainless steel coated with teflon and are sealed at each end with MgF<span class="math notranslate nohighlight">\(_2\)</span> windows.
 The electronics consist of</p>
 <ul class="simple">
 <li><p>a pulse-amplifier-discriminator,</p></li>
@@ -544,7 +544,13 @@ The electronics consist of</p>
 </div>
 <div class="section" id="microprocessor">
 <h3><span class="section-number">1.2.6. </span>Microprocessor<a class="headerlink" href="#microprocessor" title="Permalink to this headline">¶</a></h3>
-<p>The UVIS microprocessor electronics and control subassembly consists of input-output elements, power conditioning, science data and housekeeping data collection electronics, and microprocessor control elements.</p>
+<p>The UVIS microprocessor electronics and control subassembly consists of</p>
+<ul class="simple">
+<li><p>input-output elements,</p></li>
+<li><p>power conditioning,</p></li>
+<li><p>science data and housekeeping data collection electronics,</p></li>
+<li><p>microprocessor control elements.</p></li>
+</ul>
 <p>The microprocessor on the UVIS</p>
 <ul class="simple">
 <li><p>operates the instrument,</p></li>
@@ -556,8 +562,8 @@ and the limbs of Saturn and its moons).
 The spacecraft attitude control allows for slews, steps, or drifts across the target.
 Generally, these spacecraft motions are executed by commands issued from the spacecraft CDS.
 Synchronization of the instrument activities with the spacecraft motion is achieved by having the CDS send trigger commands to the UVIS at the correct time.
-These trigger commands instruct the UVIS to execute actions that have been pre-loaded in the UVIS memory.
-The data from the observation are buffered for pickup by the CDS.
+These trigger commands instruct the UVIS to execute actions that have been pre-loaded in the UVIS memory.</p>
+<p>The data from the observation are buffered for pickup by the CDS.
 Two pickup rates are allowed: 32 kbps (for occultations) and 5 kbps (for spectral imaging).
 UVIS team members generate command sequences for each observation, which are loaded in the UVIS memory using a set of tools known as the Uplink Product Generation System (UPGS).
 The sequence of internal commands is then submitted to the sequencing team at JPL via the UVIS SOPC (Science Operations and Planning Computer).
@@ -570,8 +576,8 @@ In addition, the SOPC is used to access the data played back by the spacecraft a
 The Cassini spacecraft is powered by 3 radioisotope thermoelectric generators (RTGs), which use heat from the natural decay of plutonium-238 to generate direct current electricity via thermocouples.
 The RTGs produce a constant background noise that needs to be subtracted from the UVIS observation.
 There are other backgrounds that may or may not contribute to the total raw counts; however the RTG background is internal to the spacecraft and must always be dealt with.
-More descriptions on the handling of RTG background can be found in Chapters <code class="xref std std-numref docutils literal notranslate"><span class="pre">sec_calib</span></code>, 4, 7, and 8.
-A small light leak allowed undispersed interplanetary H Lyman-α to reach the EUV detector for pixels &lt;720, corresponding to wavelengths shorter than 920 Å.
+More descriptions on the handling of RTG background can be found in Chapters <a class="reference internal" href="03_calibration.html#sec-calib"><span class="std std-numref">Section 3</span></a>, 4, 7, and 8.</p>
+<p>A small light leak allowed undispersed interplanetary H Lyman-α to reach the EUV detector for pixels &lt;720, corresponding to wavelengths shorter than 920 Å.
 For observations prior to 2007, this creates a background referred to as the “mesa” by the UVIS team.
 Users of this pre-2007 data should be careful to remove the affected pixels.
 In 2007 the source of the light leak was identified and it was eliminated from subsequent observations by opening the solar occultation door.</p>
@@ -583,16 +589,16 @@ Users can find more information regarding backgrounds, the flatfield correction,
 These pixels are often referred to as “evil”.
 Although these anomalous pixels are distributed across the entire FUV detector, they often appear in groups along individual columns. <mark> Because of the poorly characterized response of these evil pixels, the UVIS team has decided to eliminate them from analysis. </mark>
 This is implemented by assigning an invalid sensitivity to the calibration matrix for these elements.
-Users can find how the “evil” pixels are identified and handled in Chapters <span class="xref std std-ref">sec_calib</span> and 4.
+Users can find how the “evil” pixels are identified and handled in Chapters <a class="reference internal" href="03_calibration.html#sec-calib"><span class="std std-ref">UVIS Calibration</span></a> and 4.
 An alternate approach is to average over large enough areas of the detector to minimize the effects.
 This is described in 9.3.</p>
 </div>
 </div>
 <div class="section" id="pds">
 <h2><span class="section-number">1.3. </span>PDS<a class="headerlink" href="#pds" title="Permalink to this headline">¶</a></h2>
-<p>The Cassini UVIS data are stored in the NASA PDS system. The detailed structure and
-components of the UVIS data in the PDS are described in Chapter 2. In the current chapter we
-provide step-by-step instructions on how to find and obtain the UVIS data from the PDS with the
+<p>The Cassini UVIS data are stored in the NASA PDS system.
+The detailed structure and components of the UVIS data in the PDS are described in <a class="reference internal" href="02_pds_data_structure.html#sec-pds-data-structure"><span class="std std-numref">Section 2</span></a>.
+In the current chapter we provide step-by-step instructions on how to find and obtain UVIS data from the PDS with the
 following 3 examples:</p>
 <ol class="simple">
 <li><p>a 2005 observation of Saturn’s aurora</p></li>
