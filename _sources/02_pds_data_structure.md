@@ -1,8 +1,8 @@
 (sec:pds-data-structure)=
 # PDS Data Structure
 
-```{admonition} Conversion status: Raw
-Copied over raw, not yet cleaned up, figures missing.
+```{admonition} Conversion status: Close to finished
+Basic layouting done, figures added. Please report issues.
 ```
 
 ```
@@ -105,7 +105,7 @@ The following {numref}`fig:pds-windowed-data` provides an example UVIS cube corr
 :::{figure-md} fig:pds-windowed-data
 <img src="figures/fig_2.6.*" alt="PDS data for windowed data.">
 
-An example of PDS data corresponding to the example offered in diagram 2. 3.
+An example of PDS data corresponding to the example offered in {numref}`fig:example-windows`.
 :::
 
 Matrix elements outside the windows contain null values (-1).
