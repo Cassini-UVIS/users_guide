@@ -13,6 +13,7 @@ During the Cassini spacecraft’s tour of the solar system, the Ultraviolet Imag
 The UVIS science team has delivered data to the Planetary Data System for storage in an historical archive. 
 PDS clients are able to search, retrieve and analyze this data. 
 This chapter supports those users by providing a description of UVIS data and its organization within the PDS.
+
 In PDS, an “observation” is the fundamental organizational unit of UVIS data. 
 It is a set of integers representing detector counts obtained while the instrument had a particular configuration and was obtained for a particular purpose. 
 A document entitled `UVISREF.CAT` is located in all UVIS data volumes at the PDS and describes the instrument in detail. 
@@ -30,6 +31,7 @@ The axes of this matrix, using PDS terminology, are line, band, and sample.
 The line dimension is the detector’s 64 pixel spatial dimension, the band is the 1024 pixel spectral dimension, and the sample dimension corresponds to time where each integration of the detector is arrayed in this dimension. 
 A three dimensional matrix with these axes is referred to as a PDS cube. 
 The HSP and HDAC are photometers which produce a time ordered sequence of photon counts, corresponding to a PDS time series.
+
 Regardless of its PDS data structure, there are four UVIS data products: 
 
 1. spatial-spectral image cubes,
@@ -44,18 +46,18 @@ The brightness time series is produced by the HSP or HDAC channels.
 These data products are illustrated in the following figures:
 
 :::{figure-md} fig:example-cube
-<img src="figures/fig_2.1.*" alt="example cube">
+<img src="figures/fig_2.1A.*" alt="example cube">
 A spatial-spectral image cube
 :::
 
 
 :::{figure-md} fig:example-wavelength-image
-<img src="figures/fig_2.2.*" alt="image at one wavelength">
+<img src="figures/fig_2.1B.*" alt="image at one wavelength">
 An image at one wavelength
 :::
 
 :::{figure-md} fig:example-spectra
-<img src="figures/fig_2.3.*" alt="series of spectra">
+<img src="figures/fig_2.1C.*" alt="series of spectra">
 A series of spectra.
 :::
 
