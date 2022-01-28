@@ -43,45 +43,48 @@ An image is generated from a cube by summing the detector counts across the enti
 The brightness time series is produced by the HSP or HDAC channels. 
 These data products are illustrated in the following figures:
 
-```
-Figure 2.1A: A spatial-spectral image cube
-```
+:::{figure-md} fig:example-cube
+<img src="figures/fig_2.1.*" alt="example cube">
+A spatial-spectral image cube
+:::
 
-```
-Figure 2.1B: An image at one wavelength
-```
 
-```
+:::{figure-md} fig:example-wavelength-image
+<img src="figures/fig_2.2.*" alt="image at one wavelength">
+An image at one wavelength
+:::
+
+:::{figure-md} fig:example-spectra
+<img src="figures/fig_2.3.*" alt="series of spectra">
 Figure 2.1C: A series of spectra.
-```
+:::
+
 A brightness series from the HSP or HDAC is a time series: {ct0, ct1, ...}.
 The following surface plot Figure 2.2 is the first sample of a UVIS EUV spatial-spectral
 image cube from an observation of Jupiter:
 
-```
-Figure 2.2: The first sample of a UVIS EUV spatial-spectral image cube observation of Jupiter. 
+
+:::{figure-md} fig:example-spectra
+<img src="figures/fig_2.3.*" alt="series of spectra">
+The first sample of a UVIS EUV spatial-spectral image cube observation of Jupiter. 
 The elevated line at y=~20 is Jupiter. 
 The elevated regions at Y=~15 and Y=~25 are emissions from the Io torus. 
 There are 32 lines and 512 bands of data because the binning in this observation is 2 spatially and 2 spectrally.
-```
+:::
 
+## Windows
 
 The EUV and FUV channels can be configured to take data from sub-regions of the
 1024x64 detector called windows. 
-For example, if a target is expected to be visible in the central
-region of the detector then a window centered around the middle of the detector with an upper
-left corner at (0, 24) and a lower right corner at (1023, 39) with dimensions 1024x16 would
-capture the target and minimize irrelevant data. If a reduced level of resolution is possible, then
-the detector could be binned to further reduce the data size. Binning is the summation of adjacent
-pixels, for example, binning by 2 causes adjacent pairs of pixels to be added together. For
-example this [(0,24), (1023,39)] window could be binned by two in the band (spectral)
-dimension resulting in a 512x16 array of pixels. We take as an example two additional windows
-defined by window1 = ([0,10],[1023, 14], SpaBin=5, SpecBin=1) and
-window3 = ([0, 5 0],[1023, 5 4], SpaBin=5, SpecBin=1). When windowing or binning is defined
-on the detector, counts are arranged within the matrix in sub-matrices corresponding to the
+For example, if a target is expected to be visible in the central region of the detector then a window centered around the middle of the detector with an upper left corner at (0, 24) and a lower right corner at (1023, 39) with dimensions 1024x16 would capture the target and minimize irrelevant data. 
+If a reduced level of resolution is possible, then the detector could be binned to further reduce the data size. Binning is the summation of adjacent pixels, for example, binning by 2 causes adjacent pairs of pixels to be added together. 
+For example this [(0,24), (1023,39)] window could be binned by two in the band (spectral)
+dimension resulting in a 512x16 array of pixels. 
+We take as an example two additional windows defined by window1 = ([0,10],[1023, 14], SpaBin=5, SpecBin=1) and
+window3 = ([0, 5 0],[1023, 5 4], SpaBin=5, SpecBin=1). 
+When windowing or binning is defined on the detector, counts are arranged within the matrix in sub-matrices corresponding to the windows of the detector. 
 
-
-windows of the detector. Figure 2.3 illustrates this windowing and binning:
+Figure 2.3 illustrates this windowing and binning:
 
 ```
 Figure 2.3: an example of windows in the UVIS detector

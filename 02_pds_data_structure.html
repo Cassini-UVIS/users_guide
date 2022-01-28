@@ -199,6 +199,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#windows">
+   2.1. Windows
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -211,6 +224,19 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#windows">
+   2.1. Windows
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -259,38 +285,21 @@ The time series is a sequence of samples (photon counts).
 An image is generated from a cube by summing the detector counts across the entire wavelength dimension; a spectrum is generated from a cube by summing across the entire spatial dimension.
 The brightness time series is produced by the HSP or HDAC channels.
 These data products are illustrated in the following figures:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Figure</span> <span class="mf">2.1</span><span class="n">A</span><span class="p">:</span> <span class="n">A</span> <span class="n">spatial</span><span class="o">-</span><span class="n">spectral</span> <span class="n">image</span> <span class="n">cube</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Figure</span> <span class="mf">2.1</span><span class="n">B</span><span class="p">:</span> <span class="n">An</span> <span class="n">image</span> <span class="n">at</span> <span class="n">one</span> <span class="n">wavelength</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Figure</span> <span class="mf">2.1</span><span class="n">C</span><span class="p">:</span> <span class="n">A</span> <span class="n">series</span> <span class="n">of</span> <span class="n">spectra</span><span class="o">.</span>
-</pre></div>
-</div>
 <p>A brightness series from the HSP or HDAC is a time series: {ct0, ct1, …}.
 The following surface plot Figure 2.2 is the first sample of a UVIS EUV spatial-spectral
 image cube from an observation of Jupiter:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Figure</span> <span class="mf">2.2</span><span class="p">:</span> <span class="n">The</span> <span class="n">first</span> <span class="n">sample</span> <span class="n">of</span> <span class="n">a</span> <span class="n">UVIS</span> <span class="n">EUV</span> <span class="n">spatial</span><span class="o">-</span><span class="n">spectral</span> <span class="n">image</span> <span class="n">cube</span> <span class="n">observation</span> <span class="n">of</span> <span class="n">Jupiter</span><span class="o">.</span> 
-<span class="n">The</span> <span class="n">elevated</span> <span class="n">line</span> <span class="n">at</span> <span class="n">y</span><span class="o">=~</span><span class="mi">20</span> <span class="ow">is</span> <span class="n">Jupiter</span><span class="o">.</span> 
-<span class="n">The</span> <span class="n">elevated</span> <span class="n">regions</span> <span class="n">at</span> <span class="n">Y</span><span class="o">=~</span><span class="mi">15</span> <span class="ow">and</span> <span class="n">Y</span><span class="o">=~</span><span class="mi">25</span> <span class="n">are</span> <span class="n">emissions</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">Io</span> <span class="n">torus</span><span class="o">.</span> 
-<span class="n">There</span> <span class="n">are</span> <span class="mi">32</span> <span class="n">lines</span> <span class="ow">and</span> <span class="mi">512</span> <span class="n">bands</span> <span class="n">of</span> <span class="n">data</span> <span class="n">because</span> <span class="n">the</span> <span class="n">binning</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">observation</span> <span class="ow">is</span> <span class="mi">2</span> <span class="n">spatially</span> <span class="ow">and</span> <span class="mi">2</span> <span class="n">spectrally</span><span class="o">.</span>
-</pre></div>
-</div>
+<div class="section" id="windows">
+<h2><span class="section-number">2.1. </span>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
 <p>The EUV and FUV channels can be configured to take data from sub-regions of the
 1024x64 detector called windows.
-For example, if a target is expected to be visible in the central
-region of the detector then a window centered around the middle of the detector with an upper
-left corner at (0, 24) and a lower right corner at (1023, 39) with dimensions 1024x16 would
-capture the target and minimize irrelevant data. If a reduced level of resolution is possible, then
-the detector could be binned to further reduce the data size. Binning is the summation of adjacent
-pixels, for example, binning by 2 causes adjacent pairs of pixels to be added together. For
-example this [(0,24), (1023,39)] window could be binned by two in the band (spectral)
-dimension resulting in a 512x16 array of pixels. We take as an example two additional windows
-defined by window1 = ([0,10],[1023, 14], SpaBin=5, SpecBin=1) and
-window3 = ([0, 5 0],[1023, 5 4], SpaBin=5, SpecBin=1). When windowing or binning is defined
-on the detector, counts are arranged within the matrix in sub-matrices corresponding to the</p>
-<p>windows of the detector. Figure 2.3 illustrates this windowing and binning:</p>
+For example, if a target is expected to be visible in the central region of the detector then a window centered around the middle of the detector with an upper left corner at (0, 24) and a lower right corner at (1023, 39) with dimensions 1024x16 would capture the target and minimize irrelevant data.
+If a reduced level of resolution is possible, then the detector could be binned to further reduce the data size. Binning is the summation of adjacent pixels, for example, binning by 2 causes adjacent pairs of pixels to be added together.
+For example this [(0,24), (1023,39)] window could be binned by two in the band (spectral)
+dimension resulting in a 512x16 array of pixels.
+We take as an example two additional windows defined by window1 = ([0,10],[1023, 14], SpaBin=5, SpecBin=1) and
+window3 = ([0, 5 0],[1023, 5 4], SpaBin=5, SpecBin=1).
+When windowing or binning is defined on the detector, counts are arranged within the matrix in sub-matrices corresponding to the windows of the detector.</p>
+<p>Figure 2.3 illustrates this windowing and binning:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Figure</span> <span class="mf">2.3</span><span class="p">:</span> <span class="n">an</span> <span class="n">example</span> <span class="n">of</span> <span class="n">windows</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">UVIS</span> <span class="n">detector</span>
 </pre></div>
 </div>
@@ -498,6 +507,7 @@ ascertain the structure of the data and load it into an analysis tool. The label
 state information necessary to interpret the data. The steps detailed in this document will make it
 possible for UVIS data to be a valuable scientific resource into the foreseeable future.</p></li>
 </ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
