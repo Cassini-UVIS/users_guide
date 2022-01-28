@@ -328,7 +328,7 @@ An Enceladus occultation observation was carried out around UTC 19:54:56 on July
 ```
 
 1) Select COUVIS_0012 which contains the observation data. 
-Then select DATA.
+Then select `DATA/D2005_195`.
 This brings us [here](https://pds-rings.seti.org/volumes/COUVIS_0012/DATA/D2005_195/).
 Download the data set containing the closest starting time:
 

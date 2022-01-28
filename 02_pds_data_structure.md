@@ -9,33 +9,39 @@ Copied over raw, not yet cleaned up, figures missing.
 David Judd
 ```
 
-During the Cassini spacecraft’s tour of the solar system, the Ultraviolet Imaging
-Spectrograph has observed Venus, Earth, the Jovian and Saturn systems. 
+During the Cassini spacecraft’s tour of the solar system, the Ultraviolet Imaging Spectrograph (UVIS) has observed Venus, Earth, the Jovian and Saturn systems.
 The UVIS science team has delivered data to the Planetary Data System for storage in an historical archive. 
-PDS clients are able to search, retrieve and analyze this data. This chapter supports those users by providing a description of UVIS data and its organization within the PDS.
-In PDS, an “observation” is the fundamental organizational unit of UVIS data. It is a set
-of integers representing detector counts obtained while the instrument had a particular
-configuration and was obtained for a particular purpose. A document entitled UVISREF.CAT is
-located in all UVIS data volumes at the PDS and describes the instrument in detail. In summary,
-it describes the four subsystems of the UVIS instrument: the Far Ultraviolet channel (FUV), the
-Extreme Ultraviolet channel (EUV), the High Speed Photometer (HSP) and the
-Hydrogen/Deuterium Absorption Cell (HDAC) and how they acquire data.
-The four subsystems produce two PDS data types: 1) cubes; and 2) time series. The EUV
-and FUV channels use detectors with a 1024x64 array of pixels, which integrate over time to
-generate a three dimensional matrix. The axes of this matrix, using PDS terminology, are line,
-band, and sample. The line dimension is the detector’s 64 pixel spatial dimension, the band is
-the 1024 pixel spectral dimension, and the sample dimension corresponds to time where each
-integration of the detector is arrayed in this dimension. A three dimensional matrix with these
-axes is referred to as a PDS cube. The HSP and HDAC are photometers which produce a time
-ordered sequence of photon counts, corresponding to a PDS time series.
-Regardless of its PDS data structure, there are four UVIS data products: 1) spatial-
-spectral image cubes; 2) images; 3) spectra; 4) brightness time series. In each sample, a cube
-contains both spatial and spectral information about a target, the image contains only spatial
-information, and a spectrum contains only spectral information. The time series is a sequence of
-samples (photon counts). An image is generated from a cube by summing the detector counts
-across the entire wavelength dimension; a spectrum is generated from a cube by summing across
-the entire spatial dimension. The brightness time series is produced by the HSP or HDAC
-channels. These data products are illustrated in the following figures:
+PDS clients are able to search, retrieve and analyze this data. 
+This chapter supports those users by providing a description of UVIS data and its organization within the PDS.
+In PDS, an “observation” is the fundamental organizational unit of UVIS data. 
+It is a set of integers representing detector counts obtained while the instrument had a particular configuration and was obtained for a particular purpose. 
+A document entitled `UVISREF.CAT` is located in all UVIS data volumes at the PDS and describes the instrument in detail. 
+
+In summary, it describes the four subsystems of the UVIS instrument: 
+* the Far Ultraviolet channel (FUV), 
+* the Extreme Ultraviolet channel (EUV), 
+* the High Speed Photometer (HSP) and 
+* the Hydrogen/Deuterium Absorption Cell (HDAC) 
+and how they acquire data.
+
+The four subsystems produce two PDS data types: 1) cubes; and 2) time series. 
+The EUV and FUV channels use detectors with a 1024x64 array of pixels, which integrate over time to generate a three dimensional matrix. 
+The axes of this matrix, using PDS terminology, are line, band, and sample. 
+The line dimension is the detector’s 64 pixel spatial dimension, the band is the 1024 pixel spectral dimension, and the sample dimension corresponds to time where each integration of the detector is arrayed in this dimension. 
+A three dimensional matrix with these axes is referred to as a PDS cube. 
+The HSP and HDAC are photometers which produce a time ordered sequence of photon counts, corresponding to a PDS time series.
+Regardless of its PDS data structure, there are four UVIS data products: 
+
+1. spatial-spectral image cubes,
+2. images, 
+3. spectra, 
+4. brightness time series. 
+
+In each sample, a cube contains both spatial and spectral information about a target, the image contains only spatial information, and a spectrum contains only spectral information. 
+The time series is a sequence of samples (photon counts). 
+An image is generated from a cube by summing the detector counts across the entire wavelength dimension; a spectrum is generated from a cube by summing across the entire spatial dimension. 
+The brightness time series is produced by the HSP or HDAC channels. 
+These data products are illustrated in the following figures:
 
 ```
 Figure 2.1A: A spatial-spectral image cube
@@ -53,35 +59,16 @@ The following surface plot Figure 2.2 is the first sample of a UVIS EUV spatial-
 image cube from an observation of Jupiter:
 
 ```
-1 sum all pixels across the spectral dimension
-```
-```
-t 0 +(2 sec)
-```
-```
-t 0 +(1 sec)
-t 0
-```
-```
-sum
-all
-spatial
-pixels
-```
-```
-1024 t^0
-```
-```
-t 2
-t 1
+Figure 2.2: The first sample of a UVIS EUV spatial-spectral image cube observation of Jupiter. 
+The elevated line at y=~20 is Jupiter. 
+The elevated regions at Y=~15 and Y=~25 are emissions from the Io torus. 
+There are 32 lines and 512 bands of data because the binning in this observation is 2 spatially and 2 spectrally.
 ```
 
-Figure 2.2: The first sample of a UVIS EUV spatial-spectral image cube observation of Jupiter. The elevated line at
-y=~20 is Jupiter. The elevated regions at Y=~15 and Y=~25 are emissions from the Io torus. There are 32 lines and
-512 bands of data because the binning in this observation is 2 spatially and 2 spectrally.
 
 The EUV and FUV channels can be configured to take data from sub-regions of the
-1024x64 detector called windows. For example, if a target is expected to be visible in the central
+1024x64 detector called windows. 
+For example, if a target is expected to be visible in the central
 region of the detector then a window centered around the middle of the detector with an upper
 left corner at (0, 24) and a lower right corner at (1023, 39) with dimensions 1024x16 would
 capture the target and minimize irrelevant data. If a reduced level of resolution is possible, then
