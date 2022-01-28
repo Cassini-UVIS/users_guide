@@ -47,17 +47,20 @@ These data products are illustrated in the following figures:
 
 :::{figure-md} fig:example-cube
 <img src="figures/fig_2.1A.*" alt="example cube">
+
 A spatial-spectral image cube
 :::
 
 
 :::{figure-md} fig:example-wavelength-image
 <img src="figures/fig_2.1B.*" alt="image at one wavelength">
+
 An image at one wavelength
 :::
 
 :::{figure-md} fig:example-spectra
 <img src="figures/fig_2.1C.*" alt="series of spectra">
+
 A series of spectra.
 :::
 
