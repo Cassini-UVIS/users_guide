@@ -371,7 +371,7 @@ Note that the users will need to sum all spatial elements (lines) of the corresp
 Cassini UVIS observation during the 2005 Enceladus occultation event. 
 The upper panel is the FUV spectrum of the target star at sample record number 16, which is before the occultation. 
 The middle panel corresponds to sample record number 32, during the occultation. 
-The lower panel shows the division between sample 32 and 16, which can be matched with the absorption features of water vapor (see Hansen et al. 2006 ).
+The lower panel shows the division between sample 32 and 16, which can be matched with the absorption features of water vapor (see {cite:t}`Hansen2006-un` ).
 
 :::
 
