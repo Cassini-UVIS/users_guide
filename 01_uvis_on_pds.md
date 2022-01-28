@@ -301,7 +301,7 @@ data and LBL files:
     LINE_BIN = 1
     ```
 
-    This information states that the data consist of 1024 (spectral bins) from bin number 0 to 1023
+    This information states that the data consist of 1024 (spectral bins = BANDS) from bin number 0 to 1023
     with no spectral binning performed (spec_bin=BAND_BIN=1), 64 lines (spatial bins) from line
     number 0 to 63 with no spatial binning performed (space_bin=LINE_BIN=1), and 132 samples
     (or records). Also note that the integration duration is 30 seconds. This will be useful to convert
