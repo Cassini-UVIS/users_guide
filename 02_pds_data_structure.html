@@ -283,23 +283,29 @@ The HSP and HDAC are photometers which produce a time ordered sequence of photon
 <p>In each sample, a cube contains both spatial and spectral information about a target, the image contains only spatial information, and a spectrum contains only spectral information.
 The time series is a sequence of samples (photon counts).
 An image is generated from a cube by summing the detector counts across the entire wavelength dimension; a spectrum is generated from a cube by summing across the entire spatial dimension.
-The brightness time series is produced by the HSP or HDAC channels.
-These data products are illustrated in the following figures:</p>
+The brightness time series is produced by the HSP or HDAC channels.</p>
+<p>These data products are illustrated in the following figures:</p>
 <div class="figure align-default" id="fig-example-cube">
-<img alt="example cube" src="_images/fig_2.1A.png" />
+<img alt="example cube" src="_images/fig_2.1.png" />
 <p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">A spatial-spectral image cube</span><a class="headerlink" href="#fig-example-cube" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="fig-example-wavelength-image">
-<img alt="image at one wavelength" src="_images/fig_2.1B.png" />
+<img alt="image at one wavelength" src="_images/fig_2.2.png" />
 <p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">An image at one wavelength</span><a class="headerlink" href="#fig-example-wavelength-image" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="fig-example-spectra">
-<img alt="series of spectra" src="_images/fig_2.1C.png" />
+<img alt="series of spectra" src="_images/fig_2.3.png" />
 <p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">A series of spectra.</span><a class="headerlink" href="#fig-example-spectra" title="Permalink to this image">¶</a></p>
 </div>
 <p>A brightness series from the HSP or HDAC is a time series: {ct0, ct1, …}.
-The following surface plot Figure 2.2 is the first sample of a UVIS EUV spatial-spectral
-image cube from an observation of Jupiter:</p>
+The following surface plot in <a class="reference internal" href="#fig-example-jupiter-image"><span class="std std-numref">Fig. 2.4</span></a> is the first sample of a UVIS EUV spatial-spectral image cube from an observation of Jupiter:</p>
+<div class="figure align-default" id="fig-example-jupiter-image">
+<img alt="series of spectra" src="_images/fig_2.4.png" />
+<p class="caption"><span class="caption-number">Fig. 2.4 </span><span class="caption-text">The first sample of a UVIS EUV spatial-spectral image cube observation of Jupiter.
+The elevated line at y=~20 is Jupiter.
+The elevated regions at Y=~15 and Y=~25 are emissions from the Io torus.
+There are 32 lines and 512 bands of data because the binning in this observation is 2 spatially and 2 spectrally.</span><a class="headerlink" href="#fig-example-jupiter-image" title="Permalink to this image">¶</a></p>
+</div>
 <div class="section" id="windows">
 <h2><span class="section-number">2.1. </span>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
 <p>The EUV and FUV channels can be configured to take data from sub-regions of the

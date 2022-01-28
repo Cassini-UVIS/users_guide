@@ -43,34 +43,35 @@ In each sample, a cube contains both spatial and spectral information about a ta
 The time series is a sequence of samples (photon counts). 
 An image is generated from a cube by summing the detector counts across the entire wavelength dimension; a spectrum is generated from a cube by summing across the entire spatial dimension. 
 The brightness time series is produced by the HSP or HDAC channels. 
+
 These data products are illustrated in the following figures:
 
 :::{figure-md} fig:example-cube
-<img src="figures/fig_2.1A.*" alt="example cube">
+<img src="figures/fig_2.1.*" alt="example cube">
 
 A spatial-spectral image cube
 :::
 
 
 :::{figure-md} fig:example-wavelength-image
-<img src="figures/fig_2.1B.*" alt="image at one wavelength">
+<img src="figures/fig_2.2.*" alt="image at one wavelength">
 
 An image at one wavelength
 :::
 
 :::{figure-md} fig:example-spectra
-<img src="figures/fig_2.1C.*" alt="series of spectra">
+<img src="figures/fig_2.3.*" alt="series of spectra">
 
 A series of spectra.
 :::
 
 A brightness series from the HSP or HDAC is a time series: {ct0, ct1, ...}.
-The following surface plot Figure 2.2 is the first sample of a UVIS EUV spatial-spectral
-image cube from an observation of Jupiter:
+The following surface plot in {numref}`fig:example-jupiter-image` is the first sample of a UVIS EUV spatial-spectral image cube from an observation of Jupiter:
 
 
 :::{figure-md} fig:example-jupiter-image
 <img src="figures/fig_2.4.*" alt="series of spectra">
+
 The first sample of a UVIS EUV spatial-spectral image cube observation of Jupiter. 
 The elevated line at y=~20 is Jupiter. 
 The elevated regions at Y=~15 and Y=~25 are emissions from the Io torus. 
