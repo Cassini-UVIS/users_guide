@@ -56,7 +56,7 @@ An image at one wavelength
 
 :::{figure-md} fig:example-spectra
 <img src="figures/fig_2.3.*" alt="series of spectra">
-Figure 2.1C: A series of spectra.
+A series of spectra.
 :::
 
 A brightness series from the HSP or HDAC is a time series: {ct0, ct1, ...}.
@@ -64,8 +64,8 @@ The following surface plot Figure 2.2 is the first sample of a UVIS EUV spatial-
 image cube from an observation of Jupiter:
 
 
-:::{figure-md} fig:example-spectra
-<img src="figures/fig_2.3.*" alt="series of spectra">
+:::{figure-md} fig:example-jupiter-image
+<img src="figures/fig_2.4.*" alt="series of spectra">
 The first sample of a UVIS EUV spatial-spectral image cube observation of Jupiter. 
 The elevated line at y=~20 is Jupiter. 
 The elevated regions at Y=~15 and Y=~25 are emissions from the Io torus. 
