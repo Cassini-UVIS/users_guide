@@ -10,7 +10,7 @@ David Judd
 ```
 
 During the Cassini spacecraft’s tour of the solar system, the Ultraviolet Imaging Spectrograph (UVIS) has observed Venus, Earth, the Jovian and Saturn systems.
-The UVIS science team has delivered data to the Planetary Data System for storage in an historical archive. 
+The UVIS science team has delivered data to the Planetary Data System (PDS) for storage in an historical archive. 
 PDS clients are able to search, retrieve and analyze this data. 
 This chapter supports those users by providing a description of UVIS data and its organization within the PDS.
 

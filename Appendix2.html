@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4. Definitions and technical terms &#8212; Cassini UVIS User Guide</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. Bibliography" href="bibliography.html" />
+    <link rel="prev" title="3. UVIS Calibration" href="03_calibration.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Cassini UVIS User Guide</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Cassini UVIS User Guide
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_uvis_on_pds.html">
+   1. Cassini UVIS data on the PDS system
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_pds_data_structure.html">
+   2. PDS Data Structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_calibration.html">
+   3. UVIS Calibration
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   4. Definitions and technical terms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   5. Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Appendix2.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cassini-uvis/users_guide"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cassini-uvis/users_guide/issues/new?title=Issue%20on%20page%20%2FAppendix2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Definitions and technical terms</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="definitions-and-technical-terms">
+<h1><span class="section-number">4. </span>Definitions and technical terms<a class="headerlink" href="#definitions-and-technical-terms" title="Permalink to this headline">¶</a></h1>
+<p><strong>Aberration-corrected toroidal grating</strong> - A kind of diffraction grating (see Diffraction Grating)</p>
+<p><strong>Absorption cell</strong> - A cell that is filled with a particular gas that absorbs light of particular
+wavelengths.</p>
+<p><strong>Angstrom</strong> - A unit of measurement, equaling 10 -10 meter or 10 -8 centimeters, usually used to
+express short wavelengths.</p>
+<p><strong>Aperture</strong> - An adjustable opening in an instrument (like a camera) that controls the amount of
+light that can enter.</p>
+<p><strong>Attitude control</strong> - The act of controlling the position of a spacecraft relative to the direction in
+which it’s moving.</p>
+<p><strong>Baffle</strong> - A device that regulates the flow of light so that it all comes from a particular direction.</p>
+<p><strong>Channel</strong> - A specific frequency band for transmitting or receiving signals, (i.e. different signal
+frequencies give you different television channels). For UVIS, a part of the instrument sensitive
+to a particular frequency band.</p>
+<p><strong>Channel electron multiplier</strong> (CEM) - A light-sensitive device that amplifies dim signals.</p>
+<p><strong>CODACON</strong> (Coded Anode Converter) - A devise, at the output of the detector, that converts the
+data from the spectrometer into an image format.</p>
+<p><strong>Command and Data Subsystem</strong> (CDS) - Cassini’s main computer that commands and collects
+data from the various instruments and packages it to be sent back to NASA?</p>
+<p><strong>Concave grating spectrometer</strong> - A spectrometer whose diffraction grating has a concave shape.</p>
+<p><strong>Detector</strong> - A light-sensitive device that produces electrical signals when illuminated.</p>
+<p><strong>Diffraction Grating</strong> - A grooved optical element that has been deformed to reflect light of many
+colors. It acts like a prism to produce a spectrum.</p>
+<p><strong>Electromagnetic Spectrum -</strong> See “Spectra”. Also see graphic of spectrum.</p>
+<p><strong>Filament current controllers</strong> - Controls the amount of current sent to the HDAC filaments, and
+thus, their temperature.</p>
+<p><strong>Focal plane</strong> - The location where the rays from a distant object merge: This is where we place
+the detector.</p>
+<p><strong>Grating ruling density</strong> - The number of grooves per mm on the diffraction grating.</p>
+<p><strong>GSE</strong> (UVIS Ground Support Equipment) - Equipment used for testing and operating UVIS
+before launch.</p>
+<p><strong>Imaging microchannel plate detector</strong> - A light detector formed from glass full of many small
+channels that creates an image of the light shining on it.</p>
+<p><strong>Imaging, pulse-counting detector</strong> - Each bit of light that falls on the detector creates a pulse of
+electricity. See “imaging microchannel plate detector”.</p>
+<p><strong>Imaging spectroscopy</strong> - <em>Imaging</em> spectroscopy is what UVIS does–it takes spectrographic
+measurements and turns them into a graph, but it can also turn the points on the graph into digital
+data that can then be made into pictures (images). Because humans can’t see UV wavelengths of
+light, we assign different “false colors” to the different wavelengths that allows us to produce a
+picture out of the data that our eyes can appreciate.</p>
+<p><strong>Ion pump</strong> - A small vacuum pump that works by ionizing air molecules.</p>
+<p><strong>JPL</strong> - NASA’s Jet Propulsion Laboratory in Pasadena.</p>
+<p><strong>LASP</strong> - Laboratory for Atmospheric Research in Boulder, Colorado - A research facility of the
+University of Colorado and the builders of the UVIS instrument.</p>
+<p><strong>Logic</strong> - Computer circuitry</p>
+<p><strong>Lyman-alpha emission</strong> - Light emitted by hydrogen atoms at a wavelength of 1216Å.</p>
+<p><strong>Magnetosphere</strong> - A magnetic environment surrounding an object, like a planet, in a fashion
+similar to an atmosphere.</p>
+<p><strong>MDT</strong> - Mountain Daylight Time – The time in Boulder, Colorado, where LASP is. (Except in
+winter when it’s MST – Mountain Standard Time).</p>
+<p><strong>MgF 2 windows</strong> - Windows made from crystals of magnesium fluoride.</p>
+<p><strong>Microchannel plate detector</strong> - (see above under “Imaging…”)</p>
+<p><strong>Nanometer</strong> - A unit of measurement that is one billionth (10 -9 ) of a meter.</p>
+<p><strong>NASA</strong> - National Aeronautics and Space Administration, headquartered in Washington, DC with
+field centers across the country.</p>
+<p><strong>Neutrals</strong> - Particles, objects or systems that have no electrical charge.</p>
+<p><strong>Objective lens</strong> - A lens that focuses light on the detector.</p>
+<p><strong>Optical coatings</strong> - Coatings specifically made for the lenses of light-sensitive devices.</p>
+<p><strong>Orbiter</strong> - A spacecraft whose purpose is to orbit around an object like a planet or a satellite
+(moon).</p>
+<p><strong>Payload</strong> - The instruments, crew or equipment carried by a spacecraft.</p>
+<p><strong>Photochemistry</strong> - The chemistry of the effects of light on chemical systems.</p>
+<p><strong>Photometer</strong> - An instrument for measuring the intensity of light.</p>
+<p><strong>Photomultiplier tube detector</strong> - A vacuum tube that amplifies and detects weak light signals.</p>
+<p><strong>Photons</strong> - Packets of radiant energy: quanta of light.</p>
+<p><strong>Pulse- amplifier-discriminator</strong> - The part of UVIS that counts responses (pulses) to light falling
+on the detector. It discriminates between light and background noise.</p>
+<p><strong>Reflecting telescope</strong> - A telescope where mirrors are the optical elements, not lenses.</p>
+<p><strong>Remote sensing</strong> - Gathering information from far away; like the UVIS instrument will gather
+data on ultraviolet light in the saturnian system and send it back to Earth.</p>
+<p><strong>Remote Sensing Palette</strong> (on Orbiter) - The area on Cassini to which experiments (like the UVIS
+instrument) are secured into place.</p>
+<p><strong>Resonance absorption cells</strong> - Cells filled with gas that absorbs at its atoms’ resonant frequencies
+(same as “absorption cell”)</p>
+<p><strong>Satellite</strong> - A body that revolves around another body like a Saturn’s moon Titan revolving
+around Saturn; or a man-made object revolving around a body, like Explorer 1 orbiting Earth.
+We call the moons of planets satellites instead of moons so as not to confuse them with the
+Earth’s Moon.</p>
+<p><strong>Signal-to-noise-ratio</strong> (SNR) - A ratio to measures the clarity of a data source or transmission,
+usually a ratio of the signal amplitude and the noise amplitude. The higher the SNR, the less the
+interference with reception.</p>
+<p><strong>Slew</strong> - To turn something on an axis or to turn sharply or veer. Cassini slews to point its cameras
+at targets of interest.</p>
+<p><strong>Slit changer</strong> (entrance slit) - There are three slits each on UVIS EUV and FUV telescopes and
+that allow light into the instrument to be measured. The slit changer switches between them to
+measure with different spectral resolutions.</p>
+<p><strong>Solar blind CsI photocathode</strong> - The active element that is insensitive to reflected sunlight only
+seeing light with shorter wavelength.</p>
+<p><strong>Solar flux</strong> - The amount of light from the Sun.</p>
+<p><strong>Solar or stellar occultation</strong> - Watching the Sun (or a star) pass behind an object of interest, like
+a planet or Saturn’s rings. Observing solar occultations help us discover things like the vertical
+structure of clouds, gases in atmospheres and active processes that move the particles in Saturn’s
+rings.</p>
+<p><strong>SOPC</strong> (UVIS Science Operations and Planning Computer) - The computer we use to plan
+observations and send them to JPL.</p>
+<p><strong>Spectra, Spectrum</strong> - Spectra is the plural of spectrum, which is a series of energies (like light)
+arranged according to wavelength, or frequency. The electromagnetic spectrum is an array of
+radiation that is divided into a number of sub-portions, where the boundaries are only vaguely
+defined. They extend from the shortest cosmic rays, through gamma rays, X-rays, ultraviolet
+light, visible light, infrared radiation, microwave and all other wavelengths of radio energy.</p>
+<p><strong>Spectral resolution</strong> - The ability to distinguish two spectral features close to one another; the
+smallest difference in wavelength between two such distinguished features.</p>
+<p><strong>Spectrograph</strong> - A spectroscope that measures wavelengths of light (spectra) and then displays
+the data as a graph. UVIS is an <em>imaging</em> spectrograph, which means it can also display the points
+of the graph as a picture (see Imaging Sepctrosopy).</p>
+<p><strong>Spectroscope</strong> - A machine (instrument) for producing and observing spectra.</p>
+<p><strong>Spectroscopic measurements</strong> - The measurements taken by a spectrograph.</p>
+<p><strong>Spectrometer</strong> - A spectroscope equipped with the ability to measure wavelengths.</p>
+<p><strong>Telemetry Data Server</strong> (TDS) - Telemetry data are the spacecraft observations. They are stored
+temporarily on the TDS.</p>
+<p><strong>Ultraviolet</strong> (UV)- a portion of the complete electromagnetic spectrum Ultraviolet is a portion of
+the spectrum that is a shorter wavelength than visible light; roughly, with a wavelength interval
+from 100 to 4000 angstroms. Ultraviolet radiation from the Sun is responsible for many complex
+photochemical reactions like the formation of the ozone layer. Extreme ultraviolet (EUV) and far
+ultraviolet (FUV) wavelengths are different portions of the ultraviolet portion of the spectrum.
+For Cassini UVIS, EUV is between 55.8-118 nanometers and FUV is between 110- 190
+nanometers.</p>
+<p><strong>Undispersed (zero-order) light</strong> - A specular reflection off the diffraction grating which acts like
+a mirror.</p>
+<p><strong>Uplink Product Generation System</strong> (UPGS) - A process consisting of manpower, software and
+hardware that generates the sequencing of the UVIS instrument according to the plan of the
+science team.</p>
+<p><strong>UTC</strong> - Coordinated Universal Time, also known as Greenwich Mean Time (GMT), Greenwich
+Mean Time is based upon the time at the zero degree meridian that crossed through Greenwich,
+England and is used as a world time and date standard.</p>
+<p><strong>Weight-relieved</strong> (aluminum cases) - UVIS is built out of aluminum that has been carved out to
+the dimensions necessary in order to be as light as possible.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="03_calibration.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>UVIS Calibration</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="bibliography.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Bibliography</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Cassini UVIS team, Jupyter Book created by Michael Aye<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
