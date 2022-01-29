@@ -21,16 +21,21 @@ A document entitled `UVISREF.CAT` is located in all UVIS data volumes at the PDS
 In summary, it describes the four subsystems of the UVIS instrument: 
 * the Far Ultraviolet channel (FUV), 
 * the Extreme Ultraviolet channel (EUV), 
-* the High Speed Photometer (HSP) and 
-* the Hydrogen/Deuterium Absorption Cell (HDAC) 
+* the High Speed Photometer (HSP), and 
+* the Hydrogen/Deuterium Absorption Cell (HDAC)
+
 and how they acquire data.
 
-The four subsystems produce two PDS data types: 1) cubes; and 2) time series. 
+The four subsystems produce two PDS data types: 
+
+1. cubes, and 
+2. time series.
+
 The EUV and FUV channels use detectors with a 1024x64 array of pixels, which integrate over time to generate a three dimensional matrix. 
-The axes of this matrix, using PDS terminology, are line, band, and sample. 
-The line dimension is the detector’s 64 pixel spatial dimension, the band is the 1024 pixel spectral dimension, and the sample dimension corresponds to time where each integration of the detector is arrayed in this dimension. 
-A three dimensional matrix with these axes is referred to as a PDS cube. 
-The HSP and HDAC are photometers which produce a time ordered sequence of photon counts, corresponding to a PDS time series.
+The axes of this matrix, using PDS terminology, are _line_, _band_, and _sample_. 
+The _line_ dimension is the detector’s 64 pixel spatial dimension, the _band_ is the 1024 pixel spectral dimension, and the _sample_ dimension corresponds to time where each integration of the detector is arrayed in this dimension. 
+A three dimensional matrix with these axes is referred to as a **PDS cube**. 
+The HSP and HDAC are photometers which produce a time ordered sequence of photon counts, corresponding to a **PDS time series**.
 
 Regardless of its PDS data structure, there are four UVIS data products: 
 
@@ -84,10 +89,8 @@ The EUV and FUV channels can be configured to take data from sub-regions of the
 1024x64 detector called windows. 
 For example, if a target is expected to be visible in the central region of the detector then a window centered around the middle of the detector with an upper left corner at (0, 24) and a lower right corner at (1023, 39) with dimensions 1024x16 would capture the target and minimize irrelevant data. 
 If a reduced level of resolution is possible, then the detector could be binned to further reduce the data size. Binning is the summation of adjacent pixels, for example, binning by 2 causes adjacent pairs of pixels to be added together. 
-For example this [(0,24), (1023,39)] window could be binned by two in the band (spectral)
-dimension resulting in a 512x16 array of pixels. 
-We take as an example two additional windows defined by window1 = ([0,10],[1023, 14], SpaBin=5, SpecBin=1) and
-window3 = ([0, 5 0],[1023, 5 4], SpaBin=5, SpecBin=1). 
+For example this [(0, 24), (1023, 39)] window could be binned by two in the band (spectral) dimension resulting in a 512x16 array of pixels.
+We take as an example two additional windows defined by window1 = ([0, 10],[1023, 14], SpecBin=1, SpaBin=5) and window3 = ([0, 50],[1023, 54], SpecBin=1, SpaBin=5). 
 When windowing or binning is defined on the detector, counts are arranged within the matrix in sub-matrices corresponding to the windows of the detector. 
 
 {numref}`fig:example-windows` illustrates this windowing and binning:
