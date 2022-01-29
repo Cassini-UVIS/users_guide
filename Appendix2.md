@@ -5,7 +5,7 @@
 **Absorption cell** - A cell that is filled with a particular gas that absorbs light of particular
 wavelengths.
 
-**Angstrom** - A unit of measurement, equaling 10 -10 meter or 10 -8 centimeters, usually used to
+**Angstrom** - A unit of measurement, equaling 10$^{-10}$ meter or 10$^{-8}$ centimeters, usually used to
 express short wavelengths.
 
 **Aperture** - An adjustable opening in an instrument (like a camera) that controls the amount of
@@ -77,11 +77,11 @@ similar to an atmosphere.
 **MDT** - Mountain Daylight Time -- The time in Boulder, Colorado, where LASP is. (Except in
 winter when it's MST -- Mountain Standard Time).
 
-**MgF 2 windows** - Windows made from crystals of magnesium fluoride.
+**MgF$_2$ windows** - Windows made from crystals of magnesium fluoride.
 
 **Microchannel plate detector** - (see above under "Imaging...")
 
-**Nanometer** - A unit of measurement that is one billionth (10 -9 ) of a meter.
+**Nanometer** - A unit of measurement that is one billionth (10$^{-9}$) of a meter.
 
 **NASA** - National Aeronautics and Space Administration, headquartered in Washington, DC with
 field centers across the country.
