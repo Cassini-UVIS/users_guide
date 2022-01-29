@@ -16,6 +16,14 @@ The original full document can be found [here](https://pds-atmospheres.nmsu.edu/
     Converted to JupyterBook in January 2022
     Additions made in 2022
 
+## About this book
+
+As part of a NASA PDART project to create a new UVIS data format, PI Michael Aye converted the existing UVIS manual in revised version of July 6, 2018 to this form of a Jupyter Book that can be published either as a static HTML website or as a PDF.
+
+During this conversion minor changes like updated or corrected hyperlinks to resources were performed, plus layout changes that seemed advantageous in the online form.
+
+An up-to-date chapter on how to work with the new PDS format using Python will be added at the end of the project (2023).
+
 ## Introduction
 
 ```
