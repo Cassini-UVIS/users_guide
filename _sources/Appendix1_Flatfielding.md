@@ -32,7 +32,7 @@ As such, the FUV occultation slit is poorly suited for observations designed to 
 A Cartesian coordinate system has been defined for the Cassini spacecraft. 
 The boresights of the UVIS EUV and FUV channels are defined as the geometric center of the CODACON detectors (spectral pixel 511.5, spatial pixel 31.5).
 The UVIS boresight (and the boresights of the other remote sensing instruments) is nominally aligned to the spacecraft -Y axis, while the UVIS entrance slits are approximately parallel with the spacecraft Z axis. 
-The instrument azimuth angle ((/>) is defined as the angle a vector makes with respect to the spacecraft Y-Z axis, measured from the Z axis. 
+The instrument azimuth angle ($\phi$) is defined as the angle a vector makes with respect to the spacecraft Y-Z axis, measured from the Z axis. 
 The spacecraft coordinate system is shown relative the the orientation of UVIS in {numref}`fig:uvis-coordinates`.
 
 :::{figure-md} fig:uvis-coordinates
