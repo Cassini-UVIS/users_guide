@@ -299,6 +299,14 @@ This greatly simplifies the process of deriving a flatfield correction from an a
 <p>The flatfield correction is given by:</p>
 <div class="math notranslate nohighlight">
 \[F_\lambda = \frac{C_{i,m}}{A_\lambda f_i t}\frac{photons}{cm^2s}\]</div>
+<p>where</p>
+<ul class="simple">
+<li><p>F<span class="math notranslate nohighlight">\(_\lambda\)</span> is the flux from the star at a wavelength of <span class="math notranslate nohighlight">\(\lambda\)</span>,</p></li>
+<li><p>C<span class="math notranslate nohighlight">\(_{i,m}\)</span> is the counts observed in a pixel in column <em>i</em> on scan <em>m</em>, (i.e. a spectrum shifted 0.2 x milliradians)</p></li>
+<li><p>A<span class="math notranslate nohighlight">\(_\lambda\)</span> is the effective area of a pixel illuminated with light of wavelength <span class="math notranslate nohighlight">\(\lambda\)</span>, as determined by the
+laboratory calibration; and</p></li>
+<li><p>f<span class="math notranslate nohighlight">\(_i\)</span> is the flatfield correction for the pixel in column <em>i</em>.</p></li>
+</ul>
 </div>
 </div>
 </div>
