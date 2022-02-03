@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>6. Bibliography &#8212; Cassini UVIS User Guide</title>
+    <title>4. Methods for Obtaining Flatfield Corrections &#8212; Cassini UVIS User Guide</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -42,6 +42,8 @@
     <script src="_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -51,7 +53,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="5. Definitions and technical terms" href="Appendix2.html" />
+    <link rel="next" title="5. Definitions and technical terms" href="Appendix2.html" />
+    <link rel="prev" title="3. UVIS Calibration" href="03_calibration.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -111,8 +114,8 @@
    3. UVIS Calibration
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Appendix1_Flatfielding.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    4. Methods for Obtaining Flatfield Corrections
   </a>
  </li>
@@ -121,8 +124,8 @@
    5. Definitions and technical terms
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
    6. Bibliography
   </a>
  </li>
@@ -167,7 +170,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/bibliography.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/Appendix1_Flatfielding.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -187,7 +190,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/cassini-uvis/users_guide/issues/new?title=Issue%20on%20page%20%2Fbibliography.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/cassini-uvis/users_guide/issues/new?title=Issue%20on%20page%20%2FAppendix1_Flatfielding.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -208,6 +211,26 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spica-flatfields">
+   4.1. Spica Flatfields
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#row-to-row-variations-in-detector-sensitivity">
+     4.1.1. Row-to-Row Variations in Detector Sensitivity
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -215,34 +238,69 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Bibliography</h1>
+                <h1>Methods for Obtaining Flatfield Corrections</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spica-flatfields">
+   4.1. Spica Flatfields
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#row-to-row-variations-in-detector-sensitivity">
+     4.1.1. Row-to-Row Variations in Detector Sensitivity
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="bibliography">
-<h1><span class="section-number">6. </span>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h1>
-<p id="id1"><dl class="citation">
-<dt class="label" id="id4"><span class="brackets">APE+05</span></dt>
-<dd><p>Joseph M Ajello, Wayne Pryor, Larry Esposito, Ian Stewart, William McClintock, Jacques Gustin, Denis Grodent, J-C Gérard, and John T Clarke. The cassini campaign observations of the jupiter aurora by the ultraviolet imaging spectrograph and the space telescope imaging spectrograph. <em>Icarus</em>, 178(2):327–345, November 2005. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0019103505002320">https://www.sciencedirect.com/science/article/pii/S0019103505002320</a>, <a class="reference external" href="https://doi.org/10.1016/j.icarus.2005.01.023">doi:10.1016/j.icarus.2005.01.023</a>.</p>
-</dd>
-<dt class="label" id="id3"><span class="brackets">EBC+04</span></dt>
-<dd><p>Larry W Esposito, Charles A Barth, Joshua E Colwell, George M Lawrence, William E McClintock, A I A N F Stewart, H Uwe Keller, Axel Korth, Hans Lauche, Michel C Festou, Arthur L Lane, Candice J Hansen, Justin N Maki, Robert A West, Herbert Jahn, Ralf Reulke, Kerstin Warlich, Donald E Shemansky, and Yuk L Yung. The cassini ultraviolet imaging spectrograph investigation. In Christopher T Russell, editor, <em>The Cassini-Huygens Mission: Orbiter Remote Sensing Investigations</em>, pages 299–361. Springer Netherlands, Dordrecht, 2004. URL: <a class="reference external" href="https://doi.org/10.1007/1-4020-3874-7_5">https://doi.org/10.1007/1-4020-3874-7_5</a>, <a class="reference external" href="https://doi.org/10.1007/1-4020-3874-7\_5">doi:10.1007/1-4020-3874-7\_5</a>.</p>
-</dd>
-<dt class="label" id="id5"><span class="brackets">HES+06</span></dt>
-<dd><p>Candice J Hansen, L Esposito, A I F Stewart, J Colwell, A Hendrix, W Pryor, D Shemansky, and R West. Enceladus' water vapor plume. <em>Science</em>, 311(5766):1422–1425, March 2006. URL: <a class="reference external" href="http://dx.doi.org/10.1126/science.1121254">http://dx.doi.org/10.1126/science.1121254</a>, <a class="reference external" href="https://doi.org/10.1126/science.1121254">doi:10.1126/science.1121254</a>.</p>
-</dd>
-<dt class="label" id="id2"><span class="brackets">McC93</span></dt>
-<dd><p>William E McClintock. Optical design of the ultraviolet imaging spectrograph for the cassini mission to saturn. 1993. <a class="reference external" href="https://doi.org/10.1117/12.149177">doi:10.1117/12.149177</a>.</p>
-</dd>
-</dl>
-</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="methods-for-obtaining-flatfield-corrections">
+<h1><span class="section-number">4. </span>Methods for Obtaining Flatfield Corrections<a class="headerlink" href="#methods-for-obtaining-flatfield-corrections" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>Andrew Steffl</p>
+</div></blockquote>
+<p>The easiest way to derive a flatfield correction is to illuminate the detector with a spatially-uniform monochromatic source.
+In this case, any differences in the number of counts in the individual detector pixels are the result of spatial (pixel-to-pixel) variations in the detector sensitivity (assuming that the signal to noise ratio is large).
+However,the presence of a grating in the UVIS optical path means that while the entrance slit may be evenly illuminated, only a small fraction of the detector — the projected width of the slit on the detector divided by the length of the detector, or 3% for the UVIS occultation slits — will be illuminated by a monochromatic source.
+This problem can be solved by using a spatially uniform white-light (equal intensity at all wavelengths) source to illuminate the entrance slits.
+After dividing the resulting image by the instrument sensitivity as a function of wavelength (also referred to as the detector calibration curve) any pixel variations are due to variations in detector sensitivity.
+Sadly though, no such source exists.
+The next best thing is to use a spatially uniform source with a known spectrum.
+Then, after dividing the raw image by the detector calibration curve and the known spectrum, one can use the pixel to pixel variations to derive a flatfield correction.
+Ideally, UVIS would have been taken to a synchrotron radiation facility and the beam source used to illuminate the entrance slits.
+However, for various practical reasons (like time and money) this was not possible, and UVIS was launched before the flatfield correction was properly determined.
+Therefore, UVIS is limited to using astrophysical sources to derive the flatfield correction.
+Unfortunately, astrophysical sources are rarely spatially uniform (the local interstellar medium/interplanetary medium being a possible exception), and the EUV/FUV spectra of such objects (in physical units) are not as
+well determined as one might like them to be.</p>
+<div class="section" id="spica-flatfields">
+<h2><span class="section-number">4.1. </span>Spica Flatfields<a class="headerlink" href="#spica-flatfields" title="Permalink to this headline">¶</a></h2>
+<p>Assuming that the background count rate of an instrument (from RTGs, dark counts, etc.) is low compared to the signal count rate, a star bright in the UV can serve as a good approximation to a spatially uniform source.
+The star, Spica, is relatively bright in the EUV/FUV.
+Three sets of Spica observations were obtained by UVIS on 3 April 2001, 17 July 2002, and 19 May 2003.</p>
+<div class="section" id="row-to-row-variations-in-detector-sensitivity">
+<h3><span class="section-number">4.1.1. </span>Row-to-Row Variations in Detector Sensitivity<a class="headerlink" href="#row-to-row-variations-in-detector-sensitivity" title="Permalink to this headline">¶</a></h3>
+<p>Since the absolute radiometric sensitivity of the instrument has already been measured in the lab (albeit in a one-dimensional form), it is only necessary to derive the relative row-to-row, column-to-column or pixel-to-pixel variations in detector sensitivity, and then normalize this relative correction so that the absolute radiometric calibration of the instrument remains unchanged.
+This greatly simplifies the process of deriving a flatfield correction from an astrophysical source, since it is no longer critical to know the spectrum of the source object.</p>
+<p>The flatfield correction is given by:</p>
+<div class="math notranslate nohighlight">
+\[F_\lambda = \frac{C_{i,m}}{A_\lambda f_i t}\frac{photons}{cm^2s}\]</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -270,12 +328,19 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Appendix2.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="03_calibration.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5. </span>Definitions and technical terms</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>UVIS Calibration</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="Appendix2.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Definitions and technical terms</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
