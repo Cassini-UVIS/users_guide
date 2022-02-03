@@ -1,6 +1,64 @@
-# Methods for Obtaining Flatfield Corrections
+# Flatfielding
 
-> Andrew Steffl
+> Andrew Steffl {cite:p}`Steffl2005-te`, Appendix A
+
+All instruments have their own imperfections and idiosyncracies that need to be dealt with properly in order for data to be successfully interpreted. 
+The Cassini UVIS is no exception; for any rigorous analysis of the UVIS data, careful attention must be paid to the detector flatfield correction.
+The following is a somewhat technical description of the techniques used to derive the flatfield corrections for the UVIS EUV and FUV detectors.
+These flatfields are ultimately derived from observations of the star Spica and were used in the analysis of all data in this thesis.
+Reflecting their origin, these flatfields will be referred to as the Spica flatfields. 
+An independent flatfield correction for the FUV channel has been derived from observations of the local interstellar medium/interplanetary medium (Don Shemansky, private communication). 
+This second flatfield correction will be referred to as the LISM flatfield.
+
+## Definitions and Instrumental Details
+
+The UVIS CODACON (Lawrence and McClintock, 1996) detectors are subdivided into 2$^16$ pixels (1024 columns in the spectral dimension by 64 rows in the spatial dimension). 
+Individual UVIS pixels are not square. 
+Rather, they are 100 x 25 $\micron$m (spatial by spectral) in physical size and subtend a field of view of 1 x 0.25 mrad (1 mrad = 0.001 radians).
+
+Both the EUV and FUV channels of UVIS are equipped with a 3-position slit changer mechanism. 
+The three positions are referred to as the 
+
+* occultation slit (8 mrad wide), 
+* lo-resolution slit
+  * 2.0 mrad wide for the EUV channel and 1.5 mrad wide for the FUV channel, and
+* the hi-resolution slit
+  * 1.0 mrad wide for the EUV channel and 0.75 mrad wide for the FUV channel. 
+  
+The FUV occultation slit is equipped with a cylindrical MgF$_2$ lens designed to spread light from a point source perpendicular to the dispersion direction, thereby preventing the FUV detector from saturating during observations of particularly bright stars.
+The presence of this lens and its support structure reduce the effective field of view to an 8x8 mrad area in the center of the slit (where the lens is transmitting) and two 11x8 mrad windows at the ends of the slit. 
+As such, the FUV occultation slit is poorly suited for observations designed to determine the detector flatfield correction, and therefore, the FUV lo-resolution slit was used.
+
+A Cartesian coordinate system has been defined for the Cassini spacecraft. 
+The boresights of the UVIS EUV and FUV channels are defined as the geometric center of the CODACON detectors (spectral pixel 511.5, spatial pixel 31.5).
+The UVIS boresight (and the boresights of the other remote sensing instruments) is nominally aligned to the spacecraft -Y axis, while the UVIS entrance slits are approximately parallel with the spacecraft Z axis. 
+The instrument azimuth angle ((/>) is defined as the angle a vector makes with respect to the spacecraft Y-Z axis, measured from the Z axis. 
+The spacecraft coordinate system is shown relative the the orientation of UVIS in {numref}`fig:uvis-coordinates`.
+
+:::{figure-md} fig:uvis-coordinates
+<img src="figures/fig_A1_steffl.png" alt="UVIS Coordinates relative to Spacecraft cartesian system.">
+
+The orientation of the Cassini UVIS relative to the spacecraft Cartesian coordinate system. Figure from the Cassini UVIS Calibration Report (Bill McClintock, private communication).
+
+:::
+
+
+A review of the UVIS instrument is given by {cite:t}`Esposito2004-kr`.
+In addition, the Cassini UVIS Calibration Report (Bill McClintock, private communication) is an invaluable resource for those wishing a more detailed description of the instrument.
+
+The UVIS flatfield correction is a two-dimensional, multiplicative array applied to data during the reduction process in order to correct for spatial variations in the detector sensitivity. 
+This is separate from, though closely related to, the instrument calibration which is a one-dimensional multiplicative vector used to correct for variations in the detector sensitivity as a function of wavelength. 
+In principle, pixel-to-pixel variations in detector sensitivity could be corrected by using a two-dimensional calibration array.
+However, for largely historical reasons, these two corrections are applied separately to UVIS data.
+
+The source of the dual correction procedures dates back to laboratory calibration of the UVIS instrument. 
+The radiometric sensitivity of the UVIS instruments was measured by illuminating a large area of the detector and comparing the flux measured by the UVIS detector to that measured by a NIST calibrated diode, or to theoretical models of the spectrum (e.g. H$_2$) used to illuminate the detector. 
+During the laboratory calibration, the severity of the flatfield artifacts of the UVIS detectors (especially for the FUV channel) was not fully appreciated, and so the counts over the whole detector were summed up to increase the signal to noise ratio. 
+This process yielded measurements of the detector radiometric sensitivity at a few tens of wavelengths. 
+The sensitivity at wavelengths other than those directly measured was derived through linear interpolation. 
+In this manner, a 1024-element multiplicative calibration correction was created.
+
+## Methods for Obtaining Flatfield Corrections
 
 The easiest way to derive a flatfield correction is to illuminate the detector with a spatially-uniform monochromatic source. 
 In this case, any differences in the number of counts in the individual detector pixels are the result of spatial (pixel-to-pixel) variations in the detector sensitivity (assuming that the signal to noise ratio is large). 
