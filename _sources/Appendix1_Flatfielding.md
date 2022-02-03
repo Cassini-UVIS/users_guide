@@ -59,6 +59,7 @@ f_{i,j}=\frac{\sum^{60}_{j=3}C_{i,j}}{58C_{i,j}}
 where
 * f$_{i,j}$ is the flatfield correction for a pixel in column i, row j, and 
 * C$_{i,j}$ is the number of counts in the pixel located in column i, row j. 
+
 The limits of the sum are chosen such that the first few rows on either end of the detector (which are either completely or partially masked out) are excluded. 
 When applied to all pixels of the detector, Eq. A.2 yields a two-dimensional flatfield correction. 
 However, this flatfield only corrects for row-to-row variations in detector sensitivity. 

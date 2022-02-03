@@ -331,14 +331,14 @@ This procedure is described by the following equation:</p>
 <p>where</p>
 <ul class="simple">
 <li><p>f<span class="math notranslate nohighlight">\(_{i,j}\)</span> is the flatfield correction for a pixel in column i, row j, and</p></li>
-<li><p>C<span class="math notranslate nohighlight">\(_{i,j}\)</span> is the number of counts in the pixel located in column i, row j.
-The limits of the sum are chosen such that the first few rows on either end of the detector (which are either completely or partially masked out) are excluded.
+<li><p>C<span class="math notranslate nohighlight">\(_{i,j}\)</span> is the number of counts in the pixel located in column i, row j.</p></li>
+</ul>
+<p>The limits of the sum are chosen such that the first few rows on either end of the detector (which are either completely or partially masked out) are excluded.
 When applied to all pixels of the detector, Eq. A.2 yields a two-dimensional flatfield correction.
 However, this flatfield only corrects for row-to-row variations in detector sensitivity.
 This means that if the detector were illuminated with a spatially-uniform, monochromatic source, all the pixels in a given column would have the same value (within photon counting statistics) after multiplying the raw data by
 the flatfield correction described above.
-However, pixels in a neighboring column (or any other column on the detector, for that matter) might have a different value, even though they received the same illumination.</p></li>
-</ul>
+However, pixels in a neighboring column (or any other column on the detector, for that matter) might have a different value, even though they received the same illumination.</p>
 </div>
 <div class="section" id="column-to-column-varations-in-detector-sensitivity">
 <h3><span class="section-number">4.1.2. </span>Column-to-Column Varations in Detector Sensitivity<a class="headerlink" href="#column-to-column-varations-in-detector-sensitivity" title="Permalink to this headline">¶</a></h3>
