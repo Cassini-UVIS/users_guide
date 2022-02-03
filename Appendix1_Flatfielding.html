@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4. Methods for Obtaining Flatfield Corrections &#8212; Cassini UVIS User Guide</title>
+    <title>4. Flatfielding &#8212; Cassini UVIS User Guide</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -116,7 +116,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   4. Methods for Obtaining Flatfield Corrections
+   4. Flatfielding
   </a>
  </li>
  <li class="toctree-l1">
@@ -217,18 +217,28 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitions-and-instrumental-details">
+   4.1. Definitions and Instrumental Details
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methods-for-obtaining-flatfield-corrections">
+   4.2. Methods for Obtaining Flatfield Corrections
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#spica-flatfields">
-   4.1. Spica Flatfields
+   4.3. Spica Flatfields
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#row-to-row-variations-in-detector-sensitivity">
-     4.1.1. Row-to-Row Variations in Detector Sensitivity
+     4.3.1. Row-to-Row Variations in Detector Sensitivity
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#column-to-column-varations-in-detector-sensitivity">
-     4.1.2. Column-to-Column Varations in Detector Sensitivity
+     4.3.2. Column-to-Column Varations in Detector Sensitivity
     </a>
    </li>
   </ul>
@@ -243,7 +253,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Methods for Obtaining Flatfield Corrections</h1>
+                <h1>Flatfielding</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -254,18 +264,28 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitions-and-instrumental-details">
+   4.1. Definitions and Instrumental Details
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methods-for-obtaining-flatfield-corrections">
+   4.2. Methods for Obtaining Flatfield Corrections
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#spica-flatfields">
-   4.1. Spica Flatfields
+   4.3. Spica Flatfields
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#row-to-row-variations-in-detector-sensitivity">
-     4.1.1. Row-to-Row Variations in Detector Sensitivity
+     4.3.1. Row-to-Row Variations in Detector Sensitivity
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#column-to-column-varations-in-detector-sensitivity">
-     4.1.2. Column-to-Column Varations in Detector Sensitivity
+     4.3.2. Column-to-Column Varations in Detector Sensitivity
     </a>
    </li>
   </ul>
@@ -279,11 +299,65 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="methods-for-obtaining-flatfield-corrections">
-<h1><span class="section-number">4. </span>Methods for Obtaining Flatfield Corrections<a class="headerlink" href="#methods-for-obtaining-flatfield-corrections" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="flatfielding">
+<h1><span class="section-number">4. </span>Flatfielding<a class="headerlink" href="#flatfielding" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div><p>Andrew Steffl</p>
+<div><p>Andrew Steffl <span id="id1">[<a class="reference internal" href="bibliography.html#id6">Steffl, 2005</a>]</span>, Appendix A</p>
 </div></blockquote>
+<p>All instruments have their own imperfections and idiosyncracies that need to be dealt with properly in order for data to be successfully interpreted.
+The Cassini UVIS is no exception; for any rigorous analysis of the UVIS data, careful attention must be paid to the detector flatfield correction.
+The following is a somewhat technical description of the techniques used to derive the flatfield corrections for the UVIS EUV and FUV detectors.
+These flatfields are ultimately derived from observations of the star Spica and were used in the analysis of all data in this thesis.
+Reflecting their origin, these flatfields will be referred to as the Spica flatfields.
+An independent flatfield correction for the FUV channel has been derived from observations of the local interstellar medium/interplanetary medium (Don Shemansky, private communication).
+This second flatfield correction will be referred to as the LISM flatfield.</p>
+<div class="section" id="definitions-and-instrumental-details">
+<h2><span class="section-number">4.1. </span>Definitions and Instrumental Details<a class="headerlink" href="#definitions-and-instrumental-details" title="Permalink to this headline">¶</a></h2>
+<p>The UVIS CODACON (Lawrence and McClintock, 1996) detectors are subdivided into 2<span class="math notranslate nohighlight">\(^16\)</span> pixels (1024 columns in the spectral dimension by 64 rows in the spatial dimension).
+Individual UVIS pixels are not square.
+Rather, they are 100 x 25 <span class="math notranslate nohighlight">\(\micron\)</span>m (spatial by spectral) in physical size and subtend a field of view of 1 x 0.25 mrad (1 mrad = 0.001 radians).</p>
+<p>Both the EUV and FUV channels of UVIS are equipped with a 3-position slit changer mechanism.
+The three positions are referred to as the</p>
+<ul class="simple">
+<li><p>occultation slit (8 mrad wide),</p></li>
+<li><p>lo-resolution slit</p>
+<ul>
+<li><p>2.0 mrad wide for the EUV channel and 1.5 mrad wide for the FUV channel, and</p></li>
+</ul>
+</li>
+<li><p>the hi-resolution slit</p>
+<ul>
+<li><p>1.0 mrad wide for the EUV channel and 0.75 mrad wide for the FUV channel.</p></li>
+</ul>
+</li>
+</ul>
+<p>The FUV occultation slit is equipped with a cylindrical MgF<span class="math notranslate nohighlight">\(_2\)</span> lens designed to spread light from a point source perpendicular to the dispersion direction, thereby preventing the FUV detector from saturating during observations of particularly bright stars.
+The presence of this lens and its support structure reduce the effective field of view to an 8x8 mrad area in the center of the slit (where the lens is transmitting) and two 11x8 mrad windows at the ends of the slit.
+As such, the FUV occultation slit is poorly suited for observations designed to determine the detector flatfield correction, and therefore, the FUV lo-resolution slit was used.</p>
+<p>A Cartesian coordinate system has been defined for the Cassini spacecraft.
+The boresights of the UVIS EUV and FUV channels are defined as the geometric center of the CODACON detectors (spectral pixel 511.5, spatial pixel 31.5).
+The UVIS boresight (and the boresights of the other remote sensing instruments) is nominally aligned to the spacecraft -Y axis, while the UVIS entrance slits are approximately parallel with the spacecraft Z axis.
+The instrument azimuth angle ((/&gt;) is defined as the angle a vector makes with respect to the spacecraft Y-Z axis, measured from the Z axis.
+The spacecraft coordinate system is shown relative the the orientation of UVIS in <a class="reference internal" href="#fig-uvis-coordinates"><span class="std std-numref">Fig. 4.1</span></a>.</p>
+<div class="figure align-default" id="fig-uvis-coordinates">
+<img alt="UVIS Coordinates relative to Spacecraft cartesian system." src="_images/fig_A1_steffl.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1 </span><span class="caption-text">The orientation of the Cassini UVIS relative to the spacecraft Cartesian coordinate system. Figure from the Cassini UVIS Calibration Report (Bill McClintock, private communication).</span><a class="headerlink" href="#fig-uvis-coordinates" title="Permalink to this image">¶</a></p>
+</div>
+<p>A review of the UVIS instrument is given by <span id="id2">Esposito <em>et al.</em> [<a class="reference internal" href="bibliography.html#id3">2004</a>]</span>.
+In addition, the Cassini UVIS Calibration Report (Bill McClintock, private communication) is an invaluable resource for those wishing a more detailed description of the instrument.</p>
+<p>The UVIS flatfield correction is a two-dimensional, multiplicative array applied to data during the reduction process in order to correct for spatial variations in the detector sensitivity.
+This is separate from, though closely related to, the instrument calibration which is a one-dimensional multiplicative vector used to correct for variations in the detector sensitivity as a function of wavelength.
+In principle, pixel-to-pixel variations in detector sensitivity could be corrected by using a two-dimensional calibration array.
+However, for largely historical reasons, these two corrections are applied separately to UVIS data.</p>
+<p>The source of the dual correction procedures dates back to laboratory calibration of the UVIS instrument.
+The radiometric sensitivity of the UVIS instruments was measured by illuminating a large area of the detector and comparing the flux measured by the UVIS detector to that measured by a NIST calibrated diode, or to theoretical models of the spectrum (e.g. H<span class="math notranslate nohighlight">\(_2\)</span>) used to illuminate the detector.
+During the laboratory calibration, the severity of the flatfield artifacts of the UVIS detectors (especially for the FUV channel) was not fully appreciated, and so the counts over the whole detector were summed up to increase the signal to noise ratio.
+This process yielded measurements of the detector radiometric sensitivity at a few tens of wavelengths.
+The sensitivity at wavelengths other than those directly measured was derived through linear interpolation.
+In this manner, a 1024-element multiplicative calibration correction was created.</p>
+</div>
+<div class="section" id="methods-for-obtaining-flatfield-corrections">
+<h2><span class="section-number">4.2. </span>Methods for Obtaining Flatfield Corrections<a class="headerlink" href="#methods-for-obtaining-flatfield-corrections" title="Permalink to this headline">¶</a></h2>
 <p>The easiest way to derive a flatfield correction is to illuminate the detector with a spatially-uniform monochromatic source.
 In this case, any differences in the number of counts in the individual detector pixels are the result of spatial (pixel-to-pixel) variations in the detector sensitivity (assuming that the signal to noise ratio is large).
 However,the presence of a grating in the UVIS optical path means that while the entrance slit may be evenly illuminated, only a small fraction of the detector — the projected width of the slit on the detector divided by the length of the detector, or 3% for the UVIS occultation slits — will be illuminated by a monochromatic source.
@@ -297,13 +371,14 @@ However, for various practical reasons (like time and money) this was not possib
 Therefore, UVIS is limited to using astrophysical sources to derive the flatfield correction.
 Unfortunately, astrophysical sources are rarely spatially uniform (the local interstellar medium/interplanetary medium being a possible exception), and the EUV/FUV spectra of such objects (in physical units) are not as
 well determined as one might like them to be.</p>
+</div>
 <div class="section" id="spica-flatfields">
-<h2><span class="section-number">4.1. </span>Spica Flatfields<a class="headerlink" href="#spica-flatfields" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3. </span>Spica Flatfields<a class="headerlink" href="#spica-flatfields" title="Permalink to this headline">¶</a></h2>
 <p>Assuming that the background count rate of an instrument (from RTGs, dark counts, etc.) is low compared to the signal count rate, a star bright in the UV can serve as a good approximation to a spatially uniform source.
 The star, Spica, is relatively bright in the EUV/FUV.
 Three sets of Spica observations were obtained by UVIS on 3 April 2001, 17 July 2002, and 19 May 2003.</p>
 <div class="section" id="row-to-row-variations-in-detector-sensitivity">
-<h3><span class="section-number">4.1.1. </span>Row-to-Row Variations in Detector Sensitivity<a class="headerlink" href="#row-to-row-variations-in-detector-sensitivity" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.1. </span>Row-to-Row Variations in Detector Sensitivity<a class="headerlink" href="#row-to-row-variations-in-detector-sensitivity" title="Permalink to this headline">¶</a></h3>
 <p>Since the absolute radiometric sensitivity of the instrument has already been measured in the lab (albeit in a one-dimensional form), it is only necessary to derive the relative row-to-row, column-to-column or pixel-to-pixel variations in detector sensitivity, and then normalize this relative correction so that the absolute radiometric calibration of the instrument remains unchanged.
 This greatly simplifies the process of deriving a flatfield correction from an astrophysical source, since it is no longer critical to know the spectrum of the source object.</p>
 <p>The flatfield correction is given by:</p>
@@ -341,7 +416,7 @@ the flatfield correction described above.
 However, pixels in a neighboring column (or any other column on the detector, for that matter) might have a different value, even though they received the same illumination.</p>
 </div>
 <div class="section" id="column-to-column-varations-in-detector-sensitivity">
-<h3><span class="section-number">4.1.2. </span>Column-to-Column Varations in Detector Sensitivity<a class="headerlink" href="#column-to-column-varations-in-detector-sensitivity" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.2. </span>Column-to-Column Varations in Detector Sensitivity<a class="headerlink" href="#column-to-column-varations-in-detector-sensitivity" title="Permalink to this headline">¶</a></h3>
 <p>In order to obtain a correction for the column-to-column variations, it is reasonable to imagine that the spacecraft might be rotated about the Z axis, moving Spica in the dispersion direction on the detector.
 However, since Spica is a point source, only a single detector row will be illuminated.
 The trick is to start by scanning the star uniformly through the field of view by rotating about the spacecraft X axis, as described above.
