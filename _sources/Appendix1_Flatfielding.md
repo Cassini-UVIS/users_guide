@@ -90,9 +90,17 @@ Therefore, the following set of equations applies:
 
 ```{math}
 F_{i,0} = F_{i+4,5} = F_{i+8,10}
+```
+```{math}
 F_{i,1} = F_{i+4,6} = F_{i+8,11}
+```
+```{math}
 F_{i,2} = F_{i+4,7} = F_{i+8,12}
+```
+```{math}
 F_{i,3} = F_{i+4,8} = F_{i+8,13}
+```
+```{math}
 F_{i,4} = F_{i+4,9}
 ```
 
