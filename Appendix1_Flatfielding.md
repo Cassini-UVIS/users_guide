@@ -53,7 +53,7 @@ Dividing the average value of pixels in a particular column by the value of an i
 This procedure is described by the following equation:
 
 ```{math}
-f_{i,j}=\frac{\sum^60_{j=3}C_{i,j}}{58C_{i,j}}
+f_{i,j}=\frac{\sum^{60}_{j=3}C_{i,j}}{58C_{i,j}}
 ```
 
 where
