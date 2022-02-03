@@ -14,7 +14,7 @@ This second flatfield correction will be referred to as the LISM flatfield.
 
 The UVIS CODACON (Lawrence and McClintock, 1996) detectors are subdivided into 2$^16$ pixels (1024 columns in the spectral dimension by 64 rows in the spatial dimension). 
 Individual UVIS pixels are not square. 
-Rather, they are 100 x 25 $\micron$m (spatial by spectral) in physical size and subtend a field of view of 1 x 0.25 mrad (1 mrad = 0.001 radians).
+Rather, they are 100 x 25 $\mu$$m (spatial by spectral) in physical size and subtend a field of view of 1 x 0.25 mrad (1 mrad = 0.001 radians).
 
 Both the EUV and FUV channels of UVIS are equipped with a 3-position slit changer mechanism. 
 The three positions are referred to as the 
