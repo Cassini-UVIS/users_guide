@@ -92,6 +92,7 @@ This greatly simplifies the process of deriving a flatfield correction from an a
 The flatfield correction is given by:
 
 ```{math}
+:label: eq:ff-corr
 F_\lambda = \frac{C_{i,m}}{A_\lambda f_i t}\frac{photons}{cm^2s}
 ```
 
