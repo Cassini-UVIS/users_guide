@@ -5,14 +5,10 @@ format: jb-book
 root: intro
 options:
   numbered: true
-parts:
-  - caption: Part 1
-    chapters:
-      - file: 01_uvis_on_pds
-      - file: 02_pds_data_structure
-      - file: 03_calibration
-      - file: bibliography
-  - caption: Part 2
-    chapters:
-      - file: Appendix1_Flatfielding
-      - file: Appendix2
+chapters:
+  - file: 01_uvis_on_pds
+  - file: 02_pds_data_structure
+  - file: 03_calibration
+  - file: bibliography
+  - file: Appendix1_Flatfielding
+  - file: Appendix2
