@@ -108,14 +108,16 @@ If the rotation of the spacecraft is held at a constant angular velocity, than t
 By starting the observation with the star outside of the UVIS field of view, scanning it uniformly across the slit, and ending the observation with the star outside the instrument’s field of view on the opposite side, each row will have received equal illumination by both the star the scattered light profile associated with the star (assuming that the instrument scattering function is reasonably constant over the length of the entrance slits).
 
 Spica is relatively bright in the EUV/FUV, so photon counting statistics are by far the largest source of noise. 
-With the integration times used in the Spica observations, the total signal to noise ratio is ~30 for pixels in the EUV detector below 900A and more than an order of magnitude higher than that for all other pixels. 
-The “signal” from Spica below 900A—a significant portion of it is internally-scattered light from longer wavelengths—is ~10 times greater than the count rate produced by the mesa background feature. 
+With the integration times used in the Spica observations, the total signal to noise ratio is ~30 for pixels in the EUV detector below 900 $\angstrom$ and more than an order of magnitude higher than that for all other pixels. 
+The “signal” from Spica below 900 $\angstrom$ --- a significant portion of it is internally-scattered light from longer wavelengths --- is ~10 times greater than the count rate produced by the mesa background feature. 
 Since each row of the detector has received equal illumination from the source and noise in the data is small, any difference in the counts measured in the pixels of a given column must be the result of row-to-row variations in detector sensitivity.
 
 Dividing the average value of pixels in a particular column by the value of an individual pixel in that column yields a relative correction factor for that pixel. 
 This procedure is described by the following equation:
 
 ```{math}
+:label: eq:row2row-corr
+
 f_{i,j}=\frac{\sum^{60}_{j=3}C_{i,j}}{58C_{i,j}}
 ```
 
@@ -124,7 +126,7 @@ where
 * C$_{i,j}$ is the number of counts in the pixel located in column i, row j. 
 
 The limits of the sum are chosen such that the first few rows on either end of the detector (which are either completely or partially masked out) are excluded. 
-When applied to all pixels of the detector, Eq. A.2 yields a two-dimensional flatfield correction. 
+When applied to all pixels of the detector, {numref}`eq:row2row-corr` yields a two-dimensional flatfield correction.
 However, this flatfield only corrects for row-to-row variations in detector sensitivity. 
 This means that if the detector were illuminated with a spatially-uniform, monochromatic source, all the pixels in a given column would have the same value (within photon counting statistics) after multiplying the raw data by
 the flatfield correction described above. 
