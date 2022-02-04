@@ -30,9 +30,11 @@ precipitating into the atmosphere undergo elastic and inelastic collisions with 
 of the upper atmosphere and create secondary electrons through ionizations (see for example
 Grodent et al., 2001 for more details on this process). 
 The FUV auroral emission is dominated by the H$_2$ Lyman ($B^1\Sigma^+_u\rightarrow \Chi^1\Sigma^+_g$) and Werner ($C^1\Pi_u\rightarrow \Chi^1\Sigma^+_g$) system bands and the Lyman
-continuum in the 900- 1700 Å bandwidth. Below 1200 Å, the emission includes the higher
-energetic Rydberg transitions
-( _B’_^1 _Σ_^ + _u_ → _X_^1 _Σ_^ + _g_ , _D_^1 _Πu_ → _X_^1 _Σ_^ + _g_ , _B_ ”^1 _Σ_^ + _u_ → _X_^1 _Σ_^ + _g_ , and _D_ ’^1 _Πu_ → _X_^1 _Σ_^ + _g_ ) (see Figure 3 of
+continuum in the 900- 1700 Å bandwidth. 
+Below 1200 Å, the emission includes the higher energetic Rydberg transitions:
+
+$$
+B^{\prime 1} _Σ_^ + _u_ → _X_^1 _Σ_^ + _g_ , _D_^1 _Πu_ → _X_^1 _Σ_^ + _g_ , _B_ ”^1 _Σ_^ + _u_ → _X_^1 _Σ_^ + _g_ , and _D_ ’^1 _Πu_ → _X_^1 _Σ_^ + _g_ ) (see Figure 3 of
 Gustin et al, 2004 for more details). The auroral emission also includes lines from the atomic
 hydrogen Lyman series (HLy-α at 1216 Å, Hly-β at 1025 Å,...).
 The aurora can be studied through UVIS spectroscopic and imaging capabilities:
