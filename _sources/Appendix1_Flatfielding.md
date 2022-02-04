@@ -33,7 +33,7 @@ A Cartesian coordinate system has been defined for the Cassini spacecraft.
 The boresights of the UVIS EUV and FUV channels are defined as the geometric center of the CODACON detectors (spectral pixel 511.5, spatial pixel 31.5).
 The UVIS boresight (and the boresights of the other remote sensing instruments) is nominally aligned to the spacecraft -Y axis, while the UVIS entrance slits are approximately parallel with the spacecraft Z axis. 
 The instrument azimuth angle ($\phi$) is defined as the angle a vector makes with respect to the spacecraft Y-Z axis, measured from the Z axis. 
-The spacecraft coordinate system is shown relative the the orientation of UVIS in {numref}`fig:uvis-coordinates`.
+The spacecraft coordinate system is shown relative to the orientation of UVIS in {numref}`fig:uvis-coordinates`.
 
 :::{figure-md} fig:uvis-coordinates
 <img src="figures/fig_A1_steffl.png" alt="UVIS Coordinates relative to Spacecraft cartesian system.">
@@ -65,7 +65,8 @@ In this case, any differences in the number of counts in the individual detector
 However,the presence of a grating in the UVIS optical path means that while the entrance slit may be evenly illuminated, only a small fraction of the detector --- the projected width of the slit on the detector divided by the length of the detector, or 3% for the UVIS occultation slits --- will be illuminated by a monochromatic source. 
 This problem can be solved by using a spatially uniform white-light (equal intensity at all wavelengths) source to illuminate the entrance slits.
 After dividing the resulting image by the instrument sensitivity as a function of wavelength (also referred to as the detector calibration curve) any pixel variations are due to variations in detector sensitivity. 
-Sadly though, no such source exists. 
+Sadly though, no such source exists.
+
 The next best thing is to use a spatially uniform source with a known spectrum. 
 Then, after dividing the raw image by the detector calibration curve and the known spectrum, one can use the pixel to pixel variations to derive a flatfield correction.
 Ideally, UVIS would have been taken to a synchrotron radiation facility and the beam source used to illuminate the entrance slits. 
@@ -78,7 +79,10 @@ well determined as one might like them to be.
 
 Assuming that the background count rate of an instrument (from RTGs, dark counts, etc.) is low compared to the signal count rate, a star bright in the UV can serve as a good approximation to a spatially uniform source. 
 The star, Spica, is relatively bright in the EUV/FUV.
-Three sets of Spica observations were obtained by UVIS on 3 April 2001, 17 July 2002, and 19 May 2003.
+Three sets of Spica observations were obtained by UVIS on 
+* 2001-04-03, 
+* 2002-07-17, 
+* 2003-05-19.
 
 ### Row-to-Row Variations in Detector Sensitivity
 
