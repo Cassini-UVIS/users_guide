@@ -108,8 +108,8 @@ If the rotation of the spacecraft is held at a constant angular velocity, than t
 By starting the observation with the star outside of the UVIS field of view, scanning it uniformly across the slit, and ending the observation with the star outside the instrument’s field of view on the opposite side, each row will have received equal illumination by both the star the scattered light profile associated with the star (assuming that the instrument scattering function is reasonably constant over the length of the entrance slits).
 
 Spica is relatively bright in the EUV/FUV, so photon counting statistics are by far the largest source of noise. 
-With the integration times used in the Spica observations, the total signal to noise ratio is ~30 for pixels in the EUV detector below 900 $\AA$ and more than an order of magnitude higher than that for all other pixels. 
-The “signal” from Spica below 900 $\AA$ --- a significant portion of it is internally-scattered light from longer wavelengths --- is ~10 times greater than the count rate produced by the mesa background feature. 
+With the integration times used in the Spica observations, the total signal to noise ratio is ~30 for pixels in the EUV detector below 900 Å and more than an order of magnitude higher than that for all other pixels. 
+The “signal” from Spica below 900 Å --- a significant portion of it is internally-scattered light from longer wavelengths --- is ~10 times greater than the count rate produced by the mesa background feature. 
 Since each row of the detector has received equal illumination from the source and noise in the data is small, any difference in the counts measured in the pixels of a given column must be the result of row-to-row variations in detector sensitivity.
 
 Dividing the average value of pixels in a particular column by the value of an individual pixel in that column yields a relative correction factor for that pixel. 
@@ -149,8 +149,8 @@ F_{i,0}=F_{i+\delta,1}=F_{i+2\delta,2}=\cdots = F_{i+m\delta,m}
 where F$_{i,m}$ is the flux of photons incident on column i on scan m.
 
 For the UVIS observations of Spica, the azimuth angle of the spacecraft was incremented 0.2 milliradians after each scan across the slit, resulting in a shift to the spectrum of 0.8 pixels (in the dispersion direction) relative to the previous scan.
-The subpixel shift in the spectrum between successive scans means that Eq. A.3 is only strictly valid for shifts that are an integer multiple of 5. For the May 2003 observation of Spica, there were 13 scans across
-the slit, with a 0.2 milliradian shift between each scan. 
+The subpixel shift in the spectrum between successive scans means that {eq}`eq:flux-between-scans` is only strictly valid for shifts that are an integer multiple of 5. 
+For the May 2003 observation of Spica, there were 13 scans across the slit, with a 0.2 milliradian shift between each scan. 
 Therefore, the following set of equations applies:
 
 ```{math}
@@ -174,31 +174,21 @@ F_{i,3} = F_{i+4,8} = F_{i+8,13}
 F_{i,4} = F_{i+4,9}
 ```
 
-So for any column on the detector, the column 4 columns away received the
-same illumination 5 scans later, and the column 8 columns away received the same
-illumination 10 scans later. These three values could be averaged together and the
-result divided by the individual pixel values to obtain corrections for the sensitivity
-of column i relative to the sensitivity of columns i+4 and i+8. There are four sets
-of these identically illuminated triplets with one additional pair. Using all five sets
-results in five correction factors for the sensitivity of a given column relative to its
-neighbors. To decrease the statistical error in the correction factor for a given pixel, the
-five values could be averaged together. This procedure, applied to all columns on the
-detector produces a flatfield correction that compensates for the variations in detector
-sensitivity from column to column.
+So, for any column on the detector, the column 4 columns away received the same illumination 5 scans later, and the column 8 columns away received the same illumination 10 scans later. 
+These three values could be averaged together and the result divided by the individual pixel values to obtain corrections for the sensitivity of column i relative to the sensitivity of columns i+4 and i+8. 
+There are four sets of these identically illuminated triplets with one additional pair. 
+Using all five sets results in five correction factors for the sensitivity of a given column relative to its neighbors. 
+To decrease the statistical error in the correction factor for a given pixel, the five values could be averaged together. 
+This procedure, applied to all columns on the detector produces a flatfield correction that compensates for the variations in detector sensitivity from column to column.
 
-Although this procedure works reasonably well for the EUV channel, where the 8-
-milliradian-wide occultation slit could be used, it fails for the FUV channel, where, owing
-to the presence MgF 2 lens and its support structure in the center of the occultation slit,
-the lo-resolution slit was used. Since the FUV lo-resolution slit is only 1.5 milliradians
-wide, Spica will be in the field of view on, at most, 7 scans. A slight twist in the slit
-further reduces the number of usable scans to 5. Therefore, only the first two columns
-of Eq. A.7 are applicable. Since each pixel is compared with only one other pixel on the
-detector, this method is quite susceptible to errors.
+Although this procedure works reasonably well for the EUV channel, where the 8-milliradian-wide occultation slit could be used, it fails for the FUV channel, where, owing to the presence MgF$_2$ lens and its support structure in the center of the occultation slit, the lo-resolution slit was used. 
+Since the FUV lo-resolution slit is only 1.5 milliradians wide, Spica will be in the field of view on, at most, 7 scans. 
+A slight twist in the slit further reduces the number of usable scans to 5. 
+Therefore, only the first two columns of {eq}`eq:Fi3` are applicable. 
+Since each pixel is compared with only one other pixel on the detector, this method is quite susceptible to errors.
 
-By making the assumption that the flux of photons varies slowly over the range in
-wavelength covered by one pixel, it is possible to use all scans where the target (Spica) is
-within the UVIS field of view. The UVIS EUV channel has a spectral resolution of 2.25A
-(2.75A FUV) FWHM (full width at half-maximum) and a dispersion of 0.6049A/pixel
+By making the assumption that the flux of photons varies slowly over the range in wavelength covered by one pixel, it is possible to use all scans where the target (Spica) is within the UVIS field of view. 
+The UVIS EUV channel has a spectral resolution of 2.25A (2.75A FUV) FWHM (full width at half-maximum) and a dispersion of 0.6049A/pixel
 (0.7794A/pixel FUV); more than 3 pixels fit into the width of a spectral resolution
 element. Since the UVIS instruments are oversampled in the spectral dimension, the
 above assumption is valid. W ith this assumption, the following set of equations now
