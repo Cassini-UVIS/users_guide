@@ -98,7 +98,7 @@ F_\lambda = \frac{C_{i,m}}{A_\lambda f_i t}\frac{photons}{cm^2s}
 
 where 
 * F$_\lambda$ is the flux from the star at a wavelength of $\lambda$, 
-* C$_{i,m}$ is the counts observed in a pixel in column _i_ on scan _m_, (i.e. a spectrum shifted 0.2 x milliradians)
+* C$_{i,m}$ is the counts observed in a pixel in column _i_ on scan _m_, (i.e. a spectrum shifted by 0.2 x _m_ mrad)
 * A$_\lambda$ is the effective area of a pixel illuminated with light of wavelength $\lambda$, as determined by the
 laboratory calibration; and 
 * f$_i$ is the flatfield correction for the pixel in column _i_.
