@@ -14,53 +14,47 @@ Jacques Gustin
 
 ## Introduction
 
-In a very general sense, the aurora are luminous phenomena resulting from the collision
-between precipitating charged particles and the atmosphere of a planet. Following this definition,
-aurora have been observed at Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune and even at a
-few satellites (Io, Europa, Ganymede). Aurora have always been observed on Earth and started
-to be studied in a scientific way in the 17th century. Giant steps forward have been taken since
-that time, thanks to the start of the space exploration in the late fifties. Several spacecraft and
-scientific instruments have been launched and have observed the aurora of the different planets,
-in multiple wavelength ranges (e.g., Voyager 1 and 2, Galileo, Image, FUSE, the Hubble Space
-Telescope). The Cassini-Huygens spacecraft follows these renowned missions and has provided
-unique data on Saturn’s system since 2004.
-In the case of Saturn, the auroral photons in the UV are produced by the interaction
-between the atmosphere and magnetospheric electrons. The magnetospheric electrons
-precipitating into the atmosphere undergo elastic and inelastic collisions with the H 2 molecules
-of the upper atmosphere and create secondary electrons through ionizations (see for example
-Grodent et al., 2001 for more details on this process). 
-The FUV auroral emission is dominated by the H$_2$ Lyman ($B^1\Sigma^+_u\rightarrow \Chi^1\Sigma^+_g$) and Werner ($C^1\Pi_u\rightarrow \Chi^1\Sigma^+_g$) system bands and the Lyman
+In a very general sense, the aurora are luminous phenomena resulting from the collision between precipitating charged particles and the atmosphere of a planet. 
+Following this definition, aurora have been observed at Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune and even at a few satellites (Io, Europa, Ganymede). 
+Aurora have always been observed on Earth and started to be studied in a scientific way in the 17th century. Giant steps forward have been taken since that time, thanks to the start of the space exploration in the late fifties. 
+Several spacecraft and scientific instruments have been launched and have observed the aurora of the different planets, in multiple wavelength ranges (e.g., Voyager 1 and 2, Galileo, Image, FUSE, the Hubble Space Telescope). 
+The Cassini-Huygens spacecraft follows these renowned missions and has provided unique data on Saturn’s system since 2004.
+In the case of Saturn, the auroral photons in the UV are produced by the interaction between the atmosphere and magnetospheric electrons. 
+The magnetospheric electrons precipitating into the atmosphere undergo elastic and inelastic collisions with the H$_2$ molecules of the upper atmosphere and create secondary electrons through ionizations (see for example Grodent et al., 2001 for more details on this process). 
+The FUV auroral emission is dominated by the H$_2$ Lyman ($B^1\Sigma^+_u\rightarrow X^1\Sigma^+_g$) and Werner ($C^1\Pi_u\rightarrow X^1\Sigma^+_g$) system bands and the Lyman
 continuum in the 900- 1700 Å bandwidth. 
 Below 1200 Å, the emission includes the higher energetic Rydberg transitions:
 
 $$
-B^{\prime 1} _Σ_^ + _u_ → _X_^1 _Σ_^ + _g_ , _D_^1 _Πu_ → _X_^1 _Σ_^ + _g_ , _B_ ”^1 _Σ_^ + _u_ → _X_^1 _Σ_^ + _g_ , and _D_ ’^1 _Πu_ → _X_^1 _Σ_^ + _g_ ) (see Figure 3 of
-Gustin et al, 2004 for more details). The auroral emission also includes lines from the atomic
-hydrogen Lyman series (HLy-α at 1216 Å, Hly-β at 1025 Å,...).
+B^{\prime 1}\Sigma^+_u\rightarrow X^1\Sigma^+_g
+$$
+$$
+D^1\Pi_u\rightarrow X^1\Sigma^+_g
+$$
+$$
+B^{\prime\prime1}\Sigma^+_u\rightarrow X^1\Sigma^+_g
+$$
+and
+$$
+D^{\prime 1}\Pi_u\rightarrow X^1\Sigma^+_g
+$$ 
+(see Figure 3 of Gustin et al, 2004 for more details). 
+The auroral emission also includes lines from the atomic hydrogen Lyman series (HLy-α at 1216 Å, Hly-β at 1025 Å,...).
 The aurora can be studied through UVIS spectroscopic and imaging capabilities:
 
-_- Low-resolution spectroscopy_. The auroral emission is potentially attenuated by the
-hydrocarbon layer situated near the auroral peak. The main hydrocarbon responsible for
-absorption is methane (CH 4 ), which has a significant absorption cross-section shortward of 1350
-Å. By comparing the observed spectra with un-attenuated H 2 spectra (obtained from a model or
-from laboratory measurements), the methane column can be derived. A model of the atmosphere
-(like Moses et al. 2000) is then used to relate this methane column to the pressure level and the
-H 2 column overlying the auroral emission peak. The energy deposition of the precipitated
-electrons can then be estimated from a stopping power table, which gives the average path length
-traveled by monoenergetic electrons into H 2 , as they slow down to rest. Examples of this
-procedure may be found in the following references: Gustin et al., (2004, 2009), Dols et al.,
-(2000), Ajello et al., (2005). All the UVIS auroral observations to date have been obtained with
-the low-resolution slit, providing spectra at ~5.5 Å FWHM. Although this resolution is high
-enough to examine the effect of hydrocarbons on the auroral emission, it is too low to resolve the
-individual rotational lines and provide information on the temperature of the gas.
-- _Imaging_. By slewing the 1024x64 slit above a region of interest, UVIS is able to acquire
-images of the polar aurora. Images can be used to study the morphology of the aurora, determine
+### Low-resolution spectroscopy
+The auroral emission is potentially attenuated by the hydrocarbon layer situated near the auroral peak. The main hydrocarbon responsible for absorption is methane (CH$_4$), which has a significant absorption cross-section shortward of 1350 Å. 
+By comparing the observed spectra with un-attenuated H 2 spectra (obtained from a model or from laboratory measurements), the methane column can be derived. 
+A model of the atmosphere (like Moses et al. 2000) is then used to relate this methane column to the pressure level and the H$_2$ column overlying the auroral emission peak. 
+The energy deposition of the precipitated electrons can then be estimated from a stopping power table, which gives the average path length traveled by monoenergetic electrons into H$_2$ , as they slow down to rest. 
+Examples of this procedure may be found in the following references: Gustin et al., (2004, 2009), Dols et al.,(2000), Ajello et al., (2005). 
+All the UVIS auroral observations to date have been obtained with the low-resolution slit, providing spectra at ~5.5 Å FWHM. 
+Although this resolution is high enough to examine the effect of hydrocarbons on the auroral emission, it is too low to resolve the individual rotational lines and provide information on the temperature of the gas.
 
-
-the brightness of the different auroral features and their variations with time, or investigate the
-interaction between the ionosphere, the magnetosphere and the solar wind. See for example
-Grodent et al. (2003) or Clarke et al., (2005) for more details on the auroral morphology and
-ionosphere/magnetosphere interactions.
+### Imaging
+By slewing the 1024x64 slit above a region of interest, UVIS is able to acquire images of the polar aurora. 
+Images can be used to study the morphology of the aurora, determine the brightness of the different auroral features and their variations with time, or investigate the interaction between the ionosphere, the magnetosphere and the solar wind. 
+See for example Grodent et al. (2003) or Clarke et al., (2005) for more details on the auroral morphology and ionosphere/magnetosphere interactions.
 
 ## Calibration procedures
 
