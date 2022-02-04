@@ -188,52 +188,67 @@ Therefore, only the first two columns of {eq}`eq:Fi3` are applicable.
 Since each pixel is compared with only one other pixel on the detector, this method is quite susceptible to errors.
 
 By making the assumption that the flux of photons varies slowly over the range in wavelength covered by one pixel, it is possible to use all scans where the target (Spica) is within the UVIS field of view. 
-The UVIS EUV channel has a spectral resolution of 2.25A (2.75A FUV) FWHM (full width at half-maximum) and a dispersion of 0.6049A/pixel
-(0.7794A/pixel FUV); more than 3 pixels fit into the width of a spectral resolution
-element. Since the UVIS instruments are oversampled in the spectral dimension, the
-above assumption is valid. W ith this assumption, the following set of equations now
-holds:
+The UVIS EUV channel has a spectral resolution of 2.25 Å (2.75 Å FUV) FWHM (full width at half-maximum) and a dispersion of 0.6049 Å/pixel (0.7794 Å/pixel FUV); more than 3 pixels fit into the width of a spectral resolution element. 
+Since the UVIS instruments are oversampled in the spectral dimension, the above assumption is valid. 
+With this assumption, the following set of equations now holds:
 
 ```{math}
+:label: eq:A.9
 F_{i,m}A_\lambda t = \frac{1.0C_{i,m}}{f_i}
+```
+```{math}
+:label: eq:A.10
 F_{i,m}A_\lambda t = \frac{0.2C_{i,1}}{f_i} + \frac{0.8C_{i+1,m+1}}{f_{i+1}}
+```
+```{math}
+:label: eq:A.11
 F_{i,m}A_\lambda t = \frac{0.4C_{i+1,2}}{f_{i+1}} + \frac{0.6C_{i+2,m+2}}{f_{i+2}}
+```
+```{math}
+:label: eq:A.12
 F_{i,m}A_\lambda t = \frac{0.6C_{i+2,3}}{f_{i+2}} + \frac{0.4C_{i+3,m+3}}{f_{i+3}}
+```
+```{math}
+:label: eq:A.13
 F_{i,m}A_\lambda t = \frac{0.8C_{i+3,4}}{f_{i+3}} + \frac{0.2C_{i+4,m+4}}{f_{i+4}}
 ```
 
-To see how equations A.9-A.13 are derived, we refer to Table A.l and Eq. A.I.
+To see how equations {eq}`eq:A.9`-{eq}`eq:A.13` are derived, we refer to {numref}`fig:table_A.1` and 
+Eq. {eq}`eq:ff-corr`.
 
-The top half of Table A .l shows a schematic representation of 5 pixels lying in the same
-row on the detector. For each pixel, there is a flatfield correction, f,, that will be derived.
-The number of counts observed in the pixel in column i on scan m is given by Q jTO.
-Each pixel is divided into 5 equal subpixel regions. The lower half of Table A .l shows
-schematically the illumination each pixel is receiving on each of 5 scans. The spectrum
-of Spica is given as F^, and it is assumed that the spectrum is constant over the width
-of one pixel (AA). On scan 0, each pixel is fully illuminated by a single spectral element
-e.g. column i is completely illuminated by F^. Eq. A.9 is derived from this information
-and Eq. A .l. On scan 1, the position of Spica on the detector has been displaced by 0.2
-milliradians in the dispersion direction relative to its position on scan 0. As a result,
-only 1/5 of F A now falls on the pixel in column i, with the remaining 4/5 falling on
-the pixel in column i+1. information about the location of the spectral element F a can
-again be used in conjunction with Eq.A.l to derive Eq. A.10, and so on, until all five
+:::{figure-md} fig:table_A.1
+<img src="figures/table_A.1.png" alt="Description of Flatfield Method">
+
+Description of Flatfield Method
+:::
+
+The top half of {numref}`fig:table_A.1` shows a schematic representation of 5 pixels lying in the same row on the detector. 
+For each pixel, there is a flatfield correction, f$_i$, that will be derived.
+The number of counts observed in the pixel in column _i_ on scan _m_ is given by C$_i,m$.
+Each pixel is divided into 5 equal subpixel regions. 
+The lower half of {numref}`fig:table_A.1` shows schematically the illumination each pixel is receiving on each of 5 scans. 
+The spectrum of Spica is given as F$_\lambda$, and it is assumed that the spectrum is constant over the width of one pixel ($\Delta\lambda$).
+On scan 0, each pixel is fully illuminated by a single spectral element, e.g. column _i_ is completely illuminated by F$_\lambda$. 
+Eq. {eq}`eq:A.9` is derived from this information and Eq. {eq}`eq:ff-corr`.
+On scan 1, the position of Spica on the detector has been displaced by 0.2 milliradians in the dispersion direction relative to its position on scan 0. 
+As a result, only 1/5 of F$_\lambda$ now falls on the pixel in column _i_, with the remaining 4/5 falling on the pixel in column _i+1_.
+Information about the location of the spectral element F$_\lambda$ can
+again be used in conjunction with Eq {eq}`eq:ff-corr` to derive Eq. {eq}`eq:A.10`, and so on, until all five
 equations have been derived.
 
-Equations A.9-A.13 form a system of 6 unknowns (Fa, b, b+i, fi+2, fj+3, fi+4)
-in 5 equations. In order to solve this system, it is necessary to supply an additional
-equation. This equation is obtained by assuming that the average row-to-row flatfield
-correction has a value of 1. As the number of points included in the row-to-row calculation increases, the validity of this assumption increases. The reason for this is that
-the average flatfield correction, when the entire detector is considered, must be equal
-to 1. If the average flatfield correction over the whole detector were not equal to 1, this
-would have the effect of modifying the laboratory calibration. This assumption yields
-a final equation:
+Equations {eq}`eq:A.9`-{eq}`eq:A.13` form a system of 6 unknowns (F$_\lambda$, f$_i$, f$_{i+1}$, f$_{i+2}$, f$_{i+3}$, f$_{i+4}$ in 5 equations. 
+In order to solve this system, it is necessary to supply an additional equation. 
+This equation is obtained by assuming that the average row-to-row flatfield correction has a value of 1. 
+As the number of points included in the row-to-row calculation increases, the validity of this assumption increases. 
+The reason for this is that the average flatfield correction, when the entire detector is considered, must be equal to 1. 
+If the average flatfield correction over the whole detector were not equal to 1, this would have the effect of modifying the laboratory calibration. 
+This assumption yields a final equation:
 
 ```{math}
 \frac{f_i+f_{i+1}+f_{i+2}+f_{i+3}+f_{i+4}}{5}=1
 ```
 
-which can be used to close the system and solve for the various flatfield corrections. This
-technique can be readily extended to an include an arbitrary number of vertical scans.
-For each point on the detector, m flatfield correction factors are produced, where m is
-the number of scans. These are then averaged together to produce a better estimate of
-the “true” column-to-column flatfield correction.
+which can be used to close the system and solve for the various flatfield corrections. 
+This technique can be readily extended to an include an arbitrary number of vertical scans.
+For each point on the detector, m flatfield correction factors are produced, where m is the number of scans. 
+These are then averaged together to produce a better estimate of the “true” column-to-column flatfield correction.
