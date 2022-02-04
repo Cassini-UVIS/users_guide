@@ -32,12 +32,12 @@ $$
 D^1\Pi_u\rightarrow X^1\Sigma^+_g
 $$
 $$
-B^{\prime\prime1}\Sigma^+_u\rightarrow X^1\Sigma^+_g
+B^{\prime\prime1}\Sigma^+_u\rightarrow X^1\Sigma^+_g \text{and}
 $$
-and
 $$
 D^{\prime 1}\Pi_u\rightarrow X^1\Sigma^+_g
-$$ 
+$$
+
 (see Figure 3 of Gustin et al, 2004 for more details). 
 The auroral emission also includes lines from the atomic hydrogen Lyman series (HLy-α at 1216 Å, Hly-β at 1025 Å,...).
 The aurora can be studied through UVIS spectroscopic and imaging capabilities:
