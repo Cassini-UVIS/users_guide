@@ -414,7 +414,7 @@ This procedure is described by the following equation:</p>
 <li><p>C<span class="math notranslate nohighlight">\(_{i,j}\)</span> is the number of counts in the pixel located in column i, row j.</p></li>
 </ul>
 <p>The limits of the sum are chosen such that the first few rows on either end of the detector (which are either completely or partially masked out) are excluded.
-When applied to all pixels of the detector, <code class="xref std std-numref docutils literal notranslate"><span class="pre">eq:row2row-corr</span></code> yields a two-dimensional flatfield correction.
+When applied to all pixels of the detector, <a class="reference internal" href="#equation-eq-row2row-corr">(5.2)</a> yields a two-dimensional flatfield correction.
 However, this flatfield only corrects for row-to-row variations in detector sensitivity.
 This means that if the detector were illuminated with a spatially-uniform, monochromatic source, all the pixels in a given column would have the same value (within photon counting statistics) after multiplying the raw data by
 the flatfield correction described above.
@@ -428,23 +428,23 @@ The trick is to start by scanning the star uniformly through the field of view b
 After each scan, the spacecraft is rotated slightly about the Z axis and a new scan across length of the slit—in the opposite direction to the previous scan—is begun.</p>
 <p>Since the spacecraft was rotated by a small angle between each scan, the stellar spectra from successive scans will be shifted slightly (in the spectral dimension) relative to the previous spectra.
 If the rotation between scans is an integer multiple of the angular width of the detector pixels, pixel x in observation a will have received</p>
-<div class="math notranslate nohighlight">
-\[F_{i,0}=F_{i+\delta,1}=F_{i+2\delta,2}=\cdots = F_{i+m\delta,m}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-flux-between-scans">
+<span class="eqno">(5.3)<a class="headerlink" href="#equation-eq-flux-between-scans" title="Permalink to this equation">¶</a></span>\[F_{i,0}=F_{i+\delta,1}=F_{i+2\delta,2}=\cdots = F_{i+m\delta,m}\]</div>
 <p>where F<span class="math notranslate nohighlight">\(_{i,m}\)</span> is the flux of photons incident on column i on scan m.</p>
 <p>For the UVIS observations of Spica, the azimuth angle of the spacecraft was incremented 0.2 milliradians after each scan across the slit, resulting in a shift to the spectrum of 0.8 pixels (in the dispersion direction) relative to the previous scan.
 The subpixel shift in the spectrum between successive scans means that Eq. A.3 is only strictly valid for shifts that are an integer multiple of 5. For the May 2003 observation of Spica, there were 13 scans across
 the slit, with a 0.2 milliradian shift between each scan.
 Therefore, the following set of equations applies:</p>
-<div class="math notranslate nohighlight">
-\[F_{i,0} = F_{i+4,5} = F_{i+8,10}\]</div>
-<div class="math notranslate nohighlight">
-\[F_{i,1} = F_{i+4,6} = F_{i+8,11}\]</div>
-<div class="math notranslate nohighlight">
-\[F_{i,2} = F_{i+4,7} = F_{i+8,12}\]</div>
-<div class="math notranslate nohighlight">
-\[F_{i,3} = F_{i+4,8} = F_{i+8,13}\]</div>
-<div class="math notranslate nohighlight">
-\[F_{i,4} = F_{i+4,9}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-fi0">
+<span class="eqno">(5.4)<a class="headerlink" href="#equation-eq-fi0" title="Permalink to this equation">¶</a></span>\[F_{i,0} = F_{i+4,5} = F_{i+8,10}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-fi1">
+<span class="eqno">(5.5)<a class="headerlink" href="#equation-eq-fi1" title="Permalink to this equation">¶</a></span>\[F_{i,1} = F_{i+4,6} = F_{i+8,11}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-fi2">
+<span class="eqno">(5.6)<a class="headerlink" href="#equation-eq-fi2" title="Permalink to this equation">¶</a></span>\[F_{i,2} = F_{i+4,7} = F_{i+8,12}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-fi3">
+<span class="eqno">(5.7)<a class="headerlink" href="#equation-eq-fi3" title="Permalink to this equation">¶</a></span>\[F_{i,3} = F_{i+4,8} = F_{i+8,13}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-fi4">
+<span class="eqno">(5.8)<a class="headerlink" href="#equation-eq-fi4" title="Permalink to this equation">¶</a></span>\[F_{i,4} = F_{i+4,9}\]</div>
 <p>So for any column on the detector, the column 4 columns away received the
 same illumination 5 scans later, and the column 8 columns away received the same
 illumination 10 scans later. These three values could be averaged together and the
