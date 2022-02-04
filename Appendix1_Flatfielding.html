@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5. Flatfielding &#8212; Cassini UVIS User Guide</title>
+    <title>4. Flatfielding &#8212; Cassini UVIS User Guide</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6. Definitions and technical terms" href="Appendix2.html" />
-    <link rel="prev" title="4. Bibliography" href="bibliography.html" />
+    <link rel="next" title="5. Definitions and technical terms" href="Appendix2.html" />
+    <link rel="prev" title="3. UVIS Calibration" href="03_calibration.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -114,19 +114,19 @@
    3. UVIS Calibration
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="bibliography.html">
-   4. Bibliography
-  </a>
- </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   5. Flatfielding
+   4. Flatfielding
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Appendix2.html">
-   6. Definitions and technical terms
+   5. Definitions and technical terms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   6. Bibliography
   </a>
  </li>
 </ul>
@@ -218,27 +218,27 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#definitions-and-instrumental-details">
-   5.1. Definitions and Instrumental Details
+   4.1. Definitions and Instrumental Details
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#methods-for-obtaining-flatfield-corrections">
-   5.2. Methods for Obtaining Flatfield Corrections
+   4.2. Methods for Obtaining Flatfield Corrections
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#spica-flatfields">
-   5.3. Spica Flatfields
+   4.3. Spica Flatfields
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#row-to-row-variations-in-detector-sensitivity">
-     5.3.1. Row-to-Row Variations in Detector Sensitivity
+     4.3.1. Row-to-Row Variations in Detector Sensitivity
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#column-to-column-varations-in-detector-sensitivity">
-     5.3.2. Column-to-Column Varations in Detector Sensitivity
+     4.3.2. Column-to-Column Varations in Detector Sensitivity
     </a>
    </li>
   </ul>
@@ -265,27 +265,27 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#definitions-and-instrumental-details">
-   5.1. Definitions and Instrumental Details
+   4.1. Definitions and Instrumental Details
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#methods-for-obtaining-flatfield-corrections">
-   5.2. Methods for Obtaining Flatfield Corrections
+   4.2. Methods for Obtaining Flatfield Corrections
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#spica-flatfields">
-   5.3. Spica Flatfields
+   4.3. Spica Flatfields
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#row-to-row-variations-in-detector-sensitivity">
-     5.3.1. Row-to-Row Variations in Detector Sensitivity
+     4.3.1. Row-to-Row Variations in Detector Sensitivity
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#column-to-column-varations-in-detector-sensitivity">
-     5.3.2. Column-to-Column Varations in Detector Sensitivity
+     4.3.2. Column-to-Column Varations in Detector Sensitivity
     </a>
    </li>
   </ul>
@@ -300,10 +300,11 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="flatfielding">
-<h1><span class="section-number">5. </span>Flatfielding<a class="headerlink" href="#flatfielding" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><p>Andrew Steffl <span id="id1">[<a class="reference internal" href="bibliography.html#id6">Steffl, 2005</a>]</span>, Appendix A</p>
-</div></blockquote>
+<h1><span class="section-number">4. </span>Flatfielding<a class="headerlink" href="#flatfielding" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Andrew</span> <span class="n">Steffl</span>
+</pre></div>
+</div>
+<p><span id="id1">Steffl [<a class="reference internal" href="bibliography.html#id6">2005</a>]</span>, Appendix A</p>
 <p>All instruments have their own imperfections and idiosyncracies that need to be dealt with properly in order for data to be successfully interpreted.
 The Cassini UVIS is no exception; for any rigorous analysis of the UVIS data, careful attention must be paid to the detector flatfield correction.
 The following is a somewhat technical description of the techniques used to derive the flatfield corrections for the UVIS EUV and FUV detectors.
@@ -312,7 +313,7 @@ Reflecting their origin, these flatfields will be referred to as the Spica flatf
 An independent flatfield correction for the FUV channel has been derived from observations of the local interstellar medium/interplanetary medium (Don Shemansky, private communication).
 This second flatfield correction will be referred to as the LISM flatfield.</p>
 <div class="section" id="definitions-and-instrumental-details">
-<h2><span class="section-number">5.1. </span>Definitions and Instrumental Details<a class="headerlink" href="#definitions-and-instrumental-details" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1. </span>Definitions and Instrumental Details<a class="headerlink" href="#definitions-and-instrumental-details" title="Permalink to this headline">¶</a></h2>
 <p>The UVIS CODACON (Lawrence and McClintock, 1996) detectors are subdivided into 2<span class="math notranslate nohighlight">\(^16\)</span> pixels (1024 columns in the spectral dimension by 64 rows in the spatial dimension).
 Individual UVIS pixels are not square.
 Rather, they are 100 x 25 <span class="math notranslate nohighlight">\(\mu\)</span>m (spatial by spectral) in physical size and subtend a field of view of 1 x 0.25 mrad (1 mrad = 0.001 radians).</p>
@@ -338,10 +339,10 @@ As such, the FUV occultation slit is poorly suited for observations designed to 
 The boresights of the UVIS EUV and FUV channels are defined as the geometric center of the CODACON detectors (spectral pixel 511.5, spatial pixel 31.5).
 The UVIS boresight (and the boresights of the other remote sensing instruments) is nominally aligned to the spacecraft -Y axis, while the UVIS entrance slits are approximately parallel with the spacecraft Z axis.
 The instrument azimuth angle (<span class="math notranslate nohighlight">\(\phi\)</span>) is defined as the angle a vector makes with respect to the spacecraft Y-Z axis, measured from the Z axis.
-The spacecraft coordinate system is shown relative to the orientation of UVIS in <a class="reference internal" href="#fig-uvis-coordinates"><span class="std std-numref">Fig. 5.1</span></a>.</p>
+The spacecraft coordinate system is shown relative to the orientation of UVIS in <a class="reference internal" href="#fig-uvis-coordinates"><span class="std std-numref">Fig. 4.1</span></a>.</p>
 <div class="figure align-default" id="fig-uvis-coordinates">
 <img alt="UVIS Coordinates relative to Spacecraft cartesian system." src="_images/fig_A1_steffl.png" />
-<p class="caption"><span class="caption-number">Fig. 5.1 </span><span class="caption-text">The orientation of the Cassini UVIS relative to the spacecraft Cartesian coordinate system. Figure from the Cassini UVIS Calibration Report (Bill McClintock, private communication).</span><a class="headerlink" href="#fig-uvis-coordinates" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.1 </span><span class="caption-text">The orientation of the Cassini UVIS relative to the spacecraft Cartesian coordinate system. Figure from the Cassini UVIS Calibration Report (Bill McClintock, private communication).</span><a class="headerlink" href="#fig-uvis-coordinates" title="Permalink to this image">¶</a></p>
 </div>
 <p>A review of the UVIS instrument is given by <span id="id2">Esposito <em>et al.</em> [<a class="reference internal" href="bibliography.html#id3">2004</a>]</span>.
 In addition, the Cassini UVIS Calibration Report (Bill McClintock, private communication) is an invaluable resource for those wishing a more detailed description of the instrument.</p>
@@ -357,7 +358,7 @@ The sensitivity at wavelengths other than those directly measured was derived th
 In this manner, a 1024-element multiplicative calibration correction was created.</p>
 </div>
 <div class="section" id="methods-for-obtaining-flatfield-corrections">
-<h2><span class="section-number">5.2. </span>Methods for Obtaining Flatfield Corrections<a class="headerlink" href="#methods-for-obtaining-flatfield-corrections" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2. </span>Methods for Obtaining Flatfield Corrections<a class="headerlink" href="#methods-for-obtaining-flatfield-corrections" title="Permalink to this headline">¶</a></h2>
 <p>The easiest way to derive a flatfield correction is to illuminate the detector with a spatially-uniform monochromatic source.
 In this case, any differences in the number of counts in the individual detector pixels are the result of spatial (pixel-to-pixel) variations in the detector sensitivity (assuming that the signal to noise ratio is large).
 However,the presence of a grating in the UVIS optical path means that while the entrance slit may be evenly illuminated, only a small fraction of the detector — the projected width of the slit on the detector divided by the length of the detector, or 3% for the UVIS occultation slits — will be illuminated by a monochromatic source.
@@ -373,7 +374,7 @@ Unfortunately, astrophysical sources are rarely spatially uniform (the local int
 well determined as one might like them to be.</p>
 </div>
 <div class="section" id="spica-flatfields">
-<h2><span class="section-number">5.3. </span>Spica Flatfields<a class="headerlink" href="#spica-flatfields" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3. </span>Spica Flatfields<a class="headerlink" href="#spica-flatfields" title="Permalink to this headline">¶</a></h2>
 <p>Assuming that the background count rate of an instrument (from RTGs, dark counts, etc.) is low compared to the signal count rate, a star bright in the UV can serve as a good approximation to a spatially uniform source.
 The star, Spica, is relatively bright in the EUV/FUV.
 Three sets of Spica observations were obtained by UVIS on</p>
@@ -383,12 +384,12 @@ Three sets of Spica observations were obtained by UVIS on</p>
 <li><p>2003-05-19.</p></li>
 </ul>
 <div class="section" id="row-to-row-variations-in-detector-sensitivity">
-<h3><span class="section-number">5.3.1. </span>Row-to-Row Variations in Detector Sensitivity<a class="headerlink" href="#row-to-row-variations-in-detector-sensitivity" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.1. </span>Row-to-Row Variations in Detector Sensitivity<a class="headerlink" href="#row-to-row-variations-in-detector-sensitivity" title="Permalink to this headline">¶</a></h3>
 <p>Since the absolute radiometric sensitivity of the instrument has already been measured in the lab (albeit in a one-dimensional form), it is only necessary to derive the relative row-to-row, column-to-column or pixel-to-pixel variations in detector sensitivity, and then normalize this relative correction so that the absolute radiometric calibration of the instrument remains unchanged.
 This greatly simplifies the process of deriving a flatfield correction from an astrophysical source, since it is no longer critical to know the spectrum of the source object.</p>
 <p>The flatfield correction is given by:</p>
 <div class="math notranslate nohighlight" id="equation-eq-ff-corr">
-<span class="eqno">(5.1)<a class="headerlink" href="#equation-eq-ff-corr" title="Permalink to this equation">¶</a></span>\[F_\lambda = \frac{C_{i,m}}{A_\lambda f_i t}\frac{photons}{cm^2s}\]</div>
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-eq-ff-corr" title="Permalink to this equation">¶</a></span>\[F_\lambda = \frac{C_{i,m}}{A_\lambda f_i t}\frac{photons}{cm^2s}\]</div>
 <p>where</p>
 <ul class="simple">
 <li><p>F<span class="math notranslate nohighlight">\(_\lambda\)</span> is the flux from the star at a wavelength of <span class="math notranslate nohighlight">\(\lambda\)</span>,</p></li>
@@ -407,21 +408,21 @@ Since each row of the detector has received equal illumination from the source a
 <p>Dividing the average value of pixels in a particular column by the value of an individual pixel in that column yields a relative correction factor for that pixel.
 This procedure is described by the following equation:</p>
 <div class="math notranslate nohighlight" id="equation-eq-row2row-corr">
-<span class="eqno">(5.2)<a class="headerlink" href="#equation-eq-row2row-corr" title="Permalink to this equation">¶</a></span>\[f_{i,j}=\frac{\sum^{60}_{j=3}C_{i,j}}{58C_{i,j}}\]</div>
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-eq-row2row-corr" title="Permalink to this equation">¶</a></span>\[f_{i,j}=\frac{\sum^{60}_{j=3}C_{i,j}}{58C_{i,j}}\]</div>
 <p>where</p>
 <ul class="simple">
 <li><p>f<span class="math notranslate nohighlight">\(_{i,j}\)</span> is the flatfield correction for a pixel in column i, row j, and</p></li>
 <li><p>C<span class="math notranslate nohighlight">\(_{i,j}\)</span> is the number of counts in the pixel located in column i, row j.</p></li>
 </ul>
 <p>The limits of the sum are chosen such that the first few rows on either end of the detector (which are either completely or partially masked out) are excluded.
-When applied to all pixels of the detector, <a class="reference internal" href="#equation-eq-row2row-corr">(5.2)</a> yields a two-dimensional flatfield correction.
+When applied to all pixels of the detector, <a class="reference internal" href="#equation-eq-row2row-corr">(4.2)</a> yields a two-dimensional flatfield correction.
 However, this flatfield only corrects for row-to-row variations in detector sensitivity.
 This means that if the detector were illuminated with a spatially-uniform, monochromatic source, all the pixels in a given column would have the same value (within photon counting statistics) after multiplying the raw data by
 the flatfield correction described above.
 However, pixels in a neighboring column (or any other column on the detector, for that matter) might have a different value, even though they received the same illumination.</p>
 </div>
 <div class="section" id="column-to-column-varations-in-detector-sensitivity">
-<h3><span class="section-number">5.3.2. </span>Column-to-Column Varations in Detector Sensitivity<a class="headerlink" href="#column-to-column-varations-in-detector-sensitivity" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.2. </span>Column-to-Column Varations in Detector Sensitivity<a class="headerlink" href="#column-to-column-varations-in-detector-sensitivity" title="Permalink to this headline">¶</a></h3>
 <p>In order to obtain a correction for the column-to-column variations, it is reasonable to imagine that the spacecraft might be rotated about the Z axis, moving Spica in the dispersion direction on the detector.
 However, since Spica is a point source, only a single detector row will be illuminated.
 The trick is to start by scanning the star uniformly through the field of view by rotating about the spacecraft X axis, as described above.
@@ -429,22 +430,22 @@ After each scan, the spacecraft is rotated slightly about the Z axis and a new s
 <p>Since the spacecraft was rotated by a small angle between each scan, the stellar spectra from successive scans will be shifted slightly (in the spectral dimension) relative to the previous spectra.
 If the rotation between scans is an integer multiple of the angular width of the detector pixels, pixel x in observation a will have received</p>
 <div class="math notranslate nohighlight" id="equation-eq-flux-between-scans">
-<span class="eqno">(5.3)<a class="headerlink" href="#equation-eq-flux-between-scans" title="Permalink to this equation">¶</a></span>\[F_{i,0}=F_{i+\delta,1}=F_{i+2\delta,2}=\cdots = F_{i+m\delta,m}\]</div>
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-eq-flux-between-scans" title="Permalink to this equation">¶</a></span>\[F_{i,0}=F_{i+\delta,1}=F_{i+2\delta,2}=\cdots = F_{i+m\delta,m}\]</div>
 <p>where F<span class="math notranslate nohighlight">\(_{i,m}\)</span> is the flux of photons incident on column i on scan m.</p>
 <p>For the UVIS observations of Spica, the azimuth angle of the spacecraft was incremented 0.2 milliradians after each scan across the slit, resulting in a shift to the spectrum of 0.8 pixels (in the dispersion direction) relative to the previous scan.
-The subpixel shift in the spectrum between successive scans means that <a class="reference internal" href="#equation-eq-flux-between-scans">(5.3)</a> is only strictly valid for shifts that are an integer multiple of 5.
+The subpixel shift in the spectrum between successive scans means that <a class="reference internal" href="#equation-eq-flux-between-scans">(4.3)</a> is only strictly valid for shifts that are an integer multiple of 5.
 For the May 2003 observation of Spica, there were 13 scans across the slit, with a 0.2 milliradian shift between each scan.
 Therefore, the following set of equations applies:</p>
 <div class="math notranslate nohighlight" id="equation-eq-fi0">
-<span class="eqno">(5.4)<a class="headerlink" href="#equation-eq-fi0" title="Permalink to this equation">¶</a></span>\[F_{i,0} = F_{i+4,5} = F_{i+8,10}\]</div>
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-eq-fi0" title="Permalink to this equation">¶</a></span>\[F_{i,0} = F_{i+4,5} = F_{i+8,10}\]</div>
 <div class="math notranslate nohighlight" id="equation-eq-fi1">
-<span class="eqno">(5.5)<a class="headerlink" href="#equation-eq-fi1" title="Permalink to this equation">¶</a></span>\[F_{i,1} = F_{i+4,6} = F_{i+8,11}\]</div>
+<span class="eqno">(4.5)<a class="headerlink" href="#equation-eq-fi1" title="Permalink to this equation">¶</a></span>\[F_{i,1} = F_{i+4,6} = F_{i+8,11}\]</div>
 <div class="math notranslate nohighlight" id="equation-eq-fi2">
-<span class="eqno">(5.6)<a class="headerlink" href="#equation-eq-fi2" title="Permalink to this equation">¶</a></span>\[F_{i,2} = F_{i+4,7} = F_{i+8,12}\]</div>
+<span class="eqno">(4.6)<a class="headerlink" href="#equation-eq-fi2" title="Permalink to this equation">¶</a></span>\[F_{i,2} = F_{i+4,7} = F_{i+8,12}\]</div>
 <div class="math notranslate nohighlight" id="equation-eq-fi3">
-<span class="eqno">(5.7)<a class="headerlink" href="#equation-eq-fi3" title="Permalink to this equation">¶</a></span>\[F_{i,3} = F_{i+4,8} = F_{i+8,13}\]</div>
+<span class="eqno">(4.7)<a class="headerlink" href="#equation-eq-fi3" title="Permalink to this equation">¶</a></span>\[F_{i,3} = F_{i+4,8} = F_{i+8,13}\]</div>
 <div class="math notranslate nohighlight" id="equation-eq-fi4">
-<span class="eqno">(5.8)<a class="headerlink" href="#equation-eq-fi4" title="Permalink to this equation">¶</a></span>\[F_{i,4} = F_{i+4,9}\]</div>
+<span class="eqno">(4.8)<a class="headerlink" href="#equation-eq-fi4" title="Permalink to this equation">¶</a></span>\[F_{i,4} = F_{i+4,9}\]</div>
 <p>So, for any column on the detector, the column 4 columns away received the same illumination 5 scans later, and the column 8 columns away received the same illumination 10 scans later.
 These three values could be averaged together and the result divided by the individual pixel values to obtain corrections for the sensitivity of column i relative to the sensitivity of columns i+4 and i+8.
 There are four sets of these identically illuminated triplets with one additional pair.
@@ -454,42 +455,42 @@ This procedure, applied to all columns on the detector produces a flatfield corr
 <p>Although this procedure works reasonably well for the EUV channel, where the 8-milliradian-wide occultation slit could be used, it fails for the FUV channel, where, owing to the presence MgF<span class="math notranslate nohighlight">\(_2\)</span> lens and its support structure in the center of the occultation slit, the lo-resolution slit was used.
 Since the FUV lo-resolution slit is only 1.5 milliradians wide, Spica will be in the field of view on, at most, 7 scans.
 A slight twist in the slit further reduces the number of usable scans to 5.
-Therefore, only the first two columns of <a class="reference internal" href="#equation-eq-fi3">(5.7)</a> are applicable.
+Therefore, only the first two columns of <a class="reference internal" href="#equation-eq-fi3">(4.7)</a> are applicable.
 Since each pixel is compared with only one other pixel on the detector, this method is quite susceptible to errors.</p>
 <p>By making the assumption that the flux of photons varies slowly over the range in wavelength covered by one pixel, it is possible to use all scans where the target (Spica) is within the UVIS field of view.
 The UVIS EUV channel has a spectral resolution of 2.25 Å (2.75 Å FUV) FWHM (full width at half-maximum) and a dispersion of 0.6049 Å/pixel (0.7794 Å/pixel FUV); more than 3 pixels fit into the width of a spectral resolution element.
 Since the UVIS instruments are oversampled in the spectral dimension, the above assumption is valid.
 With this assumption, the following set of equations now holds:</p>
 <div class="math notranslate nohighlight" id="equation-eq-a-9">
-<span class="eqno">(5.9)<a class="headerlink" href="#equation-eq-a-9" title="Permalink to this equation">¶</a></span>\[F_{i,m}A_\lambda t = \frac{1.0C_{i,m}}{f_i}\]</div>
+<span class="eqno">(4.9)<a class="headerlink" href="#equation-eq-a-9" title="Permalink to this equation">¶</a></span>\[F_{i,m}A_\lambda t = \frac{1.0C_{i,m}}{f_i}\]</div>
 <div class="math notranslate nohighlight" id="equation-eq-a-10">
-<span class="eqno">(5.10)<a class="headerlink" href="#equation-eq-a-10" title="Permalink to this equation">¶</a></span>\[F_{i,m}A_\lambda t = \frac{0.2C_{i,1}}{f_i} + \frac{0.8C_{i+1,m+1}}{f_{i+1}}\]</div>
+<span class="eqno">(4.10)<a class="headerlink" href="#equation-eq-a-10" title="Permalink to this equation">¶</a></span>\[F_{i,m}A_\lambda t = \frac{0.2C_{i,1}}{f_i} + \frac{0.8C_{i+1,m+1}}{f_{i+1}}\]</div>
 <div class="math notranslate nohighlight" id="equation-eq-a-11">
-<span class="eqno">(5.11)<a class="headerlink" href="#equation-eq-a-11" title="Permalink to this equation">¶</a></span>\[F_{i,m}A_\lambda t = \frac{0.4C_{i+1,2}}{f_{i+1}} + \frac{0.6C_{i+2,m+2}}{f_{i+2}}\]</div>
+<span class="eqno">(4.11)<a class="headerlink" href="#equation-eq-a-11" title="Permalink to this equation">¶</a></span>\[F_{i,m}A_\lambda t = \frac{0.4C_{i+1,2}}{f_{i+1}} + \frac{0.6C_{i+2,m+2}}{f_{i+2}}\]</div>
 <div class="math notranslate nohighlight" id="equation-eq-a-12">
-<span class="eqno">(5.12)<a class="headerlink" href="#equation-eq-a-12" title="Permalink to this equation">¶</a></span>\[F_{i,m}A_\lambda t = \frac{0.6C_{i+2,3}}{f_{i+2}} + \frac{0.4C_{i+3,m+3}}{f_{i+3}}\]</div>
+<span class="eqno">(4.12)<a class="headerlink" href="#equation-eq-a-12" title="Permalink to this equation">¶</a></span>\[F_{i,m}A_\lambda t = \frac{0.6C_{i+2,3}}{f_{i+2}} + \frac{0.4C_{i+3,m+3}}{f_{i+3}}\]</div>
 <div class="math notranslate nohighlight" id="equation-eq-a-13">
-<span class="eqno">(5.13)<a class="headerlink" href="#equation-eq-a-13" title="Permalink to this equation">¶</a></span>\[F_{i,m}A_\lambda t = \frac{0.8C_{i+3,4}}{f_{i+3}} + \frac{0.2C_{i+4,m+4}}{f_{i+4}}\]</div>
-<p>To see how equations <a class="reference internal" href="#equation-eq-a-9">(5.9)</a>-<a class="reference internal" href="#equation-eq-a-13">(5.13)</a> are derived, we refer to <a class="reference internal" href="#fig-table-a-1"><span class="std std-numref">Fig. 5.2</span></a> and
-Eq. <a class="reference internal" href="#equation-eq-ff-corr">(5.1)</a>.</p>
+<span class="eqno">(4.13)<a class="headerlink" href="#equation-eq-a-13" title="Permalink to this equation">¶</a></span>\[F_{i,m}A_\lambda t = \frac{0.8C_{i+3,4}}{f_{i+3}} + \frac{0.2C_{i+4,m+4}}{f_{i+4}}\]</div>
+<p>To see how equations <a class="reference internal" href="#equation-eq-a-9">(4.9)</a>-<a class="reference internal" href="#equation-eq-a-13">(4.13)</a> are derived, we refer to <a class="reference internal" href="#fig-table-a-1"><span class="std std-numref">Fig. 4.2</span></a> and
+Eq. <a class="reference internal" href="#equation-eq-ff-corr">(4.1)</a>.</p>
 <div class="figure align-default" id="fig-table-a-1">
 <img alt="Description of Flatfield Method" src="_images/table_A.1.png" />
-<p class="caption"><span class="caption-number">Fig. 5.2 </span><span class="caption-text">Description of Flatfield Method</span><a class="headerlink" href="#fig-table-a-1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2 </span><span class="caption-text">Description of Flatfield Method</span><a class="headerlink" href="#fig-table-a-1" title="Permalink to this image">¶</a></p>
 </div>
-<p>The top half of <a class="reference internal" href="#fig-table-a-1"><span class="std std-numref">Fig. 5.2</span></a> shows a schematic representation of 5 pixels lying in the same row on the detector.
+<p>The top half of <a class="reference internal" href="#fig-table-a-1"><span class="std std-numref">Fig. 4.2</span></a> shows a schematic representation of 5 pixels lying in the same row on the detector.
 For each pixel, there is a flatfield correction, f<span class="math notranslate nohighlight">\(_i\)</span>, that will be derived.
 The number of counts observed in the pixel in column <em>i</em> on scan <em>m</em> is given by C<span class="math notranslate nohighlight">\(_i,m\)</span>.
 Each pixel is divided into 5 equal subpixel regions.
-The lower half of <a class="reference internal" href="#fig-table-a-1"><span class="std std-numref">Fig. 5.2</span></a> shows schematically the illumination each pixel is receiving on each of 5 scans.
+The lower half of <a class="reference internal" href="#fig-table-a-1"><span class="std std-numref">Fig. 4.2</span></a> shows schematically the illumination each pixel is receiving on each of 5 scans.
 The spectrum of Spica is given as F<span class="math notranslate nohighlight">\(_\lambda\)</span>, and it is assumed that the spectrum is constant over the width of one pixel (<span class="math notranslate nohighlight">\(\Delta\lambda\)</span>).
 On scan 0, each pixel is fully illuminated by a single spectral element, e.g. column <em>i</em> is completely illuminated by F<span class="math notranslate nohighlight">\(_\lambda\)</span>.
-Eq. <a class="reference internal" href="#equation-eq-a-9">(5.9)</a> is derived from this information and Eq. <a class="reference internal" href="#equation-eq-ff-corr">(5.1)</a>.
+Eq. <a class="reference internal" href="#equation-eq-a-9">(4.9)</a> is derived from this information and Eq. <a class="reference internal" href="#equation-eq-ff-corr">(4.1)</a>.
 On scan 1, the position of Spica on the detector has been displaced by 0.2 milliradians in the dispersion direction relative to its position on scan 0.
 As a result, only 1/5 of F<span class="math notranslate nohighlight">\(_\lambda\)</span> now falls on the pixel in column <em>i</em>, with the remaining 4/5 falling on the pixel in column <em>i+1</em>.
 Information about the location of the spectral element F<span class="math notranslate nohighlight">\(_\lambda\)</span> can
-again be used in conjunction with Eq <a class="reference internal" href="#equation-eq-ff-corr">(5.1)</a> to derive Eq. <a class="reference internal" href="#equation-eq-a-10">(5.10)</a>, and so on, until all five
+again be used in conjunction with Eq <a class="reference internal" href="#equation-eq-ff-corr">(4.1)</a> to derive Eq. <a class="reference internal" href="#equation-eq-a-10">(4.10)</a>, and so on, until all five
 equations have been derived.</p>
-<p>Equations <a class="reference internal" href="#equation-eq-a-9">(5.9)</a>-<a class="reference internal" href="#equation-eq-a-13">(5.13)</a> form a system of 6 unknowns (F<span class="math notranslate nohighlight">\(_\lambda\)</span>, f<span class="math notranslate nohighlight">\(_i\)</span>, f<span class="math notranslate nohighlight">\(_{i+1}\)</span>, f<span class="math notranslate nohighlight">\(_{i+2}\)</span>, f<span class="math notranslate nohighlight">\(_{i+3}\)</span>, f<span class="math notranslate nohighlight">\(_{i+4}\)</span> in 5 equations.
+<p>Equations <a class="reference internal" href="#equation-eq-a-9">(4.9)</a>-<a class="reference internal" href="#equation-eq-a-13">(4.13)</a> form a system of 6 unknowns (F<span class="math notranslate nohighlight">\(_\lambda\)</span>, f<span class="math notranslate nohighlight">\(_i\)</span>, f<span class="math notranslate nohighlight">\(_{i+1}\)</span>, f<span class="math notranslate nohighlight">\(_{i+2}\)</span>, f<span class="math notranslate nohighlight">\(_{i+3}\)</span>, f<span class="math notranslate nohighlight">\(_{i+4}\)</span> in 5 equations.
 In order to solve this system, it is necessary to supply an additional equation.
 This equation is obtained by assuming that the average row-to-row flatfield correction has a value of 1.
 As the number of points included in the row-to-row calculation increases, the validity of this assumption increases.
@@ -531,17 +532,17 @@ These are then averaged together to produce a better estimate of the “true” 
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="bibliography.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="03_calibration.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">4. </span>Bibliography</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>UVIS Calibration</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Appendix2.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Definitions and technical terms</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Definitions and technical terms</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
