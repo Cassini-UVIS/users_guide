@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PDS Data Structure &#8212; Cassini UVIS User Guide</title>
+    <title>2. PDS Data Structure &#8212; Cassini UVIS User Guide</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="UVIS Calibration" href="03_calibration.html" />
-    <link rel="prev" title="Cassini UVIS data on the PDS system" href="01_uvis_on_pds.html" />
+    <link rel="next" title="3. UVIS Calibration" href="03_calibration.html" />
+    <link rel="prev" title="1. Cassini UVIS data on the PDS system" href="01_uvis_on_pds.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -96,47 +96,35 @@
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Part 1
- </span>
-</p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01_uvis_on_pds.html">
-   Cassini UVIS data on the PDS system
+   1. Cassini UVIS data on the PDS system
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   PDS Data Structure
+   2. PDS Data Structure
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_calibration.html">
-   UVIS Calibration
+   3. UVIS Calibration
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="bibliography.html">
-   Bibliography
+   4. Bibliography
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Part 2
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Appendix1_Flatfielding.html">
-   Flatfielding
+   5. Flatfielding
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Appendix2.html">
-   Definitions and technical terms
+   6. Definitions and technical terms
   </a>
  </li>
 </ul>
@@ -228,7 +216,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#windows">
-   Windows
+   2.1. Windows
   </a>
  </li>
 </ul>
@@ -253,7 +241,7 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#windows">
-   Windows
+   2.1. Windows
   </a>
  </li>
 </ul>
@@ -266,7 +254,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="pds-data-structure">
-<span id="sec-pds-data-structure"></span><h1>PDS Data Structure<a class="headerlink" href="#pds-data-structure" title="Permalink to this headline">¶</a></h1>
+<span id="sec-pds-data-structure"></span><h1><span class="section-number">2. </span>PDS Data Structure<a class="headerlink" href="#pds-data-structure" title="Permalink to this headline">¶</a></h1>
 <div class="admonition-conversion-status-close-to-finished admonition">
 <p class="admonition-title">Conversion status: Close to finished</p>
 <p>Basic layouting done, figures added. Please report issues.</p>
@@ -313,27 +301,27 @@ The brightness time series is produced by the HSP or HDAC channels.</p>
 <p>These data products are illustrated in the following figures:</p>
 <div class="figure align-default" id="fig-example-cube">
 <img alt="example cube" src="_images/fig_2.1.png" />
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">A spatial-spectral image cube</span><a class="headerlink" href="#fig-example-cube" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">A spatial-spectral image cube</span><a class="headerlink" href="#fig-example-cube" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="fig-example-wavelength-image">
 <img alt="image at one wavelength" src="_images/fig_2.2.png" />
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">An image at one wavelength</span><a class="headerlink" href="#fig-example-wavelength-image" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">An image at one wavelength</span><a class="headerlink" href="#fig-example-wavelength-image" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="fig-example-spectra">
 <img alt="series of spectra" src="_images/fig_2.3.png" />
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">A series of spectra.</span><a class="headerlink" href="#fig-example-spectra" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">A series of spectra.</span><a class="headerlink" href="#fig-example-spectra" title="Permalink to this image">¶</a></p>
 </div>
 <p>A brightness series from the HSP or HDAC is a time series: {ct0, ct1, …}.
-The following surface plot in <a class="reference internal" href="#fig-example-jupiter-image"><span class="std std-numref">Fig. 7</span></a> is the first sample of a UVIS EUV spatial-spectral image cube from an observation of Jupiter:</p>
+The following surface plot in <a class="reference internal" href="#fig-example-jupiter-image"><span class="std std-numref">Fig. 2.4</span></a> is the first sample of a UVIS EUV spatial-spectral image cube from an observation of Jupiter:</p>
 <div class="figure align-default" id="fig-example-jupiter-image">
 <img alt="series of spectra" src="_images/fig_2.4.png" />
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">The first sample of a UVIS EUV spatial-spectral image cube observation of Jupiter.
+<p class="caption"><span class="caption-number">Fig. 2.4 </span><span class="caption-text">The first sample of a UVIS EUV spatial-spectral image cube observation of Jupiter.
 The elevated line at y=~20 is Jupiter.
 The elevated regions at Y=~15 and Y=~25 are emissions from the Io torus.
 There are 32 lines and 512 bands of data because the binning in this observation is 2 spatially and 2 spectrally.</span><a class="headerlink" href="#fig-example-jupiter-image" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="windows">
-<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1. </span>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
 <p>The EUV and FUV channels can be configured to take data from sub-regions of the
 1024x64 detector called windows.
 For example, if a target is expected to be visible in the central region of the detector then a window centered around the middle of the detector with an upper left corner at (0, 24) and a lower right corner at (1023, 39) with dimensions 1024x16 would capture the target and minimize irrelevant data.
@@ -341,17 +329,17 @@ If a reduced level of resolution is possible, then the detector could be binned 
 For example this [(0, 24), (1023, 39)] window could be binned by two in the band (spectral) dimension resulting in a 512x16 array of pixels.
 We take as an example two additional windows defined by window1 = ([0, 10],[1023, 14], SpecBin=1, SpaBin=5) and window3 = ([0, 50],[1023, 54], SpecBin=1, SpaBin=5).
 When windowing or binning is defined on the detector, counts are arranged within the matrix in sub-matrices corresponding to the windows of the detector.</p>
-<p><a class="reference internal" href="#fig-example-windows"><span class="std std-numref">Fig. 8</span></a> illustrates this windowing and binning:</p>
+<p><a class="reference internal" href="#fig-example-windows"><span class="std std-numref">Fig. 2.5</span></a> illustrates this windowing and binning:</p>
 <div class="figure align-default" id="fig-example-windows">
 <img alt="example windowed data" src="_images/fig_2.5.png" />
-<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">An example of windows in the UVIS detector</span><a class="headerlink" href="#fig-example-windows" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.5 </span><span class="caption-text">An example of windows in the UVIS detector</span><a class="headerlink" href="#fig-example-windows" title="Permalink to this image">¶</a></p>
 </div>
 <p>The image, spectrum and cube data products are represented in the PDS as cubes.
 Images are 1 x 64 x n cubes, spectra are 1024 x 1 x n cubes and spatial-spectral image cubes are 1024 x 64 x n cubes.
-The following <a class="reference internal" href="#fig-pds-windowed-data"><span class="std std-numref">Fig. 9</span></a> provides an example UVIS cube corresponding to the windowed and binned detector configuration in <a class="reference internal" href="#fig-example-windows"><span class="std std-numref">Fig. 8</span></a>:</p>
+The following <a class="reference internal" href="#fig-pds-windowed-data"><span class="std std-numref">Fig. 2.6</span></a> provides an example UVIS cube corresponding to the windowed and binned detector configuration in <a class="reference internal" href="#fig-example-windows"><span class="std std-numref">Fig. 2.5</span></a>:</p>
 <div class="figure align-default" id="fig-pds-windowed-data">
 <img alt="PDS data for windowed data." src="_images/fig_2.6.png" />
-<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">An example of PDS data corresponding to the example offered in <a class="reference internal" href="#fig-example-windows"><span class="std std-numref">Fig. 8</span></a>.</span><a class="headerlink" href="#fig-pds-windowed-data" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.6 </span><span class="caption-text">An example of PDS data corresponding to the example offered in <a class="reference internal" href="#fig-example-windows"><span class="std std-numref">Fig. 2.5</span></a>.</span><a class="headerlink" href="#fig-pds-windowed-data" title="Permalink to this image">¶</a></p>
 </div>
 <p>Matrix elements outside the windows contain null values (-1).
 Data counts are ordered in line-major ordering.
@@ -583,13 +571,13 @@ The steps detailed in this document will make it possible for UVIS data to be a 
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Cassini UVIS data on the PDS system</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>Cassini UVIS data on the PDS system</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="03_calibration.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">UVIS Calibration</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>UVIS Calibration</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
