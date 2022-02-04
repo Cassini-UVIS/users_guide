@@ -117,7 +117,6 @@ This procedure is described by the following equation:
 
 ```{math}
 :label: eq:row2row-corr
-
 f_{i,j}=\frac{\sum^{60}_{j=3}C_{i,j}}{58C_{i,j}}
 ```
 
@@ -126,7 +125,7 @@ where
 * C$_{i,j}$ is the number of counts in the pixel located in column i, row j. 
 
 The limits of the sum are chosen such that the first few rows on either end of the detector (which are either completely or partially masked out) are excluded. 
-When applied to all pixels of the detector, {numref}`eq:row2row-corr` yields a two-dimensional flatfield correction.
+When applied to all pixels of the detector, {eq}`eq:row2row-corr` yields a two-dimensional flatfield correction.
 However, this flatfield only corrects for row-to-row variations in detector sensitivity. 
 This means that if the detector were illuminated with a spatially-uniform, monochromatic source, all the pixels in a given column would have the same value (within photon counting statistics) after multiplying the raw data by
 the flatfield correction described above. 
@@ -143,6 +142,7 @@ Since the spacecraft was rotated by a small angle between each scan, the stellar
 If the rotation between scans is an integer multiple of the angular width of the detector pixels, pixel x in observation a will have received
 
 ```{math}
+:label: eq:flux-between-scans
 F_{i,0}=F_{i+\delta,1}=F_{i+2\delta,2}=\cdots = F_{i+m\delta,m}
 ```
 
@@ -154,18 +154,23 @@ the slit, with a 0.2 milliradian shift between each scan.
 Therefore, the following set of equations applies:
 
 ```{math}
+:label: eq:Fi0
 F_{i,0} = F_{i+4,5} = F_{i+8,10}
 ```
 ```{math}
+:label: eq:Fi1
 F_{i,1} = F_{i+4,6} = F_{i+8,11}
 ```
 ```{math}
+:label: eq:Fi2
 F_{i,2} = F_{i+4,7} = F_{i+8,12}
 ```
 ```{math}
+:label: eq:Fi3
 F_{i,3} = F_{i+4,8} = F_{i+8,13}
 ```
 ```{math}
+:label: eq:Fi4
 F_{i,4} = F_{i+4,9}
 ```
 
