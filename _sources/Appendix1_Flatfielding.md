@@ -3,7 +3,7 @@
 ```
 Andrew Steffl
 ```
-{cite:t}`Steffl2005-te`, Appendix A
+> Reproduction of {cite:t}`Steffl2005-te`, Appendix A, with permission of the author.
 
 All instruments have their own imperfections and idiosyncracies that need to be dealt with properly in order for data to be successfully interpreted. 
 The Cassini UVIS is no exception; for any rigorous analysis of the UVIS data, careful attention must be paid to the detector flatfield correction.
