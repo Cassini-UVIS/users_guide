@@ -255,3 +255,36 @@ which can be used to close the system and solve for the various flatfield correc
 This technique can be readily extended to an include an arbitrary number of vertical scans.
 For each point on the detector, m flatfield correction factors are produced, where m is the number of scans. 
 These are then averaged together to produce a better estimate of the “true” column-to-column flatfield correction.
+
+## IDL programs
+
+Below are several IDL programs used to create the Spica flatfields.
+There is also a gzipped tar file of the required data files.
+
+The documentation at the head of the mk_flatfield* files should explain how they should be used. 
+These routines can be used to create a flatfield with arbitrary binning based on the spica raster observations of July 2002 and May 2003.
+
+For example, to create EUV and FUV flatfield files with no binning and the bad pixels masked out with NaN's, type:
+
+```idl
+IDL> mk_flatfield,euv_flatfield,euv_flatfield_err,fuv_flatfield,fuv_flatfield_err,/badpix
+```
+
+The variables `euv_flatfield`, `euv_flatfield_err`, `fuv_flatfield`, `fuv_flatfield_err` will be identical to the data contained in the IDL save file `spica_ff_post_1-13-2004.sav` that is in the folder "steffl" on the UVIS ftp site.
+
+`spica_ff_datafiles.tar.gz` (gzipped tar file of the required data files)
+This file is about 20 MB, so it's also stored on the UVIS ftp site, if that would work better for you for download. 
+The full path is: `/rescha2/cassini/steffl/spica_ff_datafiles.tar.gz`
+
+Individual Files:
+* avg2.pro — This is a modified version of the routine avg.pro found in the  GSFC IDL astronomy users library. The modification allows NaN values to be handled properly.
+* avgerr.pro — IDL routine that performs averaging on arrays, handling statistical errors properly.
+* diverr.pro — IDL routine to divide (or multiply) two arrays together, handling statistical errors properly.
+* frebin.pro — GSFC IDL astronomy user's library routine to resize an array, similar to the built-in function REBIN
+* mk_flatfield.pro — Top-level IDL routine to create Spica-derived flatfields. --calls both mk_flatfield_jul02 and 
+* mk_flatfield_may03. This is the primary routine to use when creating Spica flatfields.
+* mk_flatfield_jul02.pro — IDL routine to create Spica-derived flatfields using only the July 2002 Spica raster scans.
+* mk_flatfield_may03.pro — IDL routine to create Spica-derived flatfields using only the May 2003 Spica raster scans.
+* rowsmooth.pro — IDL routine to perform smoothing of an array by an arbitrary kernel  with an odd number of elements (e.g. [1,4,6,4,1]) on a row-by-row basis. Can also be used to interpolate over NaN values via the interpolate_nan keyword
+* totalerr.pro — IDL routine similar in use to the built-in routine "total",
+ but handling statistical errors properly.
