@@ -1,10 +1,11 @@
 name: deploy
 
 on:
-  # Trigger the workflow on push to main branch
+  # Trigger the workflow on push to main branch and jbook2 branch
   push:
     branches:
       - main
+      - jbook2
 
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
