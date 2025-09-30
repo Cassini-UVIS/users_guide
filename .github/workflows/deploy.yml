@@ -27,9 +27,8 @@ concurrency:
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    # Only use environment protection for main branch
+    environment: ${{ github.ref == 'refs/heads/main' && 'github-pages' || null }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
