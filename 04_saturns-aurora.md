@@ -2,7 +2,7 @@
 author: Jacques Gustin
 ---
 (sec:saturns_aurora)=
-# Saturn’s Aurora
+# Saturn's Aurora
 
 
 ```{admonition} Conversion status: Raw

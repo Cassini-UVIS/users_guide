@@ -1,9 +1,6 @@
 ---
-numbering:
-  enumerator: B%s
-title: "Appendix B: Glossary"
-authors:
-   - name: ''
+title: Glossary
+author: ''
 ---
 <!-- # Definitions and technical terms -->
 

@@ -1,10 +1,7 @@
 ---
-numbering:
-  enumerator: A%s
-authors:
-   - name: Andrew Steffl
+author: Andrew Steffl
 ---
-# Appendix A: Flatfielding
+# Flatfielding
 > Reproduction of {cite:t}`Steffl2005-te`, Appendix A, with permission of the author.
 
 All instruments have their own imperfections and idiosyncracies that need to be dealt with properly in order for data to be successfully interpreted. 

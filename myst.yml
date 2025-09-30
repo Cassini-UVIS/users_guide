@@ -14,8 +14,7 @@ project:
       template: plain_latex_book
       output: exports/book.pdf
   toc:
-    - file: about.md
-    - file: intro.md
+    - file: 00_about_intro.md
     - file: 01_uvis_on_pds.md
     - file: 02_pds_data_structure.md
     - file: 03_calibration.md
@@ -30,19 +29,14 @@ project:
     - file: 12_cube_gen.md
     - file: Appendix1_Flatfielding.md
     - file: Appendix2.md
-    # - file: bibliography.md
   numbering:
-    # title: true
+    title: true
+    headings: true
     figure: true
     table: true
     code: true
     equation: true
     sections: true
-    # prefix_section_with_chapter_number: true
-    # prefix_figure_with_chapter_number: true
-    # prefix_table_with_chapter_number: true
-    # prefix_code_with_chapter_number: true
-    # prefix_equation_with_chapter_number: true
 site:
   options:
     logo: figures/fig_1.0.png
