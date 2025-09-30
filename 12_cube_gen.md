@@ -31,7 +31,7 @@ the IDL development environment. If successful, the following widget will be rea
 
 ```{figure} figures/fig_12.1.png
 :label: "fig:cg_options"
-:width: 75%
+:width: 100%
 :align: left
 Base level menu for Cube Generator.
 ```
@@ -68,7 +68,7 @@ Cube Generator widget as follows (see {ref}`fig:cg_output`).
 
 ```{figure} figures/fig_12.2.png
 :label: "fig:cg_output"
-:width: 75%
+:width: 100%
 :align: left
 File Output options menu
 ```
