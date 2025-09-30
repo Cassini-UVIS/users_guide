@@ -5,10 +5,6 @@ authors:
 (sec:pds-data-structure)=
 # PDS Data Structure
 
-```{admonition} Conversion status: Close to finished
-Basic layouting done, figures added. Please report issues.
-```
-
 During the Cassini spacecraft’s tour of the solar system, the Ultraviolet Imaging Spectrograph (UVIS) has observed Venus, Earth, the Jovian and Saturn systems.
 The UVIS science team has delivered data to the Planetary Data System (PDS) for storage in an historical archive. 
 PDS clients are able to search, retrieve and analyze this data. 
@@ -16,7 +12,10 @@ This chapter supports those users by providing a description of UVIS data and it
 
 In PDS, an “observation” is the fundamental organizational unit of UVIS data. 
 It is a set of integers representing detector counts obtained while the instrument had a particular configuration and was obtained for a particular purpose. 
-A document entitled `UVISREF.CAT` is located in all UVIS data volumes at the PDS and describes the instrument in detail. 
+A document entitled `UVISREF.CAT` is located in all UVIS data volumes at the PDS and describes the instrument in detail.
+:::{aside} 
+Note by Michael Aye: `UVISREF.CAT` is rather a summary of references, and is not a complete description of the instrument. This User's Guide is a more complete description, in my opinion.
+:::
 
 In summary, it describes the four subsystems of the UVIS instrument: 
 * the Far Ultraviolet channel (FUV), 
@@ -26,14 +25,10 @@ In summary, it describes the four subsystems of the UVIS instrument:
 
 and how they acquire data.
 
-The four subsystems produce two PDS data types: 
-
-1. cubes, and 
-2. time series.
-
+The four subsystems produce two PDS data types, namely _cubes_, and _time series_.
 The EUV and FUV channels use detectors with a 1024x64 array of pixels, which integrate over time to generate a three dimensional matrix. 
-The axes of this matrix, using PDS terminology, are _line_, _band_, and _sample_. 
-The _line_ dimension is the detector’s 64 pixel spatial dimension, the _band_ is the 1024 pixel spectral dimension, and the _sample_ dimension corresponds to time where each integration of the detector is arrayed in this dimension. 
+The axes of this matrix, using PDS terminology, are _`line`_, _`band`_, and _`sample`_. 
+The _`line`_ dimension is the detector’s 64 pixel spatial dimension, the _`band`_ is the 1024 pixel spectral dimension, and the _`sample`_ dimension corresponds to time where each integration of the detector is arrayed in this dimension. 
 A three dimensional matrix with these axes is referred to as a **PDS cube**. 
 The HSP and HDAC are photometers which produce a time ordered sequence of photon counts, corresponding to a **PDS time series**.
 
@@ -79,7 +74,7 @@ The following surface plot in {numref}`fig:example-jupiter-image` is the first s
 :alt: series of spectra
 The first sample of a UVIS EUV spatial-spectral image cube observation of Jupiter. 
 The elevated line at y=~20 is Jupiter. 
-The elevated regions at Y=~15 and Y=~25 are emissions from the Io torus. 
+The elevated regions at y=~15 and y=~25 are emissions from the Io torus. 
 There are 32 lines and 512 bands of data because the binning in this observation is 2 spatially and 2 spectrally.
 :::
 
@@ -93,7 +88,7 @@ For example this [(0, 24), (1023, 39)] window could be binned by two in the band
 We take as an example two additional windows defined by window1 = ([0, 10],[1023, 14], SpecBin=1, SpaBin=5) and window3 = ([0, 50],[1023, 54], SpecBin=1, SpaBin=5). 
 When windowing or binning is defined on the detector, counts are arranged within the matrix in sub-matrices corresponding to the windows of the detector. 
 
-{numref}`fig:example-windows` illustrates this windowing and binning:
+{ref}`fig:example-windows` illustrates this windowing and binning:
 
 :::{figure} figures/fig_2.5.*
 :label: "fig:example-windows"
@@ -118,7 +113,7 @@ The solar-stellar brightness series are represented as PDS Time Series objects t
 To this point we have seen several configurable aspects of the UVIS instrument, namely, integration time and the detector windowing and binning. 
 Windows are defined by the upper left and lower right corners of the window and an associated spatial bin and spectral bin. 
 These values are specified in the PDS using name/value pairs.
-In PDS format, the previous example had INTEGRATION_DURATION = 1 <SECOND>, and three windows defined using their
+In PDS format, the previous example had INTEGRATION_DURATION = 1 s, and three windows defined using their
 upper left corner, lower right corner and binning:
 
 ```
@@ -191,7 +186,7 @@ PDS data objects have two components, a data component and a label component.
 The label contains a set of name/value pairs, including those listed above.
 The data file contains data values formatted into a PDS object. 
 These components are stored as files whose names contain the extensions DAT and LBL respectively. 
-UVIS data object file names have the form <channel><start_time>.LBL or <channel><start_time>.DAT. 
+UVIS data object file names have the form `<channel><start_time>.LBL` or `<channel><start_time>.DAT`. 
 The LBL files contain instrument configuration, spacecraft geometry, and taxonomic information describing UVIS data within the PDS. 
 Using the information within a LBL, a reader can understand the organization of data within the DAT file and extract that data into an analysis tool. 
 For example, in the IDL programming language, the read_binary function can read a data Cube such as the one defined above:
@@ -228,16 +223,16 @@ where
 * the start time is a text string corresponding to the spacecraft clock start time, 
 * the stop time is a derived value produced by multiplying the INTEGRATION_DURATION by the number of samples, 
 * the target name is a value defined during operations planning, 
-* the OBSERVATION_ID is a unique numerical value associated with the observation, 
-* the INTEGRATION_DURATION is the time period used to generate each sample, 
-* the COMPRESSION_TYPE is the algorithm used by the UVIS flight software to encode data on-board and during transmission to earth, 
+* the `OBSERVATION_ID` is a unique numerical value associated with the observation, 
+* the `INTEGRATION_DURATION` is the time period used to generate each sample, 
+* the `COMPRESSION_TYPE` is the algorithm used by the UVIS flight software to encode data on-board and during transmission to earth, 
 * the `HI_VOLTAGE_POWER_SUPPLY_STATE` is the voltage level applied to the detector, 
 * the `OCCULTATION_PORT_STATE` is a flag indicating whether the occultation port is open or closed (i.e. whether the light source is being observed through the port), 
-* the SLIT_STATE describes the width of the spectrometer entrance, 
-* the TEST_PULSE_STATE indicates whether the data is internally-generated, and 
-* the ODC_ID is a numeric value identifying the configuration commands generated by the operations team for this observation. 
+* the `SLIT_STATE` describes the width of the spectrometer entrance, 
+* the `TEST_PULSE_STATE` indicates whether the data is internally-generated, and 
+* the `ODC_ID` is a numeric value identifying the configuration commands generated by the operations team for this observation. 
 
-There are two DESCRIPTION fields in a label. 
+There are two `DESCRIPTION` fields in a label. 
 The first contains a reference to additional material for understanding the instrument state. 
 The second contains a one line description of the purpose of the observation which has the form “The purpose of this observation is to...”. 
 The fields relevant to understanding data are spacecraft clock, target, integration, slit state and description. 
@@ -251,7 +246,7 @@ The other fields are less important and are included in the label because they a
 data quality, and 
 * observation ID is useful only as a reference point.
 
-The HDAC replaces INTEGRATION_DURATION with DWELL_TIME and the H_LEVEL and D_LEVEL parameters. 
+The HDAC replaces `INTEGRATION_DURATION` with `DWELL_TIME` and the `H_LEVEL` and `D_LEVEL` parameters. 
 The time series generated by the HDAC channel may have additional complexity. 
 If all the filament voltage levels are 0 then the HDAC is in photometer mode and its output is a time series of detector counts. 
 If there is a non-zero filament voltage level the detector is in modulation mode and the time series can be mapped into a table of 32 columns, each column corresponding to an HDAC filament voltage level in the order:
@@ -278,20 +273,20 @@ PLANET_CENTER_VELOCITY_VECTOR
 Their values are in units of degrees for angles, kilometers for distances, and kilometers/second for velocities and are given in the J2000 reference frame. 
 Geometry values are generated using the NAIF SPICE toolkit. 
 When a geometry value cannot be computed due to a dispersed target --- such as observation of the interplanetary medium --- or insufficient ephemeris data --- such as when the target is off-center --- a value of UNK is recorded as the parameter value. 
-Since the number of interplanetary hydrogen survey observations with a target of SOLAR_WIND is relatively high, the number of UNK values is also high.
+Since the number of interplanetary hydrogen survey observations with a target of `SOLAR_WIND` is relatively high, the number of UNK values is also high.
 Data objects are stored in files within a data volume. 
 A data volume is a directory tree whose content and structure is defined by PDS. 
 The UVIS data volume has a name of the form COUVIS_nnnn where CO is an acronym for Cassini Orbiter, UVIS is the instrument name, and `nnnn` is a number in a sequence of indices. 
-During the Cassini mission, UVIS produced data volumes from COUVIS_0001 through COUVIS_0060. 
+During the Cassini mission, UVIS produced data volumes from `COUVIS_0001` through `COUVIS_0060`. 
 The top level directory contains several directories and files:
 
-- DATA contains data objects
-- CALIB contains calibration objects
-- DOCUMENT contains documentation
-- CATALOG contains catalogs of data products on the volume
-- SOFTWARE contains software (used for documentation only)
-- AAREADME.TXT describes the data volume
-- ERRATA.TXT describes know errors.
+- `DATA` contains data objects
+- `CALIB` contains calibration objects
+- `DOCUMENT` contains documentation
+- `CATALOG` contains catalogs of data products on the volume
+- `SOFTWARE` contains software (used for documentation only)
+- `AAREADME.TXT` describes the data volume
+- `ERRATA.TXT` describes know errors.
 
 The UVIS data object files are organized by date under the DATA directory. 
 The CALIB directory contains files that correspond, by name, to FUV and EUV data object files. 
@@ -300,9 +295,9 @@ The calibration LBL files contain a description of the calibration process.
 The SOFTWARE directory contains algorithms used to generate these coefficients and are included for reference.
 The INDEX directory contains a relational database table whose columns are the fields of the LBL files and which contain the label values as records in the table. 
 The purpose of the INDEX.TAB file is to provide a database search capability.
-Underneath the DATA directory is a sequence of directories of the form D<yyyy>_<ddd> where yyyy is a year and ddd is a day of year. 
+Underneath the DATA directory is a sequence of directories of the form `D<yyyy>_<ddd>` where `yyyy` is a year and `ddd` is a day of year. 
 The contents of these directories are the observations that began on the specified day, for example,
-COUVIS_0002/DATA/D2001_001/FUV2001_001_01_12.LBL. 
+`COUVIS_0002/DATA/D2001_001/FUV2001_001_01_12.LBL`. 
 Underneath the CALIB directory is a subdirectory of the form VERSION_n and under that is the same directory tree as is under DATA, for example:
 
     COUVIS_0002/CALIB/VERSION_2/D2001_001/FUV2001_001_01_12_CAL_2.LBL.
@@ -313,14 +308,14 @@ A description of the calibration version is located in the SOFTWARE/CALIB direct
 Underneath the INDEX directory are two files, INDEX.LBL and INDEX.TAB. 
 The INDEX.LBL file contains a schema definition for a relational database table. 
 The TAB file contains a set of records corresponding to observations, one record per observation. 
-One column contains the data file name and the rest correspond to the keywords in the observation label, e.g. START_TIME, TARGET_NAME, INTEGRATION_TIME, etc. 
+One column contains the data file name and the rest correspond to the keywords in the observation label, e.g. `START_TIME`, `TARGET_NAME`, `INTEGRATION_TIME`, etc. 
 The index table is used to search for observations matching some user-specified criteria.
-Underneath the DOCUMENT directory is the UVIS.TXT file that is a more substantial version of this chapter. 
-The CATALOG directory contains the files UVISINST.CAT and UVISREF.CAT that describe the instrument in detail. 
+Underneath the DOCUMENT directory is the `UVIS.TXT` file that is a more substantial version of this chapter. 
+The CATALOG directory contains the files `UVISINST.CAT` and `UVISREF.CAT` that describe the instrument in detail. 
 Also included there are a description of the mission, the spacecraft and the four UVIS data products. 
 The SOFTWARE directory contains algorithms encoded in the IDL programming language that are used to generate calibration coefficients and geometry. 
 They are included primarily for reference. 
-An IDL data reader, UVIS_PDS_READ_DATA and associated documentation are also provided.
+An IDL data reader, `UVIS_PDS_READ_DATA` and associated documentation are also provided.
 UVIS data are available from the Atmospheres and Rings nodes of the PDS. 
 From PDS, users obtain observations formatted as PDS data objects. 
 By reading the object’s label a user can ascertain the structure of the data and load it into an analysis tool. The label contains all UVIS state information necessary to interpret the data. 
