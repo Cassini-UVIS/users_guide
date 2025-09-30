@@ -166,7 +166,7 @@ effects means that the icy moons generally do not reflect very much light at the
 wavelengths, and as a result, the signal is extremely low. The resultant reflectance continuum is
 noisy, so we often choose to create binned reflectance values at the wavelengths where the
 satellite spectrum exhibits reflected solar lines such as the carbon line at 1335 Å (see for instance
-{ref}`fig:8_4a`). {ref}`fig:8_4b` is an example reflectance spectrum showing division by the solar
+{ref}`fig:9_4a`). {ref}`fig:9_4b` is an example reflectance spectrum showing division by the solar
 continuum.
 
 ## Saturn reflectance spectra <!-- 8.3 -->
@@ -174,12 +174,12 @@ continuum.
 Sample reflectance spectra::
 ::::{grid} 2
 :::{figure} figures/fig_9.4a.png
-:label: "fig:8_4a"
+:label: "fig:9_4a"
 Phoebe (phase angle α=42°).
 :::
 
 :::{figure} figures/fig_9.4b.png
-:label: "fig:8_4b"
+:label: "fig:9_4b"
 Enceladus (α=2°).
 :::
 ::::
@@ -223,7 +223,7 @@ one can run a ‘forward calculation’ as described elsewhere in this document 
 Chapter {ref}`sec:sat_titan_occ`) to estimate instrument count rates given a model intensity spectrum,
 and compare the simulated counts with observed counts.
 
-```
-Figure 8.5. Sample Saturn spectrum. I is the measured intensity; πF is the incidence solar flux.
+```{figure} figures/fig_9.5.jpg
+Sample Saturn spectrum. _I_ is the measured intensity; _πF_ is the incidence solar flux.
 ```
 
