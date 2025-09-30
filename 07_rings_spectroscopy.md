@@ -3,7 +3,7 @@ short_title: Rings Spectroscopy
 author: E. Todd Bradley
 ---
 (sec:rings_spec)=
-# RingsSpectroscopy Data Reduction
+# Rings Spectroscopy Data Reduction
 
 ```{admonition} Conversion status: Raw
 Layout unfinished and no figures yet
