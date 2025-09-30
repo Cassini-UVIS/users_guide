@@ -1,0 +1,54 @@
+version: 1
+project:
+  title: Cassini UVIS User Guide
+  description: A guide to the Cassini Ultraviolet Imaging Spectrograph (UVIS) data in the Planetary Data System (PDS)
+  authors:
+    - name: Cassini UVIS team
+    - name: Jupyter Book created by Michael Aye
+  copyright: 'Cassini UVIS team'
+  github: cassini-uvis/users_guide
+  bibliography:
+    - references.bib
+  exports:
+    - format: pdf
+      template: plain_latex_book
+      output: exports/book.pdf
+  toc:
+    - file: about.md
+    - file: intro.md
+    - file: 01_uvis_on_pds.md
+    - file: 02_pds_data_structure.md
+    - file: 03_calibration.md
+    - file: 04_saturns-aurora.md
+    - file: 05_hdac.md
+    - file: 06_stellar_occultations.md
+    - file: 07_rings_spectroscopy.md
+    - file: 08_icy_moons.md
+    - file: 09_stellar_calib_fuv.md
+    - file: 10_sat_titan_occ.md
+    - file: 11_iph_survey.md
+    - file: 12_cube_gen.md
+    - file: Appendix1_Flatfielding.md
+    - file: Appendix2.md
+    # - file: bibliography.md
+  numbering:
+    # title: true
+    figure: true
+    table: true
+    code: true
+    equation: true
+    sections: true
+    # prefix_section_with_chapter_number: true
+    # prefix_figure_with_chapter_number: true
+    # prefix_table_with_chapter_number: true
+    # prefix_code_with_chapter_number: true
+    # prefix_equation_with_chapter_number: true
+site:
+  options:
+    logo: figures/fig_1.0.png
+    logo_text: Cassini UVIS User Guide
+    folders: true
+    outline_maxdepth: 2
+    # assets:
+    #   - custom.css
+  template: book-theme

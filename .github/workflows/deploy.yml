@@ -13,27 +13,32 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        python-version: [3.8]
+        python-version: [3.11]
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     # Install dependencies
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
+    
+    - name: Install MyST-MD and dependencies
       run: |
-        pip install -r requirements.txt
+        pip install mystmd
+        # Install additional dependencies if requirements.txt exists
+        if [ -f requirements.txt ]; then
+          pip install -r requirements.txt
+        fi
 
-    # Build the book
-    - name: Build the book
+    # Build the book with MyST
+    - name: Build the MyST book
       run: |
-        jupyter-book build .
+        myst build --html
 
     # Deploy the book's HTML to gh-pages branch
     - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v3.6.1
+      uses: peaceiris/actions-gh-pages@v3.9.0
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: _build/html

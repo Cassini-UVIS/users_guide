@@ -1,13 +1,10 @@
+---
+authors:
+  - name: Greg Holsclaw
+  - name: Michael Aye (Online Book additions 2022+)
+---
 (sec:calib)=
 # UVIS Calibration
-
-```{admonition} Conversion status: done
-Conversion finished. Please report any errors or issues you find.
-```
-
-```
-Greg Holsclaw
-```
 
 ## Introduction
 
@@ -27,7 +24,7 @@ These subsystems are referred to as the Far Ultraviolet Spectrograph (FUV), the 
 Because the interpretations of data from the EUV and FUV channels require a well-understood calibration, the rest of this chapter will be limited to these two subsystems only.
 
 ```{table} Summary of the UltraViolet Imaging Spectrograph design specifications
-:name: tab:uvis-design
+:name: "tab:uvis-design"
 
 ||FUV  | EUV | HSP | HDAC|
 |--- | --- | --- | --- | --- |
@@ -129,11 +126,10 @@ Due to scattering within the spectrograph (see {numref}`sec:spec-scattered`), th
 It is recommended that background estimates be determined for each observation independently.
 
 
-:::{figure-md} fig:fuv-background
-<img src="figures/fig_3.1.png" alt="FUV background count rate">
-
+:::{figure} figures/fig_3.1.png
+:label: fig:fuv-background
+:alt: FUV background count rate
 Background count rate in the FUV detector as a function of time.
-
 :::
 
 (sec:spec-scattered)=
@@ -151,9 +147,9 @@ rectangular function representing the geometric image of the low-resolution entr
 The model given in Eqn {eq}`eq:iph-model` was fit to the data, and is shown as a dashed line in {numref}`fig:fuv-hydrogen`. 
 The model coefficients from this fit are listed in {numref}`tab:iph-coeffs`.
 
-:::{figure-md} fig:fuv-hydrogen
-<img src="figures/fig_3.2.png" alt="FUV interplanetary hydrogen">
-
+:::{figure} figures/fig_3.2.png
+:label: fig:fuv-hydrogen
+:alt: FUV interplanetary hydrogen
 Average FUV spectrum of interplanetary hydrogen along with a fit to an analytic function.
 :::
 
@@ -391,9 +387,9 @@ The EUV image (top left panel) shows that there appears to be little or no detec
 This is likely a residual signal from the “mesa”, a known contamination occurring in this region of the detector due to undispersed light entering through the solar occultation port (see <mark>Chapters 4 and 11</mark>).
 
 
-:::{figure-md} fig:example-data-raw
-<img src="figures/fig_3.3.png" alt="EUV/FUV example data as images and spectra">
-
+:::{figure} figures/fig_3.3.png
+:label: fig:example-data-raw
+:alt: EUV/FUV example data as images and spectra
 Top panels: image of the average EUV (left) and FUV (right) array. Bottom panels: spatially averaged
 EUV (left) and FUV (right) spectrum. Images have been scaled from 0 to 0.6 counts.
 :::
@@ -460,9 +456,9 @@ Comment: "revise"
 It is this relationship that provides the link between the quantity of radiance (<mark>*power or photon rate per unit area per unit solid angle*</mark>) measured by remote sensing instrumentation and the reported column emission rate expected by aeronomers.
 
 
-:::{figure-md} fig:example-data-calibrated
-<img src="figures/fig_3.4.png" alt="EUV/FUV calibrated example data as images and spectra">
-
+:::{figure} figures/fig_3.4.png
+:label: fig:example-data-calibrated
+:alt: EUV/FUV calibrated example data as images and spectra
 Top panels: image of the calibrated average EUV (left) and FUV (right) array. Bottom panels: spatially averaged calibrated EUV (left) and FUV (right) spectrum.
 Images have been scaled from 0 to 2 rayleigh per angstrom.
 :::
